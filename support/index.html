@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RXB Workstation Support</title>
+<meta name="description" content="Support for RXB Workstation: system requirements, common issues, and how to get help.">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="RXB Workstation Support">
+<meta property="og:description" content="Support for RXB Workstation: system requirements, common issues, and how to get help.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../assets/img/icon.png">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="../">
+      <img src="../assets/img/logo-white.png" alt="RXB Workstation" height="26">
+    </a>
+    <nav class="site-nav" aria-label="Main"><a href="../">Overview</a><a href="../manual/">Manual</a><a href="../support/" class="is-active">Support</a><a href="../eula/">Licence</a><a href="../privacy/">Privacy</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap">
+
+
+<div class="doc">
+<h1>Support</h1>
+<p class="lede">Most questions are answered in the manual. If yours is not, email us.</p>
+
+<section class="panel panel--contact">
+  <h2 id="contact">Contact<a class="anchor" href="#contact">#</a></h2>
+  <p><a class="mail" href="mailto:ryno@globalxbrand.com">ryno@globalxbrand.com</a></p>
+  <p class="muted">Include your RXB Workstation version (shown in the SYSTEM tab), your operating system, and what you were doing when the problem happened. If it involves a specific project, say whether it is reproducible from a fresh one.</p>
+</section>
+
+<h2 id="requirements">System requirements<a class="anchor" href="#requirements">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr><th>Component</th><th>Guidance</th></tr></thead>
+<tbody>
+<tr><td>Operating system</td><td>Windows (NSIS installer). macOS and Linux builds exist but are not validated for this release.</td></tr>
+<tr><td>RAM, minimum</td><td><code>4 GB</code></td></tr>
+<tr><td>RAM, recommended</td><td><code>8 GB</code></td></tr>
+<tr><td>RAM, heavy sessions</td><td><code>16 GB</code></td></tr>
+<tr><td>Audio hardware</td><td>A low-latency interface, or a stable onboard audio driver</td></tr>
+<tr><td>Storage</td><td>An SSD is recommended for larger sample projects</td></tr>
+</tbody></table></div>
+
+<p>Supported audio formats: <code>WAV</code>, <code>AIFF</code>, <code>MP3</code>, <code>M4A</code>, <code>FLAC</code>, <code>OGG</code>, <code>WMA</code>. Maximum file size <code>256 MB</code>; maximum duration <code>45 minutes</code>. Behaviour varies with the codecs your operating system provides &mdash; <code>WAV</code> and <code>AIFF</code> are the safest choices.</p>
+
+<h2 id="display">Windows display scaling<a class="anchor" href="#display">#</a></h2>
+<p>If the workspace does not fill your screen, or looks smaller than expected, set <strong>Settings &rarr; System &rarr; Display &rarr; Scale &amp; layout</strong> to <strong>100%</strong> and restart the application. Higher scale values reduce the logical pixel area available to the app.</p>
+
+<h2 id="common">Common issues<a class="anchor" href="#common">#</a></h2>
+
+<h3>Samples show as missing after moving a project</h3>
+<p>Projects reference their samples by path. Move the project folder as a whole, or use the relink prompt to point at the folder containing the audio. The manual's troubleshooting section covers the relink flow.</p>
+
+<h3>A backing track will not import</h3>
+<p>Check the file against the format table above. Long or very large files, and codecs your system does not provide, are the usual causes.</p>
+
+<h3>Audio device still busy after closing</h3>
+<p>Some Windows audio stacks hold the device briefly after the app exits. Wait a few seconds before relaunching or before starting another audio application.</p>
+
+<h3>Exporting an arrangement takes as long as the song</h3>
+<p>That is expected. <code>EXPORT ARRANGEMENT</code> is a <strong>real-time bounce</strong> &mdash; the arrangement is played and recorded rather than rendered offline, so it takes about as long as the song lasts. Leave it running until it reports completion.</p>
+
+<h3>Performance</h3>
+<p>Latency and voice count depend on your hardware and audio stack, so results vary between machines. A dedicated low-latency interface makes the largest difference.</p>
+
+<h2 id="refunds">Refunds<a class="anchor" href="#refunds">#</a></h2>
+<p>Refunds are handled by the store you purchased from, under that store's refund policy. We cannot process a refund for a purchase made through a third-party storefront.</p>
+
+<h2 id="privacy">Your data<a class="anchor" href="#privacy">#</a></h2>
+<p>RXB Workstation runs locally and keeps your projects on your own machine. See the <a href="../privacy/">privacy policy</a> for the detail.</p>
+</div>
+
+</main>
+<footer class="site-foot">
+  <div class="wrap foot-inner">
+    <p><strong>RXB Workstation</strong> 2.6.5 &middot; &copy; 2026 Brand RPB</p>
+    <nav aria-label="Footer">
+      <a href="../manual/">Manual</a>
+      <a href="../support/">Support</a>
+      <a href="../eula/">Licence</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../licenses/">Third-party notices</a>
+      <a href="mailto:ryno@globalxbrand.com">ryno@globalxbrand.com</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>

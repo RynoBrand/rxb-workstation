@@ -1,0 +1,1173 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>RXB Workstation User Manual</title>
+<meta name="description" content="The complete RXB Workstation 2.6.5 user manual: every tab, control and workflow, with figures.">
+<meta name="color-scheme" content="dark">
+<meta property="og:title" content="RXB Workstation User Manual">
+<meta property="og:description" content="The complete RXB Workstation 2.6.5 user manual: every tab, control and workflow, with figures.">
+<meta property="og:type" content="website">
+<link rel="icon" href="../assets/img/icon.png">
+<link rel="stylesheet" href="../assets/css/site.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="../">
+      <img src="../assets/img/logo-white.png" alt="RXB Workstation" height="26">
+    </a>
+    <nav class="site-nav" aria-label="Main"><a href="../">Overview</a><a href="../manual/" class="is-active">Manual</a><a href="../support/">Support</a><a href="../eula/">Licence</a><a href="../privacy/">Privacy</a></nav>
+  </div>
+</header>
+<main id="main" class="wrap wrap--wide">
+<nav class="toc" aria-label="On this page"><p class="toc__title">On this page</p><ol><li><a href="#1-introduction-overview">1. Introduction &amp; Overview</a></li><li><a href="#2-system-requirements">2. System Requirements</a></li><li><a href="#3-getting-started">3. Getting Started</a></li><li><a href="#4-core-concepts">4. Core Concepts</a></li><li><a href="#5-pad-grid-operation">5. Pad Grid Operation</a></li><li><a href="#6-keygroup-mode-keygrp">6. Keygroup Mode (KEYGRP)</a></li><li><a href="#7-effects-routing">7. Effects &amp; Routing</a></li><li><a href="#8-file-management">8. File Management</a></li><li><a href="#9-troubleshooting">9. Troubleshooting</a></li><li><a href="#10-appendix">10. Appendix</a></li><li><a href="#11-extended-workflow-reference">11. Extended Workflow Reference</a></li><li><a href="#12-layout-mode">12. Layout Mode</a></li><li><a href="#13-transport-and-tempo-controls">13. Transport and Tempo Controls</a></li><li><a href="#14-backing-track-full-control-reference">14. Backing Track — Full Control Reference</a></li><li><a href="#15-daw-view-multi-lane-backing-track-workspace">15. DAW View — Multi-Lane Backing Track Workspace</a></li><li><a href="#16-bank-switching-a-b-c-d">16. Bank Switching (A / B / C / D)</a></li><li><a href="#17-xpad-tab-reference">17. XPAD Tab Reference</a></li><li><a href="#18-input-tab-monitoring-reference">18. INPUT Tab — Monitoring Reference</a></li><li><a href="#19-record-input-to-pad-complete-reference">19. Record Input to Pad — Complete Reference</a></li><li><a href="#20-auto-sampler">20. Auto-Sampler</a></li><li><a href="#21-step-performance-editing">21. Step Performance Editing</a></li><li><a href="#22-arpeggiator-keygroup-mode">22. Arpeggiator (Keygroup Mode)</a></li><li><a href="#23-fx-rack-reference">23. FX Rack Reference</a></li><li><a href="#24-keyboard-shortcuts-complete-reference">24. Keyboard Shortcuts — Complete Reference</a></li><li><a href="#25-macros">25. Macros</a></li><li><a href="#26-warp-time-stretch-reference">26. Warp / Time-Stretch Reference</a></li><li><a href="#27-song-mode-and-arranger-extended-reference">27. Song Mode and Arranger — Extended Reference</a></li><li><a href="#28-dmx-lighting-art-net-output">28. DMX Lighting (Art-Net Output)</a></li><li><a href="#documentation-disclaimer-notice">Documentation Disclaimer Notice</a></li></ol></nav>
+<div class="doc doc--manual">
+<h1>User Manual</h1>
+<p class="lede">RXB Workstation 2.6.5. Every tab, control and workflow, with numbered figures throughout.</p>
+<p>Version: CV2.6.5 Date: June 18, 2026 (revised August 22, 2026) Status: Current release. Adds the Windows-first DAW multi-lane backing-track workspace and linked playback. The July revision improves Mixer view visibility (scrollable panel, full-height channel strips) and touch-drag reliability for knobs and faders. The August revision adds the backing-track MUTE button, sequencer-master song/backing-track timeline sync (waveform seek moves the Song pointer, section-length edits follow the playhead), and a native-transport fallback status notice. The 8 August revision measures Song Mode sections in <strong>bars</strong> so they can run an odd length, with a per-section toggle for building turnarounds and pickups (Section 27); anchors the Mixer's horizontal scrollbar to the bottom of the panel; and hardens playback so a UI stall — switching tabs mid-playback — can no longer leave the audio cutting in and out. The 15 August revision adds the <strong>MIX BUSES</strong> card to the MIXER view — five group faders (<code>DRUMS</code>, <code>MUSIC</code>, <code>VOX</code>, <code>FX</code>, <code>BACKING</code>) with metering, pan, mute, solo, and master-EQ routing, saved with the project (Section 7) — and makes clearing the backing track or a DAW lane undoable (Section 11). The 16 August revision lets <strong>any pad be sent to any bus</strong> from a <code>BUS</code> selector on its channel strip (Section 7), and adds <strong>EXPORT ARRANGEMENT</strong> to the SONG view, which plays the whole song through and saves it as a WAV or MP3 unattended (Section 27). The 22 August revision ships the <strong>factory sound library</strong>: all 63 samples in Banks B, C and D, synthesised by RXB's own audio engine and licensed for commercial use with no clearance required (Section 16).</p>
+<p>Table of Contents:</p>
+<p>(Word field code style — <em>keep this exact text</em> in the generated <code>.docx</code> file.  Do not interpret or modify it.)</p>
+<h2 id="1-introduction-overview">1. Introduction &amp; Overview<a class="anchor" href="#1-introduction-overview" aria-label="Link to this section">#</a></h2>
+<p>RXB Workstation is a pad-first production environment for beat creation, live triggering, scene sequencing, and performance arrangement.</p>
+<p>Pads are always live — you never need to arm a track to play.</p>
+<p>The <strong>MAIN</strong> view provides quick pad playback control, and is accessible through the <strong>MAIN</strong> tab. The <strong>GRID</strong>, <strong>DAW</strong>, <strong>XPAD</strong>, <strong>SAMPLE</strong>, <strong>SONG</strong>, <strong>KEYGRP</strong>, <strong>FXRACK</strong>, <strong>MIXER</strong>, <strong>MACRO</strong>, <strong>INPUT</strong>, <strong>MIDI</strong>, <strong>DMX</strong>, and <strong>SYSTEM</strong> views expose deeper workflow controls.</p>
+<ul><li>The full tab bar order is: <strong>MAIN, MIXER, GRID, DAW, FXRACK, INPUT, XPAD, KEYGRP, SAMPLE, SONG, MACRO, MIDI, SYSTEM, DMX</strong>.</li><li>The <strong>DAW</strong> view is a Windows-first multi-lane backing-track workspace with a master lane plus seven aux lanes, linked transport, and per-lane mix controls (see Section 15).</li><li>The <strong>DMX</strong> view is a DMX512 / Art-Net lighting controller for driving fixtures in sync with the transport (see Section 28).</li><li>Each project stores scenes, pad settings, layer names, sample references, backing-track metadata, and routing preferences.</li><li>The desktop runtime uses a C++ native transport backend with a JS fallback path retained for safety.</li><li>Layout presets currently available in <strong>LAYOUT MODE</strong> are <strong>Default</strong>, <strong>Pads Left</strong>, and <strong>Studio / Mix</strong>.</li></ul>
+<p>The workspace as it appears on first launch is shown in <strong>Figure 1.1</strong>.</p>
+<figure class="fig"><img src="images/01_main_workspace_default_layout.png" alt="Figure 1.1 — Main workspace in the Default layout." loading="lazy"><figcaption><strong>Figure 1.1</strong> — Main workspace in the Default layout.</figcaption></figure>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>Use <strong>Studio / Mix</strong> when balancing levels and FX, then switch back to <strong>Default</strong> for broader edit/navigation speed.</p></div></aside>
+<h2 id="2-system-requirements">2. System Requirements<a class="anchor" href="#2-system-requirements" aria-label="Link to this section">#</a></h2>
+<p>RXB supports packaged desktop builds for Windows, macOS, and Linux. Behavior can vary by OS media codec availability and hardware audio stack.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>COMPONENT</th><th>GUIDANCE</th></tr></thead>
+<tbody>
+<tr><td>Operating system</td><td>Windows (NSIS installer), macOS (DMG), Linux (AppImage)</td></tr>
+<tr><td>RAM (minimum functional)</td><td><code>4 GB</code></td></tr>
+<tr><td>RAM (recommended baseline)</td><td><code>8 GB</code></td></tr>
+<tr><td>RAM (heavy sessions)</td><td><code>16 GB</code></td></tr>
+<tr><td>Audio hardware</td><td>Low-latency interface or stable onboard audio driver</td></tr>
+<tr><td>Storage</td><td>Fast SSD recommended for larger sample projects</td></tr>
+</tbody>
+</table></div>
+<p>Supported formats: <code>WAV</code>, <code>AIFF</code>, <code>MP3</code>, <code>M4A</code>, <code>FLAC</code>, <code>OGG</code>, <code>WMA</code>. Maximum file size: <code>256 MB</code>. Maximum duration: <code>45 minutes</code>.</p>
+<aside class="callout callout--important"><p class="callout__label">IMPORTANT</p><div class="callout__body"><p><code>.WMA</code> support is desktop-runtime dependent. For guaranteed compatibility, prefer <code>WAV</code> or <code>AIFF</code>.</p></div></aside>
+<aside class="callout callout--note"><p class="callout__label">DISPLAY SCALE — WINDOWS USERS</p><div class="callout__body"><p>RXB Workstation automatically scales to fill the available screen height. If the application does not fill the screen correctly, or appears smaller than expected, check your Windows display scale setting:</p></div></aside>
+<ol><li>Open <strong>Settings → System → Display → Scale &amp; layout</strong></li><li>Ensure <strong>Scale</strong> is set to <strong>100% (Recommended)</strong></li><li>Restart the application after changing the scale</li></ol>
+<blockquote><p>Higher scale values (125%, 150% etc.) reduce the logical pixel area available to the app, which can cause the workstation to appear smaller or fail to fill the screen. <strong>100% is strongly recommended</strong> for the best experience.</p></blockquote>
+<p>See <strong>Figure 2.1</strong> for the Windows display setting this requires.</p>
+<figure class="fig"><img src="images/02_windows_display_scale_100.png" alt="Figure 2.1 — Windows display scaling set to 100%." loading="lazy"><figcaption><strong>Figure 2.1</strong> — Windows display scaling set to 100%.</figcaption></figure>
+<h2 id="3-getting-started">3. Getting Started<a class="anchor" href="#3-getting-started" aria-label="Link to this section">#</a></h2>
+<p>Use this sequence for a clean first session.</p>
+<ol><li>Click <strong>NEW CLEAN FILE</strong>.</li><li>Set tempo and transport mode, then trigger pads to confirm audio output.</li><li>Load samples into pad layers from <strong>SAMPLE</strong> or drag files onto pad quadrants.</li><li>Build a pattern in <strong>GRID</strong>.</li><li>Save using <strong>SAVE PROJECT</strong>.</li><li>For a portable project, run <strong>COLLECT + SAVE</strong> before transfer or backup.</li></ol>
+<p>The <strong>OPEN</strong> action loads existing project files or folder-based project roots.</p>
+<p><strong>Figure 3.1</strong> illustrates the home screen presented at launch.</p>
+<figure class="fig"><img src="images/03_home_screen_new_clean_open.png" alt="Figure 3.1 — Home screen: new file, open, and recent projects." loading="lazy"><figcaption><strong>Figure 3.1</strong> — Home screen: new file, open, and recent projects.</figcaption></figure>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>Use <strong>COLLECT + SAVE</strong> before transferring or archiving your project so sample dependencies are copied into <code>Samples/</code>.</p></div></aside>
+<h2 id="4-core-concepts">4. Core Concepts<a class="anchor" href="#4-core-concepts" aria-label="Link to this section">#</a></h2>
+<h3 id="scenes-banks-and-source-pairing">Scenes, Banks, and Source Pairing<a class="anchor" href="#scenes-banks-and-source-pairing" aria-label="Link to this section">#</a></h3>
+<ul><li>Scenes are split into two linked ranges:</li><li>Main scenes: <code>1-8</code> (<code>S1-S8</code>, red context)</li><li>Keygroup-linked scenes: <code>9-16</code> (<code>K1-K8</code>, teal/green context)</li><li>Banks are performance/sample banks <strong>A / B / C / D</strong>.</li><li>Source toggles in song steps use <strong>MAIN</strong> and <strong>KEYGRP</strong> ON/OFF states.</li></ul>
+<p>If both scene systems are used in one arrangement, RXB adjusts playback routing to match step-level source settings.</p>
+<h3 id="pad-layers-and-xy-quadrants">Pad Layers and XY Quadrants<a class="anchor" href="#pad-layers-and-xy-quadrants" aria-label="Link to this section">#</a></h3>
+<p>Each pad has four independent layers labeled <code>L1</code>, <code>L2</code>, <code>L3</code>, <code>L4</code>.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>LAYER</th><th>XY QUADRANT</th><th>DROP POSITION</th></tr></thead>
+<tbody>
+<tr><td><code>L1</code></td><td>Top-left</td><td><code>x &lt; 0.5</code>, <code>y &lt; 0.5</code></td></tr>
+<tr><td><code>L2</code></td><td>Top-right</td><td><code>x &gt;= 0.5</code>, <code>y &lt; 0.5</code></td></tr>
+<tr><td><code>L3</code></td><td>Bottom-left</td><td><code>x &lt; 0.5</code>, <code>y &gt;= 0.5</code></td></tr>
+<tr><td><code>L4</code></td><td>Bottom-right</td><td><code>x &gt;= 0.5</code>, <code>y &gt;= 0.5</code></td></tr>
+</tbody>
+</table></div>
+<p>Click a quadrant/layer target before load/edit actions when you need deterministic layer placement.</p>
+<p>The quadrant split and its layer labels are shown in <strong>Figure 4.1</strong>.</p>
+<figure class="fig"><img src="images/04_xpad_crosshair_layer_labels.png" alt="Figure 4.1 — Pad layer quadrants and the crosshair overlay." loading="lazy"><figcaption><strong>Figure 4.1</strong> — Pad layer quadrants and the crosshair overlay.</figcaption></figure>
+<h2 id="5-pad-grid-operation">5. Pad Grid Operation<a class="anchor" href="#5-pad-grid-operation" aria-label="Link to this section">#</a></h2>
+<p>The <strong>GRID</strong> view provides step sequencing, velocity editing, and per-step performance controls.</p>
+<ul><li>Toggle steps directly on the grid.</li><li>Use edit modes such as velocity/probability/ratchet for groove shaping.</li><li>Use <strong>PLAY</strong>, <strong>MUTE</strong>, <strong>SOLO</strong>, and <strong>BATCH</strong> mode buttons to control pad behavior.</li></ul>
+<p>A populated step grid is shown in <strong>Figure 5.1</strong>.</p>
+<figure class="fig"><img src="images/05_grid_view_steps_velocity.png" alt="Figure 5.1 — GRID view with active steps and velocity bars." loading="lazy"><figcaption><strong>Figure 5.1</strong> — GRID view with active steps and velocity bars.</figcaption></figure>
+<p>The <strong>BAR</strong> button (next to the Play button in the GRID) toggles the grid view between <strong>Bar 1</strong> (steps 1–16) and <strong>Bar 2</strong> (steps 17–32), allowing you to view and edit both halves of a 32-step pattern. The current bar number is displayed on the button.</p>
+<p><strong>BATCH mode</strong> — tap pads to build a multi-pad selection (pads highlight in blue). The knobs panel switches to the <strong>BATCH EDIT</strong> surface showing 10 parameter knobs (VOL, TUNE, REV, DEL, CUTOFF, DRIVE, PAN, ATK, DEC, REL). Moving any knob sets that parameter to the same value across all selected pads simultaneously. Press <strong>BATCH</strong> again or <strong>CLEAR</strong> inside the panel to exit.</p>
+<p>See <strong>Figure 5.2</strong> for BATCH mode with several pads selected.</p>
+<figure class="fig"><img src="images/06_batch_mode_edit_surface.png" alt="Figure 5.2 — BATCH mode with the batch edit surface." loading="lazy"><figcaption><strong>Figure 5.2</strong> — BATCH mode with the batch edit surface.</figcaption></figure>
+<h3 id="keyboard-pad-play">Keyboard Pad Play<a class="anchor" href="#keyboard-pad-play" aria-label="Link to this section">#</a></h3>
+<p>If no MIDI controller is connected, the computer keyboard map is:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>ROW</th><th>KEYS</th></tr></thead>
+<tbody>
+<tr><td>Row 1</td><td><code>1 2 3 4</code></td></tr>
+<tr><td>Row 2</td><td><code>Q W E R</code></td></tr>
+<tr><td>Row 3</td><td><code>A S D F</code></td></tr>
+<tr><td>Row 4</td><td><code>Z X C V</code></td></tr>
+</tbody>
+</table></div>
+<ul><li>Key down triggers the mapped pad.</li><li>Key up releases the mapped key (important for keygroup and repeat behavior).</li><li>Keyboard triggering is ignored while typing in text inputs.</li></ul>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>For tighter programming passes, keep one hand on the keyboard pad map and the other on step edit controls to alternate live input and correction quickly.</p></div></aside>
+<h2 id="6-keygroup-mode-keygrp">6. Keygroup Mode (KEYGRP)<a class="anchor" href="#6-keygroup-mode-keygrp" aria-label="Link to this section">#</a></h2>
+<p>When <strong>KEYGRP</strong> is active, pads become note keys derived from root note, scale type, and octave settings.</p>
+<ul><li>In normal mode, each pad triggers its own sample identity.</li><li>In <strong>KEYGRP</strong>, pad hits transpose the currently targeted sample voice.</li><li><strong>KEYGRP Pair</strong> and <strong>MAIN Pair</strong> control linked-bank audibility from the XPAD/sequencer link surface.</li></ul>
+<p><strong>Figure 6.1</strong> illustrates the keygroup scale controls.</p>
+<figure class="fig"><img src="images/07_keygrp_tab_scale_selector.png" alt="Figure 6.1 — KEYGRP tab: scale, root note, and octave controls." loading="lazy"><figcaption><strong>Figure 6.1</strong> — KEYGRP tab: scale, root note, and octave controls.</figcaption></figure>
+<p>The <strong>KEYGRP ENGINE</strong> section in <strong>SYSTEM</strong> provides dedicated tone and dynamics control.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>CONTROL</th><th>FUNCTION</th></tr></thead>
+<tbody>
+<tr><td>LOW / MID / HIGH</td><td>Three-band tonal shaping on the keygroup bus (<code>-12 dB</code> to <code>+12 dB</code>)</td></tr>
+<tr><td>COMP</td><td>Keygroup bus compression amount (<code>0.00</code> to <code>1.00</code>)</td></tr>
+<tr><td>GAIN</td><td>Keygroup bus output gain (<code>0.50</code> to <code>2.20</code>)</td></tr>
+<tr><td>POLYPHONY</td><td>Maximum simultaneous keygroup voices (<code>4-32</code>)</td></tr>
+</tbody>
+</table></div>
+<p>The engine controls for keygroup playback are shown in <strong>Figure 6.2</strong>.</p>
+<figure class="fig"><img src="images/08_system_keygrp_engine_controls.png" alt="Figure 6.2 — SYSTEM tab: KEYGRP engine controls." loading="lazy"><figcaption><strong>Figure 6.2</strong> — SYSTEM tab: KEYGRP engine controls.</figcaption></figure>
+<aside class="callout callout--important"><p class="callout__label">IMPORTANT</p><div class="callout__body"><p>When switching between <strong>MAIN</strong> and <strong>KEYGRP</strong>, pair controls reset to OFF. Reconfirm pair state before live playback.</p></div></aside>
+<h2 id="7-effects-routing">7. Effects &amp; Routing<a class="anchor" href="#7-effects-routing" aria-label="Link to this section">#</a></h2>
+<h3 id="mixer-view-master-meter-delivery-metering-and-channel-strips">Mixer View — Master Meter, Delivery Metering, and Channel Strips<a class="anchor" href="#mixer-view-master-meter-delivery-metering-and-channel-strips" aria-label="Link to this section">#</a></h3>
+<p>The <strong>MIXER</strong> view stacks five cards top to bottom: <strong>MASTER</strong>, <strong>DELIVERY METERING</strong>, <strong>MIX BUSES</strong>, <strong>SIDECHAIN</strong>, and the channel strip area. When the panel is shorter than its content, the whole view scrolls vertically — no controls are ever hidden; when the panel is taller, the channel strips grow to fill the extra height.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>ELEMENT</th><th>FUNCTION</th></tr></thead>
+<tbody>
+<tr><td><code>MASTER</code> meter</td><td>Real-time master peak bar (green/amber/red zones) with a numeric <code>PEAK</code> readout in dBFS</td></tr>
+<tr><td><code>CLIP</code></td><td>Latches red when master clipping is detected; click to clear the latch</td></tr>
+<tr><td><code>LUFS-M</code> / <code>LUFS-S</code> / <code>LUFS-I</code></td><td>Momentary, short-term, and integrated loudness. <code>LUFS-I</code> reads green when inside the delivery window</td></tr>
+<tr><td><code>TRUE PK</code></td><td>True-peak estimate in dBTP; amber above <code>-3</code>, red above <code>-1</code></td></tr>
+<tr><td><code>TARGET -14 LUFS / -1 dBTP</code></td><td>The streaming delivery target the metering is judged against</td></tr>
+<tr><td><code>RESET</code></td><td>Restarts the integrated LUFS measurement</td></tr>
+<tr><td><code>GR</code></td><td>Master gain-reduction meter in dB</td></tr>
+<tr><td>Spectrum display</td><td>Log-frequency analyzer of the master output (blue = low energy, red = hot)</td></tr>
+</tbody>
+</table></div>
+<p>Each channel strip provides, top to bottom: a <strong>PAN</strong> knob (clip ring lights on channel clip), a level meter with peak line, the volume <strong>fader</strong> (drag vertically; the <code>0 dB</code> unity line is marked), a dB scale with a live-level <code>LIVE</code> marker, the <strong>VOL</strong> readout in dB, the <strong>BUS</strong> selector (which mix bus this pad plays to — see <em>Sending a Pad to a Bus</em> below), and the <strong>PAD</strong> name button — click it to <strong>solo</strong> that channel, click the strip anywhere else to select the pad.</p>
+<p>The full mixer surface is shown in <strong>Figure 7.1</strong>.</p>
+<figure class="fig"><img src="images/09_mixer_sidechain_panel.png" alt="Figure 7.1 — MIXER view: master meter, delivery metering, and channel strips." loading="lazy"><figcaption><strong>Figure 7.1</strong> — MIXER view: master meter, delivery metering, and channel strips.</figcaption></figure>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>Mix toward <code>LUFS-I</code> reading green (−14 LUFS) with <code>TRUE PK</code> below −1 dBTP and the CLIP latch dark — that combination is safe for loudness-normalized streaming delivery without further limiting.</p></div></aside>
+<h3 id="mix-buses-group-faders-for-drums-music-vox-fx-and-backing">Mix Buses — Group Faders for Drums, Music, Vox, FX, and Backing<a class="anchor" href="#mix-buses-group-faders-for-drums-music-vox-fx-and-backing" aria-label="Link to this section">#</a></h3>
+<p>Location: <code>MIXER</code> view → <strong>MIX BUSES</strong> card (between DELIVERY METERING and SIDECHAIN)</p>
+<p>Everything you hear is grouped onto one of five buses on its way to the master chain. A bus is a group fader: it lets you move the balance between whole categories of sound — pull all the drums down together, push the vocal up — without touching the individual pad faders underneath.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>BUS</th><th>WHAT FEEDS IT</th></tr></thead>
+<tbody>
+<tr><td><code>DRUMS</code></td><td>Every pad you have not sent somewhere else (see <strong>Sending a Pad to a Bus</strong> below)</td></tr>
+<tr><td><code>MUSIC</code></td><td>The keygroup bus, plus any pad you assign here</td></tr>
+<tr><td><code>VOX</code></td><td>Live input monitoring</td></tr>
+<tr><td><code>FX</code></td><td>Reverb, delay, and FX-rack returns</td></tr>
+<tr><td><code>BACKING</code></td><td>The backing track and the DAW aux lanes</td></tr>
+</tbody>
+</table></div>
+<p>Each strip carries the same five controls:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>CONTROL</th><th>FUNCTION</th></tr></thead>
+<tbody>
+<tr><td>Level slider</td><td>Bus fader, with the current value shown in dB beside the bus name. Unity (<code>0.0 dB</code>) is the default</td></tr>
+<tr><td>Meter</td><td>Post-fader output level for that bus — it follows the fader, pan, and mute, so it shows what the bus is actually sending to the master. Amber above −1.4 dBFS, red on clip</td></tr>
+<tr><td><code>PAN</code></td><td>Places the whole group in the stereo field. <code>C</code> is centre; values read as <code>L50</code> / <code>R50</code></td></tr>
+<tr><td><code>M</code></td><td>Mutes the bus</td></tr>
+<tr><td><code>S</code></td><td>Solos the bus. Any solo silences the un-soloed buses; if a bus is both muted and soloed, <strong>mute wins</strong></td></tr>
+<tr><td><code>MST</code> / <code>DIR</code></td><td>Routing. <code>MST</code> (default) sends the bus through the master 3-band EQ. <code>DIR</code> routes it <strong>around</strong> that EQ</td></tr>
+</tbody>
+</table></div>
+<p><code>DIR</code> exists mainly for the <code>BACKING</code> bus: a finished backing track has usually been mastered already, and pushing it through your master EQ colours it a second time. <code>DIR</code> keeps it out of that EQ — but it <strong>never</strong> bypasses the master compressor or the safety limiter, so it can still never clip the output.</p>
+<p>Bus settings are saved with your project. A project saved before this feature existed simply opens with every bus at unity, centred, unmuted, and set to <code>MST</code> — which is exactly how it sounded before, so nothing you have already made will play back differently.</p>
+<p>See <strong>Figure 7.2</strong> for the five bus strips with SOLO active.</p>
+<figure class="fig"><img src="images/37_mix_buses_card.png" alt="Figure 7.2 — MIX BUSES card with one bus soloed." loading="lazy"><figcaption><strong>Figure 7.2</strong> — MIX BUSES card with one bus soloed.</figcaption></figure>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>When a mix feels crowded, solo the <code>DRUMS</code> bus and then the <code>MUSIC</code> bus in turn — because these are group faders, you are auditioning the whole layer as it sits in the mix, which makes it far easier to hear which group is masking the other than soloing pads one at a time.</p></div></aside>
+<h3 id="sending-a-pad-to-a-bus">Sending a Pad to a Bus<a class="anchor" href="#sending-a-pad-to-a-bus" aria-label="Link to this section">#</a></h3>
+<p>Location: <code>MIXER</code> view → pad channel strip → <strong>BUS</strong> selector (under the <code>VOL</code> readout)</p>
+<p>By default every pad goes to the <code>DRUMS</code> bus. That is fine for a kit, but it is not what you want once a pad is carrying a bassline, a vocal chop, or a texture — those want their own group fader. The <code>BUS</code> selector on each pad strip sends that pad wherever you like:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>SETTING</th><th>WHERE THE PAD GOES</th></tr></thead>
+<tbody>
+<tr><td><code>AUTO</code></td><td>The default. Normal playback goes to <code>DRUMS</code>; KEYGRP playback goes through the keygroup bus into <code>MUSIC</code></td></tr>
+<tr><td><code>DRM</code></td><td>The <code>DRUMS</code> bus</td></tr>
+<tr><td><code>MUS</code></td><td>The <code>MUSIC</code> bus — useful for melodic pads you want grouped with your keygroup parts</td></tr>
+<tr><td><code>VOX</code></td><td>The <code>VOX</code> bus — for vocal chops and one-shots, so they ride with your live input</td></tr>
+<tr><td><code>FX</code></td><td>The <code>FX</code> bus</td></tr>
+<tr><td><code>BCK</code></td><td>The <code>BACKING</code> bus</td></tr>
+</tbody>
+</table></div>
+<p>An assigned pad shows its bus highlighted, so you can read the whole routing of a kit down the rail at a glance.</p>
+<p>The change takes effect <strong>immediately</strong>, even on a pad that is still ringing — you can reassign while the sequencer is running and hear it move. Assignments are saved with your project, are the same in every scene, and a project made before this feature existed opens with every pad on <code>AUTO</code>, which is exactly how it sounded before.</p>
+<aside class="callout callout--important"><p class="callout__label">IMPORTANT</p><div class="callout__body"><p>While <code>KEYGRP</code> mode is on, the selected pad's strip shows a locked <code>KEY</code> chip instead of the selector. All keygroup pads share one keygroup bus — that is what gives them their own EQ and compression before they reach <code>MUSIC</code> — so keygroup playback always uses that chain, whatever the pad is assigned to. Leave <code>KEYGRP</code> mode and the selector comes back, unchanged.</p></div></aside>
+<p><strong>Figure 7.3</strong> illustrates pads assigned to different buses.</p>
+<figure class="fig"><img src="images/38_pad_bus_selector.png" alt="Figure 7.3 — Per-pad bus assignment on the channel rail." loading="lazy"><figcaption><strong>Figure 7.3</strong> — Per-pad bus assignment on the channel rail.</figcaption></figure>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>Put your kick and snare on <code>AUTO</code>, move sub/bass pads to <code>MUS</code>, and send vocal chops to <code>VOX</code>. Now the <code>DRUMS</code> fader really is a drum fader: you can duck the whole kit under a vocal without dragging the bass down with it.</p></div></aside>
+<h3 id="sidechain-compression">Sidechain Compression<a class="anchor" href="#sidechain-compression" aria-label="Link to this section">#</a></h3>
+<p>Location: <code>MIXER</code> view → <strong>SIDECHAIN</strong> panel (between DELIVERY METERING and the channel strip area)</p>
+<div class="table-wrap"><table>
+<thead><tr><th>CONTROL</th><th>FUNCTION</th></tr></thead>
+<tbody>
+<tr><td><code>SC</code></td><td>Toggle — activates the sidechain ducking engine</td></tr>
+<tr><td><code>SRC</code></td><td>Select the trigger pad by <code>PAD ID</code> (shown as <code>PAD {id} - {label}</code> in the dropdown)</td></tr>
+<tr><td><code>DEPTH</code></td><td>How much the target pads duck (<code>0–100%</code>)</td></tr>
+<tr><td><code>ATK</code></td><td>How fast ducking engages (<code>1–500 ms</code>)</td></tr>
+<tr><td><code>REL</code></td><td>How fast ducking recovers (<code>10–2000 ms</code>)</td></tr>
+<tr><td><code>DUCK</code></td><td>The target pad buttons — toggle which pads are ducked by the source. Buttons display <code>PAD ID</code> for stable routing even if pad labels are duplicated or renamed</td></tr>
+</tbody>
+</table></div>
+<p>Sidechain config is saved per project. The envelope follower runs in the audio rAF loop at display rate, driving a dedicated <code>sidechainDuckGain</code> node on each target pad's output chain — no audio dropout on rapid toggles.</p>
+<p>The sidechain controls are shown in <strong>Figure 7.4</strong>.</p>
+<figure class="fig"><img src="images/09_mixer_sidechain_panel.png" alt="Figure 7.4 — SIDECHAIN panel with a source and target pads." loading="lazy"><figcaption><strong>Figure 7.4</strong> — SIDECHAIN panel with a source and target pads.</figcaption></figure>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>Set SOURCE to your kick pad's <code>PAD ID</code>, target the bass or main melodic pads, and use a short ATTACK (<code>5 ms</code>) with RELEASE around <code>120 ms</code> for classic pump-style compression.</p></div></aside>
+<h3 id="fx-send-rack">FX Send Rack<a class="anchor" href="#fx-send-rack" aria-label="Link to this section">#</a></h3>
+<p>The <strong>FXRACK</strong> view hosts five built-in send modules.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>FX TYPE</th><th>DESCRIPTION</th></tr></thead>
+<tbody>
+<tr><td><code>GRN</code> (Granular Bloom)</td><td>Granular texture/diffusion for bloom and glitch movement</td></tr>
+<tr><td><code>VRB</code> (Nebula Verb)</td><td>Hybrid reverb textures (room/hall/plate-like spaces)</td></tr>
+<tr><td><code>ECH</code> (Vector Echo)</td><td>Stereo delay with routing and modulation variants</td></tr>
+<tr><td><code>AIR</code> (Bedroom Air)</td><td>Vocal doubler/air enhancement chain</td></tr>
+<tr><td><code>PSY</code> (Psychedelic Vox)</td><td>Slap/echo/swirl style vocal space chain</td></tr>
+</tbody>
+</table></div>
+<p>The <strong>SYSTEM</strong> view also provides <strong>SAMPLE DECODE ROUTING</strong>:</p>
+<ul><li><strong>JS-FIRST</strong> (default) for compressed-format latency balance.</li><li><strong>NATIVE-FIRST</strong> for native decode preference on compressed formats.</li></ul>
+<p>WAV/AIFF-family decode remains native-preferred where available.</p>
+<p>See <strong>Figure 7.5</strong> for the module browser and the PAD SENDS card.</p>
+<figure class="fig"><img src="images/10_fxrack_modules_pad_sends.png" alt="Figure 7.5 — FX Rack: module slots and pad sends." loading="lazy"><figcaption><strong>Figure 7.5</strong> — FX Rack: module slots and pad sends.</figcaption></figure>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>If a patch gets dense, lower pad sends first, then reduce module feedback/mix. This usually preserves transients better than dropping master level.</p></div></aside>
+<h2 id="8-file-management">8. File Management<a class="anchor" href="#8-file-management" aria-label="Link to this section">#</a></h2>
+<h3 id="project-contract-and-folder-conventions">Project Contract and Folder Conventions<a class="anchor" href="#project-contract-and-folder-conventions" aria-label="Link to this section">#</a></h3>
+<p>Use these exact names for stable project portability.</p>
+<ul><li>Primary file: <strong><code>project.rxbproj</code></strong></li><li>Legacy mirror: <strong><code>project.json</code></strong></li><li>Backups: <strong><code>project_backup_TIMESTAMP.rxbbak</code></strong></li><li>Sample folder: <strong><code>Samples/</code></strong></li><li>Export folders: <strong><code>Bounces/</code></strong>, <strong><code>MIDI/</code></strong></li></ul>
+<p>Folder-open discovery order:</p>
+<ol><li><strong><code>project.rxbproj</code></strong></li><li><strong><code>project.json</code></strong></li><li>First matching <code><em>.rxbproj</code> or <code></em>.json</code> in project root</li></ol>
+<h3 id="save-and-open-actions">Save and Open Actions<a class="anchor" href="#save-and-open-actions" aria-label="Link to this section">#</a></h3>
+<ul><li><strong>SAVE PROJECT</strong> writes both <code>project.rxbproj</code> and <code>project.json</code>, then creates a timestamped backup.</li><li><strong>COLLECT + SAVE</strong> copies required sample assets to <code>Samples/</code> and writes project files.</li><li><strong>SAVE AS</strong> creates a new project destination while preserving project metadata links.</li><li><strong>OPEN</strong> supports folder-first and direct-file project open flows.</li><li><strong>NEW CLEAN FILE</strong> initializes a fresh project state.</li></ul>
+<p>Backups are auto-cleaned to retain the newest three backup files per project root.</p>
+<aside class="callout callout--warning"><p class="callout__label">WARNING</p><div class="callout__body"><p>Do not move or rename project sample assets outside RXB after saving. If links break, run <strong>COLLECT + SAVE</strong> to rebuild a portable project state.</p></div></aside>
+<h2 id="9-troubleshooting">9. Troubleshooting<a class="anchor" href="#9-troubleshooting" aria-label="Link to this section">#</a></h2>
+<p>Use this section for common recovery and stability checks.</p>
+<h3 id="missing-samples-or-broken-links">Missing Samples or Broken Links<a class="anchor" href="#missing-samples-or-broken-links" aria-label="Link to this section">#</a></h3>
+<ul><li>If a file shows as missing, relink from the relevant load action first.</li><li>Re-run <strong>COLLECT + SAVE</strong> to rebuild portable sample references in <code>Samples/</code>.</li><li>Reopen the project and confirm all pad layers (<code>L1-L4</code>) resolve.</li></ul>
+<h3 id="backing-track-import-failures">Backing Track Import Failures<a class="anchor" href="#backing-track-import-failures" aria-label="Link to this section">#</a></h3>
+<ul><li>Confirm extension is one of: <code>WAV</code>, <code>AIFF</code>, <code>MP3</code>, <code>M4A</code>, <code>FLAC</code>, <code>OGG</code>, <code>WMA</code>.</li><li>Confirm file size is below <code>256 MB</code> and duration is below <code>45 minutes</code>.</li><li>Use desktop runtime for best <code>WMA</code> compatibility.</li></ul>
+<h3 id="keygroup-mix-clarity">Keygroup Mix Clarity<a class="anchor" href="#keygroup-mix-clarity" aria-label="Link to this section">#</a></h3>
+<ol><li>Confirm target track state is not muted/solo-filtered unexpectedly.</li><li>Raise <code>MID</code> and <code>HIGH</code> slightly in <strong>KEYGRP ENGINE</strong>.</li><li>Add moderate <code>COMP</code>, then trim <code>GAIN</code> to avoid clipping.</li><li>Increase <code>POLYPHONY</code> if notes are cut early.</li></ol>
+<aside class="callout callout--important"><p class="callout__label">IMPORTANT</p><div class="callout__body"><p>After changing the song structure, stop and restart transport once to ensure fresh plan application.</p></div></aside>
+<h3 id="native-transport-fallback">Native Transport Fallback<a class="anchor" href="#native-transport-fallback" aria-label="Link to this section">#</a></h3>
+<p>The desktop runtime drives playback timing from the C++ native transport backend. If the native transport drops mid-session, playback continues seamlessly on the JS clock and the status line shows:</p>
+<pre><code>Native transport dropped - playback continued on the JS clock. Stop/play to retry native.</code></pre>
+<p>No action is required — timing continues uninterrupted. Stop and restart the transport once to retry the native backend.</p>
+<h3 id="audio-device-not-released-after-close-windows">Audio Device Not Released After Close (Windows)<a class="anchor" href="#audio-device-not-released-after-close-windows" aria-label="Link to this section">#</a></h3>
+<p>On Windows, if the microphone or system audio recording indicator (taskbar) stays active after RXB is closed, the audio capture device was not fully released.</p>
+<p>Close the app and check Task Manager for any lingering RXB or Electron processes. Terminate them to release the device.</p>
+<p>If the device indicator persists even after full process exit, confirm your audio driver and virtual device software (e.g. VB-Audio Cable, Stereo Mix) are up to date.</p>
+<h2 id="10-appendix">10. Appendix<a class="anchor" href="#10-appendix" aria-label="Link to this section">#</a></h2>
+<h3 id="glossary">Glossary<a class="anchor" href="#glossary" aria-label="Link to this section">#</a></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>TERM</th><th>MEANING</th></tr></thead>
+<tbody>
+<tr><td>Scene</td><td>Pattern/state snapshot in the sequencer context</td></tr>
+<tr><td>Bank</td><td>A/B/C/D pad/sample bank set</td></tr>
+<tr><td>Keygroup</td><td>Note-mapped playback mode linked to KEYGRP controls</td></tr>
+<tr><td>Collect Save</td><td>Portable save process that gathers sample dependencies</td></tr>
+<tr><td>Native transport</td><td>C++ transport backend used by desktop runtime</td></tr>
+</tbody>
+</table></div>
+<h3 id="technical-specifications-current">Technical Specifications (Current)<a class="anchor" href="#technical-specifications-current" aria-label="Link to this section">#</a></h3>
+<ul><li>Backing-track load limit: <code>256 MB</code></li><li>Backing-track duration limit: <code>45 minutes</code></li><li>Maximum inline embedded backing payload in project metadata: <code>96 MB</code></li><li>Project backups: newest 3 retained per project root</li><li>Keyboard pad map: <code>1 2 3 4 / Q W E R / A S D F / Z X C V</code></li></ul>
+<h3 id="home-screen-and-pad-control-surface">Home Screen and PAD CONTROL SURFACE<a class="anchor" href="#home-screen-and-pad-control-surface" aria-label="Link to this section">#</a></h3>
+<h4 id="open-project-button">Open Project Button<a class="anchor" href="#open-project-button" aria-label="Link to this section">#</a></h4>
+<p>The home/intro screen shows an <strong>Open Project</strong> button alongside recent project entries. Clicking it opens a folder picker to browse to any project root directly, without requiring a recent entry. Project load errors appear as an inline dismissable message on the home screen.</p>
+<h4 id="pad-control-surface">PAD CONTROL SURFACE<a class="anchor" href="#pad-control-surface" aria-label="Link to this section">#</a></h4>
+<p>The PAD CONTROL SURFACE panel (knobs area, MAIN/ENV/FX tabs) uses a consistent visual layout across all tabs:</p>
+<ul><li>All three tabs use medium-size knobs (<code>size 10</code> — 38 px body, 56 px ring).</li><li>Knobs are horizontally and vertically centred within the panel background after the heading on all tabs.</li><li><strong>MAIN</strong> tab: 5 knobs in one row — TUNE, RESO, CUTOFF, DRIVE, DEPTH (AT aftertouch depth). AT target toggle (<code>AT: OFF</code> / <code>AT: VOL</code>) is a compact button in the panel header.</li><li><strong>ENV</strong> tab: 4 knobs — ATK, DEC, SUS, REL.</li><li><strong>FX</strong> tab: 3 knobs (REV, DEL, PAN) + TYPE button sized to match knob footprint.</li></ul>
+<h3 id="addendum-august-7-2026">Addendum — August 7, 2026<a class="anchor" href="#addendum-august-7-2026" aria-label="Link to this section">#</a></h3>
+<p>Changes in this revision (Sections 9 and 14 updated in place):</p>
+<ul><li><strong>Backing-track MUTE button</strong> — new MUTE toggle beside the LVL slider in the backing-track strip. Gain-only mute with a click-free ramp: the playhead, grid lock, and song-section mapping keep running, the LVL setting is preserved (readout struck through while muted), and the sample-editor preview remains audible. See Section 14.</li><li><strong>Song ↔ backing-track timeline sync (sequencer is master)</strong> — the coloured song-section bands on the backing waveform, the playhead alignment, BARS/per-step-BPM edit follow, and waveform seek all now share one timeline mapping, so they always agree. Clicking or scrubbing the waveform with GRID LOCK on moves both the backing playhead and the Song Mode pointer; the cued song position survives STOP so PLAY resumes from the cued section. See Section 14.</li><li><strong>Native transport fallback notice</strong> — if the native C++ transport drops mid-session, playback continues on the JS clock and a status message explains how to retry. See Section 9 (Troubleshooting).</li><li><strong>Correction</strong> — Section 14 LOCK MODE now documents the actual selector options (<strong>RATE ONLY</strong>, <strong>RATE+PHASE</strong>, <strong>FOLLOW TRACK BPM</strong>); earlier revisions described a Rate/Stretch pair that is not present in the app.</li></ul>
+<h3 id="addendum-august-12-2026">Addendum — August 12, 2026<a class="anchor" href="#addendum-august-12-2026" aria-label="Link to this section">#</a></h3>
+<p>Changes in this revision (Sections 11, 14 and 15 updated in place):</p>
+<ul><li><strong>DAW clip editing — <code>CLIP</code> / <code>MOVE</code> arming on every lane</strong> — the master lane and each aux lane now arm one drag gesture at a time. <code>CLIP</code> drags the edge handles to set the track's in/out points; <code>MOVE</code> drags the body to place the track in the song. Only the armed gesture is drawn, so the two can no longer be confused or mis-hit. See Section 15.</li><li><strong>The backing track can start later than the song</strong> — the master lane's <code>MOVE</code> gesture places the track on the arrangement using the same grid offset as <code>SET GRID START</code> and the <code>±ms</code> nudges. A backing track that comes in two bars late no longer shortens or crops the song around it. See Section 15.</li><li><strong>Zoom and trim are documented as separate controls</strong> — the <code>ZOOM</code> sliders and <code>RESET ZOOM</code> are view-only; the <code>CLIP</code> handles are what set in/out points and silence audio. Earlier revisions left this ambiguous because the two shared one control internally. See Section 14.</li><li><strong>Undo scope and the boundary notice</strong> — Section 11 now states what the edit history covers (sequencer scenes and pad state) and what it does not (backing track, DAW lanes, song structure, mixer, FX, DMX). <code>Ctrl+Z</code> after an uncovered action now reports that it was skipped instead of reaching past it into your sequencer work. See Section 11.</li><li><strong>Correction</strong> — the header memory readout was showing roughly one-thousandth of actual usage (a <code>1 MB</code> reading for a session using close to a gigabyte). It now reports correctly; expect realistic figures in the hundreds of MB.</li></ul>
+<aside class="callout callout--important"><p class="callout__label">IMPORTANT</p><div class="callout__body"><p>Clearing a backing track or a DAW lane is still <strong>not undoable</strong> — the <code>Ctrl+Z</code><br>notice tells you the action was outside the history, it does not reverse it.<br>Reload the file to recover.</p></div></aside>
+<blockquote><p><strong>Superseded on August 15, 2026.</strong> Both clears are now undoable — see the August 15 addendum below and Section 11.</p></blockquote>
+<h3 id="addendum-august-15-2026">Addendum — August 15, 2026<a class="anchor" href="#addendum-august-15-2026" aria-label="Link to this section">#</a></h3>
+<p>Changes in this revision (Sections 7 and 11 updated in place):</p>
+<ul><li><strong>MIX BUSES — group faders in the MIXER view</strong> — everything now sums through one of five buses (<code>DRUMS</code>, <code>MUSIC</code>, <code>VOX</code>, <code>FX</code>, <code>BACKING</code>) on its way to the master chain, each with a level fader, post-fader meter, pan, mute, solo, and a routing button. <code>MST</code> sends the bus through the master 3-band EQ; <code>DIR</code> routes it around that EQ without ever bypassing the safety limiter. Bus settings save with the project. See Section 7.</li><li><strong>Existing projects are unaffected</strong> — a project saved before mix buses existed opens with every bus at unity, centred, unmuted, and <code>MST</code>, which is identical to how it sounded before. Nothing you have already made will play back differently.</li><li><strong>Undo now covers clearing the backing track and clearing a DAW lane</strong> — this corrects the August 12 addendum above, which stated both were unrecoverable. <code>Ctrl+Z</code> now restores the cleared audio. See Section 11.</li><li><strong>SONG SECTIONS says when song mode is off</strong> — the panel now carries a status chip reading <code>SONG MODE OFF — EDITS SAVED, NOT PLAYED</code> or <code>DRIVING PLAYBACK</code>. Section edits and per-step BPM entry always commit; with song mode off they are simply not driving playback, which previously looked like the fields were broken.</li></ul>
+<h3 id="addendum-august-16-2026">Addendum — August 16, 2026<a class="anchor" href="#addendum-august-16-2026" aria-label="Link to this section">#</a></h3>
+<p>Changes in this revision (Sections 7 and 27 updated in place):</p>
+<ul><li><strong>Send any pad to any bus</strong> — each pad channel strip in the <code>MIXER</code> view has a <code>BUS</code> selector under its <code>VOL</code> readout: <code>AUTO</code>, <code>DRM</code>, <code>MUS</code>, <code>VOX</code>, <code>FX</code>, <code>BCK</code>. Until now every pad landed on <code>DRUMS</code>, so the bus faders could only balance all your pads as one block against the backing track. Put the bass on <code>MUS</code>, vocal chops on <code>VOX</code>, and the <code>DRUMS</code> fader finally means the drums. Assignments apply instantly — even to a pad that is still ringing — and save with the project. See Section 7.</li><li><strong><code>AUTO</code> means what it always did</strong> — a pad set to <code>AUTO</code> plays to <code>DRUMS</code>, or through the keygroup bus into <code>MUSIC</code> when played in <code>KEYGRP</code> mode. Projects made before this feature open with every pad on <code>AUTO</code>, so nothing you have already made sounds different.</li><li><strong><code>KEYGRP</code> playback ignores the assignment</strong> — all keygroup pads share one keygroup bus, which is what gives them their own EQ and compression before <code>MUSIC</code>. While <code>KEYGRP</code> mode is on, the selected pad's strip shows a locked <code>KEY</code> chip instead of the selector. See Section 7.</li><li><strong>Export the whole arrangement in one press</strong> — <code>SONG</code> view now has <code>EXPORT ARRANGEMENT</code> (<code>WAV</code> / <code>MP3</code>). It rewinds to the top, plays the entire song, stops itself at the end and saves the file to <code>Bounces/</code>. See Section 27.</li><li><strong>Sidechain source selection no longer changes a pad's routing</strong> — picking a pad as the sidechain <code>SOURCE</code> used to move that pad's audio to <code>DRUMS</code> behind your back. It now leaves routing alone.</li></ul>
+<aside class="callout callout--important"><p class="callout__label">IMPORTANT</p><div class="callout__body"><p><code>EXPORT ARRANGEMENT</code> is a <strong>real-time bounce</strong> — a three-minute song takes three<br>minutes to export, and the progress readout counts real seconds. That is not a<br>hang. In exchange the file is exactly what you heard: your bus levels, per-pad<br>bus assignments, master EQ, compressor and limiter are all in it.</p></div></aside>
+<h3 id="addendum-august-22-2026">Addendum — August 22, 2026<a class="anchor" href="#addendum-august-22-2026" aria-label="Link to this section">#</a></h3>
+<p>Changes in this revision (Section 16 updated in place):</p>
+<ul><li><strong>The factory sound library ships.</strong> Banks B, C and D previously contained 63 placeholder files that were half a second of silence each — the pads triggered, the meters moved, and nothing came out. All 63 are now real sounds. Bank A was always synthesised and is unchanged. See Section 16.</li><li><strong>Everything is synthesised by RXB.</strong> The samples were rendered offline by the application's own audio engine, not sourced from a sample pack. There is no third-party audio anywhere in the factory content.</li><li><strong>Cleared for commercial release.</strong> You may use the factory sounds in commercial music with no clearance, royalty or credit. The full terms, including the one restriction — you may not repackage the sounds themselves as a sample library — are in <code>EULA.txt</code>, installed with the application.</li><li><strong>All 42 manual screenshots re-captured</strong> against CV2.6.5. The previous set dated from 17 April 2026 and predated the DAW tab, the MIX BUSES card and per-pad bus routing. Capture is now automated (<code>npm run docs:screenshots</code>) so the images track the app.</li><li><strong>Bank C is tuned to A minor</strong> and the Bank D loops are tempo-labelled, so the melodic content works together without retuning.</li></ul>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>If you built projects while the placeholders were in place, those projects<br>referenced the factory filenames and will simply start making sound when you<br>reopen them. Nothing needs to be relinked.</p></div></aside>
+<h3 id="addendum-august-22-2026-documentation-cleanup">Addendum — August 22, 2026 (documentation cleanup)<a class="anchor" href="#addendum-august-22-2026-documentation-cleanup" aria-label="Link to this section">#</a></h3>
+<p>Two sets of corrections, both found by comparing this manual against the shipped code rather than by reading it.</p>
+<p><strong>The Linear Arranger has been removed from this manual.</strong> <code>ARR PLAY</code>, <code>ARR TO SONG</code> and the <code>+ARR</code> clip-slot button were real features in CV2.6.3, but the UI was removed in CV2.6.4 and this manual kept documenting them for four minor versions. There was no way to reach any of the three in the shipped app.</p>
+<p>Their job is now done by <strong>Song Mode</strong> (Section 27), which is both the successor and the better model: a song step carries a scene, a bar count with half-bar granularity, and optional BANK and BPM overrides, where an arranger segment only ever held a clip reference and a repeat count. If you remember building arrangements by chaining clips with <code>+ARR</code>, build them as song steps instead — capture your scenes, then add a row per section.</p>
+<aside class="callout callout--important"><p class="callout__label">IMPORTANT</p><div class="callout__body"><p>Projects saved by CV2.6.3 may still contain an <code>arrangerTimeline</code> entry. It is<br>read and written for compatibility and is simply unused; it costs nothing and<br>needs no action.</p></div></aside>
+<p><strong>Sidechain control names corrected.</strong> Four of the five labels in Section 7's sidechain table never matched the UI. The panel reads <code>SC</code>, <code>SRC</code>, <code>DEPTH</code>, <code>ATK</code>, <code>REL</code> and <code>DUCK</code> — not <code>SC ENABLE</code>, <code>SOURCE</code>, <code>ATTACK</code> and <code>RELEASE</code>. The <code>DUCK</code> target-pad selector was not named at all.</p>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p><code>npm run docs:audit-claims</code> compares every control this manual names against<br>the shipped source and lists the ones it cannot find. Run it before a release:<br>it is what caught both of the above.</p></div></aside>
+<h2 id="11-extended-workflow-reference">11. Extended Workflow Reference<a class="anchor" href="#11-extended-workflow-reference" aria-label="Link to this section">#</a></h2>
+<h3 id="backing-track-import-detailed-behavior">Backing Track Import (Detailed Behavior)<a class="anchor" href="#backing-track-import-detailed-behavior" aria-label="Link to this section">#</a></h3>
+<ul><li>Loader filter accepts <code>audio/*</code>, <code>.wav</code>, <code>.aif</code>, <code>.aiff</code>, <code>.mp3</code>, <code>.m4a</code>, <code>.flac</code>, <code>.ogg</code>, <code>.wma</code>.</li><li>Decode support still depends on runtime codec availability; desktop builds can use native fallback for additional formats when WebAudio decode fails.</li><li>Backing toolbar actions include <code>LOAD TRACK</code> / <code>REPLACE</code> and <code>CLEAR TRACK</code>.</li><li>For stable timing in production edits, prefer <code>WAV</code> / <code>AIFF</code> and shorter source tracks when possible.</li></ul>
+<h3 id="performance-midi-controller-library">Performance MIDI Controller Library<a class="anchor" href="#performance-midi-controller-library" aria-label="Link to this section">#</a></h3>
+<p>RXB includes profile-based performance control in <code>MIDI -&gt; PERFORMANCE MIDI CONTROLLER</code>.</p>
+<p>Built-in profiles:</p>
+<ul><li>Novation Launchkey MK4 Family</li><li>Novation Launchkey MK3 Family</li><li>Novation Launchpad MK3 Family</li><li>Ableton Push 3 (User Port)</li><li>Ableton Push 2 (User Port)</li><li>Ableton Push 1 (User Port)</li><li>Ableton Push Family (Legacy Auto-Detect)</li><li>Ableton Move</li><li>Akai MPK Mini MK3</li><li>Akai APC Key Family</li><li>Arturia MiniLab Family</li><li>Korg nanoKONTROL2</li><li>M-Audio Oxygen Family</li><li>Native Instruments Komplete Kontrol</li><li>Generic MIDI (16 Pads + 4 Knobs)</li></ul>
+<p>Default profile behavior:</p>
+<ul><li>16-pad note mapping for pad triggering</li><li>Macro control mapped to Macro <code>1-4</code></li><li>Transport parsing for Play/Stop/Record-capable controllers</li></ul>
+<p>Default profile values (per family):</p>
+<div class="table-wrap"><table>
+<thead><tr><th>PROFILE</th><th>PAD BASE NOTE</th><th>MACRO CC DEFAULTS</th></tr></thead>
+<tbody>
+<tr><td>Novation Launchkey MK3 / MK4</td><td><code>36</code> (<code>C1</code>)</td><td><code>21, 22, 23, 24</code></td></tr>
+<tr><td>Novation Launchpad MK3</td><td><code>36</code> (<code>C1</code>)</td><td><code>21, 22, 23, 24</code></td></tr>
+<tr><td>Ableton Push 1 / Push 2 / Push 3</td><td><code>36</code> (<code>C1</code>)</td><td><code>14, 15, 16, 17</code></td></tr>
+<tr><td>Ableton Push Family (Legacy)</td><td><code>36</code> (<code>C1</code>)</td><td><code>14, 15, 16, 17</code></td></tr>
+<tr><td>Ableton Move</td><td><code>36</code> (<code>C1</code>)</td><td><code>71, 72, 73, 74</code></td></tr>
+<tr><td>Akai MPK Mini MK3</td><td><code>36</code> (<code>C1</code>)</td><td><code>70, 71, 72, 73</code></td></tr>
+<tr><td>Akai APC Key Family</td><td><code>36</code> (<code>C1</code>)</td><td><code>48, 49, 50, 51</code></td></tr>
+<tr><td>Arturia MiniLab Family</td><td><code>36</code> (<code>C1</code>)</td><td><code>74, 71, 76, 77</code></td></tr>
+<tr><td>Korg nanoKONTROL2</td><td>— (no pads)</td><td><code>0, 1, 2, 3</code></td></tr>
+<tr><td>M-Audio Oxygen Family</td><td><code>36</code> (<code>C1</code>)</td><td><code>20, 21, 22, 23</code></td></tr>
+<tr><td>Native Instruments Komplete Kontrol</td><td><code>36</code> (<code>C1</code>)</td><td><code>14, 15, 16, 17</code></td></tr>
+<tr><td>Generic MIDI (16 Pads + 4 Knobs)</td><td><code>36</code> (<code>C1</code>)</td><td><code>21, 22, 23, 24</code></td></tr>
+</tbody>
+</table></div>
+<p>All profiles with pad support use MIDI Start/Stop/Continue transport, plus MMC/MCU/HUI parser support when host mode exposes it.</p>
+<p>MIDI Learn (User Layer) target groups:</p>
+<ul><li><strong>COMBO</strong> — <code>combo_modifier</code></li><li><strong>TRANSPORT</strong> — <code>transport_toggle</code>, <code>transport_stop</code>, <code>transport_record</code></li><li><strong>MACROS</strong> — <code>macro_0</code>, <code>macro_1</code>, <code>macro_2</code>, <code>macro_3</code></li><li><strong>PUSH KNOBS</strong> — <code>knob_tempo</code>, <code>knob_swing</code>, <code>knob_filter</code>, <code>knob_resonance</code></li><li><strong>PAD MAIN KNOBS</strong> — <code>knob_pad_tune</code>, <code>knob_pad_reso</code>, <code>knob_pad_cutoff</code>, <code>knob_pad_drive</code></li><li><strong>PAD ENV KNOBS</strong> — <code>knob_env_attack</code>, <code>knob_env_decay</code>, <code>knob_env_sustain</code>, <code>knob_env_release</code></li><li><strong>PAD FX KNOBS</strong> — <code>knob_fx_reverb</code>, <code>knob_fx_delay</code>, <code>knob_fx_pan</code></li><li><strong>STEP PERF KNOBS</strong> — <code>knob_step_prob</code>, <code>knob_step_rat</code>, <code>knob_step_hum</code></li><li><strong>STEP EDIT MODE</strong> — <code>knob_step_edit_vel</code>, <code>knob_step_edit_rpb</code>, <code>knob_step_edit_rat</code></li></ul>
+<p>The controller surface is shown in <strong>Figure 11.1</strong>.</p>
+<figure class="fig"><img src="images/11_midi_performance_controller.png" alt="Figure 11.1 — Performance MIDI controller configuration." loading="lazy"><figcaption><strong>Figure 11.1</strong> — Performance MIDI controller configuration.</figcaption></figure>
+<h4 id="poly-aftertouch-and-channel-pressure">Poly Aftertouch and Channel Pressure<a class="anchor" href="#poly-aftertouch-and-channel-pressure" aria-label="Link to this section">#</a></h4>
+<p>RXB responds to incoming MIDI <code>0xA0</code> (Poly Aftertouch) and <code>0xD0</code> (Channel Pressure) messages.</p>
+<ul><li><strong>Poly Aftertouch (<code>0xA0</code>)</strong>: maps pressure for the triggered note to the matching pad by note index.</li><li><strong>Channel Pressure (<code>0xD0</code>)</strong>: applies pressure to all pads that have an aftertouch target configured.</li><li>On note release, per-pad aftertouch pressure is cleared automatically.</li></ul>
+<p>Configuring aftertouch per pad (PAD CONTROL SURFACE → MAIN tab):</p>
+<div class="table-wrap"><table>
+<thead><tr><th>CONTROL</th><th>FUNCTION</th></tr></thead>
+<tbody>
+<tr><td><code>AT: OFF / AT: VOL</code></td><td>Toggle the aftertouch target for the selected pad (OFF or VOLUME)</td></tr>
+<tr><td><code>DEPTH</code> knob</td><td>Controls modulation depth (<code>0–100%</code>); at max, pressure adds up to <code>+50%</code> volume boost</td></tr>
+</tbody>
+</table></div>
+<p>Settings are saved in pad presets and persist with the project.</p>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>Assign <code>AT: VOL</code> on melodic pads when using a pressure-sensitive controller such as Push or Launchkey to add expressive volume swells mid-pattern.</p></div></aside>
+<h4 id="bluetooth-midi">Bluetooth MIDI<a class="anchor" href="#bluetooth-midi" aria-label="Link to this section">#</a></h4>
+<p>Bluetooth MIDI controllers are supported natively via the WebMIDI API (<code>{sysex: true}</code> permission). RXB treats Bluetooth MIDI inputs identically to USB/DIN. Pair your controller at the OS level first, then select it in <code>SYSTEM → PERFORMANCE MIDI CONTROLLER</code>. No additional configuration is required. <code>onstatechange</code> hotplug detection handles connect/disconnect events.</p>
+<h3 id="retrospective-midi-capture">Retrospective MIDI Capture<a class="anchor" href="#retrospective-midi-capture" aria-label="Link to this section">#</a></h3>
+<p>Location: <code>GRID MAXIMIZED</code> → <code>MIDI FILE EXCHANGE</code> → <code>Retrospective MIDI Capture</code></p>
+<ul><li>Button: <code>CAPTURE LAST</code></li><li>Capture length control: <code>1-60 sec</code></li><li>Recovers recent unarmed pad/MIDI performance into the active scene timeline</li></ul>
+<p>Usage notes:</p>
+<ul><li>Best used immediately after a spontaneous performance pass.</li><li>Review quantization/step density after capture when recording very dense passages.</li></ul>
+<h3 id="undo-redo">Undo / Redo<a class="anchor" href="#undo-redo" aria-label="Link to this section">#</a></h3>
+<p>Undo/Redo uses a bounded dual-stack snapshot model for edit history.</p>
+<ul><li>Undo: <code>Ctrl+Z</code> / <code>Cmd+Z</code></li><li>Redo: <code>Ctrl+Y</code> or <code>Ctrl+Shift+Z</code> / <code>Cmd+Shift+Z</code></li><li>History depth: up to <code>40</code> states</li></ul>
+<p><strong>What undo covers.</strong> The history holds your <strong>sequencer scenes and pad state</strong> — step edits, pad parameters, sample edits, chops, MIDI import and captured input. It also covers <strong>clearing the backing track and clearing a DAW lane</strong>: both are undoable, and <code>Ctrl+Z</code> puts the audio back. It does <strong>not</strong> cover song structure, mixer, mix buses, FX, or DMX; those are project state outside the edit history.</p>
+<p><strong>Edits are grouped into gestures.</strong> A continuous run of step edits counts as one undo step, so <code>Ctrl+Z</code> after tapping in a hi-hat pattern removes the pattern rather than the last cell. Pause for about a second and the next edit starts a fresh undo step; a long unbroken run also breaks into separate steps every few seconds, so no single <code>Ctrl+Z</code> can swallow minutes of work. Velocity and pan scrubs group the same way, per step.</p>
+<p><strong>What happens at the boundary.</strong> If your last action was outside that scope — for example a song-structure or mixer change — <code>Ctrl+Z</code> does not reach past it into your sequencer work. Instead the header shows:</p>
+<pre><code>Nothing to undo — &lt;action&gt; is outside undo history; your last sequencer edit was left alone.</code></pre>
+<p>Press <code>Ctrl+Z</code> again and it resumes normally, undoing your most recent sequencer edit.</p>
+<aside class="callout callout--important"><p class="callout__label">IMPORTANT</p><div class="callout__body"><p>Undo restores a cleared backing track or DAW lane from memory, not from disk. It<br>is a safety net for a mis-click during a session — it is not a substitute for<br>saving, and it does not survive closing the project.</p></div></aside>
+<h3 id="keygrp-extended-notes">KEYGRP Extended Notes<a class="anchor" href="#keygrp-extended-notes" aria-label="Link to this section">#</a></h3>
+<ul><li><code>PAD ROOT KEY</code> is per-pad and defines the sample reference key used for pitch calculation.</li><li>In <code>GRID</code>, <code>MAIN</code> edits <code>S1-S8</code> and <code>KEYGRP</code> edits linked <code>K1-K8</code> (<code>Scenes 9-16</code>).</li><li>Pair controls are mode-sensitive — in <code>MAIN</code>, <code>KEYGRP Pair</code> controls linked-bank audibility; in <code>KEYGRP</code>, <code>MAIN Pair</code> controls linked-bank audibility.</li><li>Pair controls reset to OFF when switching modes.</li></ul>
+<h3 id="song-tab-song-modes">SONG Tab (Song Modes)<a class="anchor" href="#song-tab-song-modes" aria-label="Link to this section">#</a></h3>
+<p><code>SONG</code> includes two transport-driven playback modes:</p>
+<ul><li><code>SONG MODE</code>: playlist-driven step playback (<code>scene + bars</code>)</li></ul>
+<p>Playlist step fields:</p>
+<ul><li><code>SCENE</code> (<code>1-8</code>)</li><li><code>BARS</code> — section length in bars. A pattern loop is 2 bars, so odd values end the section on half a loop</li><li><code>½ BAR</code> — on odd-length sections only, chooses whether the trailing bar plays the pattern's <code>1ST</code> or <code>LAST</code> bar</li><li><code>BPM</code> (<code>AUTO</code> or override)</li><li><code>BANK</code> (<code>AUTO</code> or <code>A/B/C/D</code>)</li><li><code>SOURCE</code> toggles (<code>MAIN</code> + <code>KEYGRP</code>)</li></ul>
+<p>Clip launcher notes:</p>
+<ul><li><code>CAP</code> stores current scene into a clip slot.</li><li><code>GO</code> queues clip launch with bar quantization.</li></ul>
+<p>Runtime behavior note:</p>
+<ul><li>After changing the song structure, verify from a fresh Play start (stop/start once) so the latest transport plan is applied.</li></ul>
+<h3 id="non-destructive-chop-workflow">Non-Destructive Chop Workflow<a class="anchor" href="#non-destructive-chop-workflow" aria-label="Link to this section">#</a></h3>
+<p>Location: <code>SAMPLE</code> view → <strong>SET MARKERS</strong> panel</p>
+<p>The chop system uses non-destructive slice markers stored separately from the source audio. The source pad is never overwritten.</p>
+<p>Setting markers:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>ACTION</th><th>RESULT</th></tr></thead>
+<tbody>
+<tr><td>Click waveform</td><td>Places a yellow slice marker at that position</td></tr>
+<tr><td><code>+ AT PLAYHEAD</code> button</td><td>Places a marker at the current playhead position</td></tr>
+<tr><td><code>AUTO</code> button (threshold-based)</td><td>Generates markers from transient energy</td></tr>
+<tr><td><code>EQUAL</code> button</td><td>Divides the sample into equal-length slices</td></tr>
+<tr><td><code>CLEAR</code></td><td>Removes all markers</td></tr>
+</tbody>
+</table></div>
+<p>Committing chops:</p>
+<ul><li>Press <code>COMMIT CHOPS</code> (amber, enabled only when markers are present).</li><li>Chops are assigned to pads starting after the source pad in bank order.</li><li>The source pad is preserved with its original sample intact.</li><li>Markers are cleared after a successful commit.</li></ul>
+<p><strong>Figure 11.2</strong> illustrates slice markers placed across a sample.</p>
+<figure class="fig"><img src="images/12_sample_set_markers_chops.png" alt="Figure 11.2 — SAMPLE view: chop markers on the waveform." loading="lazy"><figcaption><strong>Figure 11.2</strong> — SAMPLE view: chop markers on the waveform.</figcaption></figure>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>Place a few manual markers first, then use <code>+ AT PLAYHEAD</code> while previewing to refine positions before committing.</p></div></aside>
+<h3 id="multi-sample-batch-editing">Multi-Sample Batch Editing<a class="anchor" href="#multi-sample-batch-editing" aria-label="Link to this section">#</a></h3>
+<p>Location: <code>XPAD</code> area → <strong>BATCH</strong> mode button (track mode strip)</p>
+<p>Batch editing applies a parameter value to multiple pads simultaneously.</p>
+<ol><li>Press <strong>BATCH</strong> — the button highlights blue, pad hit behavior switches to selection mode.</li><li>Tap any pads to add them to the selection (blue border highlight). Tap again to deselect.</li><li>The right panel switches to the <strong>BATCH EDIT</strong> surface with 10 knobs across two rows.</li><li>Drag any knob to set that parameter to the same value on all selected pads.</li><li>Press <strong>BATCH</strong> again (or <strong>CLEAR</strong> in the panel) to exit and deselect all.</li></ol>
+<p>Available batch parameters: <code>VOL</code>, <code>TUNE</code>, <code>REV</code>, <code>DEL</code>, <code>CUTOFF</code>, <code>DRIVE</code>, <code>PAN</code>, <code>ATK</code>, <code>DEC</code>, <code>REL</code>.</p>
+<h3 id="input-routing-persistence">Input Routing Persistence<a class="anchor" href="#input-routing-persistence" aria-label="Link to this section">#</a></h3>
+<p>Input routing selection (selected audio input device) is saved at two levels:</p>
+<ul><li><strong>App level</strong>: persisted to <code>localStorage</code> — restored on every launch.</li><li><strong>Project level</strong>: saved inside <code>project.rxbproj</code> as <code>inputRoutingSettings</code> — restores the routing for that specific project when loaded.</li></ul>
+<p>Project-level routing takes precedence when a project is loaded. App-level routing applies at cold start before any project is opened.</p>
+<h3 id="sample-view-marker-guides">SAMPLE View Marker Guides<a class="anchor" href="#sample-view-marker-guides" aria-label="Link to this section">#</a></h3>
+<ul><li><code>SHOW GRID</code>: BPM-aligned marker lines (16th-note spacing).</li><li><code>SHOW TRANSIENTS</code>: transient markers based on waveform energy changes.</li><li><code>SNAP TO MARKERS</code>: seek/trim controls snap to nearest active marker within timing window.</li></ul>
+<p>For predictable loop edits, enable both <code>SHOW GRID</code> and <code>SNAP TO MARKERS</code>.</p>
+<h3 id="fx-rack-stability-notes">FX Rack Stability Notes<a class="anchor" href="#fx-rack-stability-notes" aria-label="Link to this section">#</a></h3>
+<ul><li><code>Granular Bloom</code> includes safety/dynamics protection to reduce runaway feedback.</li><li>If a patch is dense, reduce per-pad send amounts before reducing master output.</li><li>Then trim module <code>feedback</code> and <code>mix</code> values.</li><li>For <code>Bedroom Air</code>, start with moderate <code>mix</code> and <code>doubler</code>, then raise <code>air</code>.</li><li>For <code>Psychedelic Vox</code>, start with lower <code>feedback</code> and raise <code>flutter</code> gradually.</li></ul>
+<h3 id="ui-consistency-and-chop-editing-notes">UI Consistency and Chop Editing Notes<a class="anchor" href="#ui-consistency-and-chop-editing-notes" aria-label="Link to this section">#</a></h3>
+<h4 id="1-system-midi-layout">1) System / MIDI Layout<a class="anchor" href="#1-system-midi-layout" aria-label="Link to this section">#</a></h4>
+<ul><li>MIDI sync/performance/midi-learn controls live in the dedicated <code>MIDI</code> tab.</li><li>The <code>SYSTEM</code> tab contains hardware, engine, and routing controls.</li></ul>
+<h4 id="2-fxrack-pad-sends-tile">2) FXRACK Pad Sends Tile<a class="anchor" href="#2-fxrack-pad-sends-tile" aria-label="Link to this section">#</a></h4>
+<ul><li><code>PAD SENDS</code> follows a consistent panel structure:</li><li>Header row with title + active pad badge (<code>Pxx</code>)</li><li>Divider line under header</li><li>Knob row beneath the divider</li><li>Top send knobs (<code>GRN/VRB/ECH/AIR/PSY</code>) are aligned in a fixed 5-column grid for visual consistency with the lower FX knob row.</li></ul>
+<h4 id="3-sample-header-layout">3) SAMPLE Header Layout<a class="anchor" href="#3-sample-header-layout" aria-label="Link to this section">#</a></h4>
+<ul><li>Layer buttons are arranged in XPad-style 2x2 placement:</li><li>Top row: <code>LAYER 1</code>, <code>LAYER 2</code></li><li>Bottom row: <code>LAYER 3</code>, <code>LAYER 4</code></li><li>Header controls group as:</li><li><code>LOAD</code>, <code>COPY</code>, <code>PASTE</code></li><li>Layer name field</li><li><code>SAVE AS</code> on the far right with helper note (<code>Current layer WAV</code>)</li></ul>
+<h4 id="4-draggable-chop-markers">4) Draggable Chop Markers<a class="anchor" href="#4-draggable-chop-markers" aria-label="Link to this section">#</a></h4>
+<ul><li>In <code>SAMPLE</code>, chop markers on the waveform can be dragged directly to reposition.</li><li>Existing click-on-waveform behavior to add markers remains active.</li><li>Drag respects marker ordering and minimum spacing.</li><li>When <code>SNAP TO MARKERS</code> is enabled, moved chop markers snap using the same marker snapping system.</li></ul>
+<h3 id="ui-layout-and-input-capture-reference">UI Layout and Input Capture Reference<a class="anchor" href="#ui-layout-and-input-capture-reference" aria-label="Link to this section">#</a></h3>
+<h4 id="1-collapsible-transport-backing-track-strip">1) Collapsible Transport / Backing Track Strip<a class="anchor" href="#1-collapsible-transport-backing-track-strip" aria-label="Link to this section">#</a></h4>
+<p>The Transport panel (backing track section) has a <strong>Collapse / Expand</strong> toggle button at the left edge of the strip.</p>
+<ul><li><strong>Collapsed state (<code>▲ COLLAPSE</code>):</strong> the transport strip shrinks to a single row. The freed rows are distributed to the LCD screen and XPads panels, which expand to fill the space.</li><li><strong>Expanded state (<code>▼ EXPAND</code>):</strong> the full backing-track waveform and controls are restored.</li></ul>
+<p>The collapse state is per-session and resets on relaunch.</p>
+<h4 id="2-bottom-pinned-panels">2) Bottom-Pinned Panels<a class="anchor" href="#2-bottom-pinned-panels" aria-label="Link to this section">#</a></h4>
+<p>The <strong>Pad Surface</strong> (knobs) and <strong>Sequencer</strong> panels are permanently anchored to the bottom of the workspace with 6 px padding. They do not move in Layout Mode — drag/resize chrome is suppressed on pinned panels. All panels above them are clamped to the available rows.</p>
+<h4 id="3-selected-pad-indicator">3) Selected Pad Indicator<a class="anchor" href="#3-selected-pad-indicator" aria-label="Link to this section">#</a></h4>
+<p>The currently selected pad displays a <strong>2 px red (<code>#ff0040</code>) border</strong>. Switching to a different pad immediately updates the indicator. The selected pad state is also reflected in the <strong>SAMPLE</strong> and <strong>XPAD</strong> tab views, which auto-update to show the active pad's content.</p>
+<h4 id="4-tab-bar-active-state">4) Tab Bar — Active State<a class="anchor" href="#4-tab-bar-active-state" aria-label="Link to this section">#</a></h4>
+<p>All tab labels are white by default. The <strong>active tab</strong> is highlighted in corporate red (<code>#ff0040</code>). This applies to all tabs, shown left to right: MAIN, MIXER, GRID, DAW, FXRACK, INPUT, XPAD, KEYGRP, SAMPLE, SONG, MACRO, MIDI, SYSTEM, DMX.</p>
+<h4 id="5-record-input-to-pad-located-on-xpad-and-sample-tabs">5) Record Input to Pad — Located on XPAD and SAMPLE Tabs<a class="anchor" href="#5-record-input-to-pad-located-on-xpad-and-sample-tabs" aria-label="Link to this section">#</a></h4>
+<p>The <strong>RECORD INPUT TO PAD</strong> card is available on both the <strong>XPAD</strong> and <strong>SAMPLE</strong> tabs. Both instances are identical. The <code>INPUT</code> tab shows a redirect notice and retains the monitoring controls.</p>
+<p>The card header shows a live monitoring status badge and a quick <strong>START MON</strong> / <strong>STOP MON</strong> button so you can activate input monitoring without switching to the <code>INPUT</code> tab first.</p>
+<aside class="callout callout--note"><p class="callout__label">Full label reference:</p><div class="callout__body"><p></p></div></aside>
+<div class="table-wrap"><table>
+<thead><tr><th>LABEL</th><th>FUNCTION</th></tr></thead>
+<tbody>
+<tr><td><code>RECORD INPUT</code></td><td>Start live input recording</td></tr>
+<tr><td><code>STOP RECORD</code></td><td>End capture and commit to pad/layer</td></tr>
+<tr><td><code>CAPTURE LAST</code></td><td>Capture last N seconds from retrospective buffer</td></tr>
+<tr><td><code>RESAMPLE MIX</code></td><td>Capture master mix output to pad</td></tr>
+<tr><td><code>SHOW SETTINGS / HIDE SETTINGS</code></td><td>Toggle auto-sampler settings panel</td></tr>
+<tr><td><code>START AUTO-SAMPLE</code></td><td>Begin auto-sampler sequence</td></tr>
+<tr><td><code>STOP AUTO-SAMPLE</code></td><td>Abort auto-sampler</td></tr>
+<tr><td><code>Layer 1 / Layer 2 / Layer 3 / Layer 4</code></td><td>Layer dropdown options</td></tr>
+</tbody>
+</table></div>
+<p>Errors from the card (e.g. monitoring not active, buffer not filled) are displayed inline in red text within the card itself.</p>
+<h4 id="6-capture-last-automatic-layer-fallback">6) CAPTURE LAST — Automatic Layer Fallback<a class="anchor" href="#6-capture-last-automatic-layer-fallback" aria-label="Link to this section">#</a></h4>
+<p>If the target layer on the selected pad is already occupied, <strong>CAPTURE LAST</strong> automatically places the captured audio on the next available empty layer.</p>
+<ul><li>Scans forward from the selected layer (<code>Layer 1 → 4</code>), then wraps back from <code>Layer 1</code> if needed.</li><li>If all four layers are occupied, captures to the originally selected layer (overwrite).</li><li>A status notice confirms where the audio was placed: <em>&quot;Layer 1 occupied — placed on Layer 2.&quot;</em></li><li>The layer selector in the card updates to reflect the actual destination layer.</li></ul>
+<h4 id="7-xpad-tab-visual-details">7) XPAD Tab Visual Details<a class="anchor" href="#7-xpad-tab-visual-details" aria-label="Link to this section">#</a></h4>
+<ul><li><strong>Crosshair overlay:</strong> a light grey X/Y axis line is overlaid on each pad button, indicating the XY quadrant split at 50% opacity. This is a visual guide only and does not affect playback.</li><li><strong>Pad centre number:</strong> displayed at <code>11 px</code>, <code>#707070</code> for legibility at a glance.</li><li><strong>Layer buttons:</strong> radial gradient background matching the XPAD pad surface style.</li><li><strong>Card padding:</strong> all cards in the XPAD tab use condensed padding for denser information display.</li></ul>
+<hr>
+<h2 id="12-layout-mode">12. Layout Mode<a class="anchor" href="#12-layout-mode" aria-label="Link to this section">#</a></h2>
+<h3 id="entering-and-exiting-layout-mode">Entering and Exiting Layout Mode<a class="anchor" href="#entering-and-exiting-layout-mode" aria-label="Link to this section">#</a></h3>
+<p>Layout Mode lets you drag, resize, and reposition panels to customise the workspace.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>ACTION</th><th>METHOD</th></tr></thead>
+<tbody>
+<tr><td>Enter Layout Mode</td><td>Press <code>L</code> on keyboard, or use the <strong>LAYOUT</strong> button in the toolbar</td></tr>
+<tr><td>Lock and save layout</td><td>Press <code>Enter</code>, or click <strong>LOCK</strong></td></tr>
+<tr><td>Cancel without saving</td><td>Press <code>Escape</code>, or click <strong>CANCEL</strong></td></tr>
+</tbody>
+</table></div>
+<p>When Layout Mode is active, a red drag handle appears at the top of each panel, a dashed red border frames the panel, and a background grid becomes visible showing the available cell positions.</p>
+<p>Layout Mode is shown in <strong>Figure 12.1</strong>.</p>
+<figure class="fig"><img src="images/13_layout_mode_active_handles.png" alt="Figure 12.1 — Layout Mode with panel drag handles active." loading="lazy"><figcaption><strong>Figure 12.1</strong> — Layout Mode with panel drag handles active.</figcaption></figure>
+<h3 id="dragging-and-resizing-panels">Dragging and Resizing Panels<a class="anchor" href="#dragging-and-resizing-panels" aria-label="Link to this section">#</a></h3>
+<ul><li><strong>Drag:</strong> grab a panel by its red handle bar and drop onto any grid cell.</li><li><strong>Resize:</strong> drag the resize handles on any panel edge (top, bottom, left, right). Panel dimensions snap to full grid cells.</li><li><strong>Drop preview:</strong> a ghost overlay shows the proposed new position. Red tint = valid placement; darker red = blocked.</li><li><strong>Swap:</strong> dropping onto an occupied cell will attempt an intelligent swap, shifting displaced panels to available space.</li></ul>
+<h3 id="layout-presets">Layout Presets<a class="anchor" href="#layout-presets" aria-label="Link to this section">#</a></h3>
+<p>Named presets are available via the preset selector in the toolbar:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>PRESET</th><th>USE CASE</th></tr></thead>
+<tbody>
+<tr><td>Default</td><td>Balanced production layout — pads, sample, sequencer, mixer visible simultaneously</td></tr>
+<tr><td>Pads Left</td><td>Pad grid and XPAD on the left, larger LCD and effects space on the right</td></tr>
+<tr><td>Studio / Mix</td><td>Maximised mixer and FX rack — reduced pad surface for mixing/mastering passes</td></tr>
+<tr><td>My Layout</td><td>Your saved custom arrangement (appears once you have saved one)</td></tr>
+</tbody>
+</table></div>
+<p>See <strong>Figure 12.2</strong> for the preset list.</p>
+<figure class="fig"><img src="images/14_layout_mode_preset_dropdown.png" alt="Figure 12.2 — Layout Mode preset selector." loading="lazy"><figcaption><strong>Figure 12.2</strong> — Layout Mode preset selector.</figcaption></figure>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>Use <strong>Studio / Mix</strong> when balancing sends and sidechain, then switch back to <strong>Default</strong> to return to a broader edit view quickly.</p></div></aside>
+<h3 id="saving-a-custom-layout">Saving a Custom Layout<a class="anchor" href="#saving-a-custom-layout" aria-label="Link to this section">#</a></h3>
+<p>Click <strong>SAVE</strong> in the layout mode toolbar to save the current panel arrangement as <strong>My Layout</strong>. The SAVE action does not exit layout mode — you can continue adjusting and save again to update it. Once saved, <strong>My Layout</strong> appears as a selectable preset in the toolbar dropdown.</p>
+<h3 id="confirming-and-cancelling">Confirming and Cancelling<a class="anchor" href="#confirming-and-cancelling" aria-label="Link to this section">#</a></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>BUTTON</th><th>ACTION</th></tr></thead>
+<tbody>
+<tr><td><strong>LOCK</strong></td><td>Confirm the current arrangement, save it as the active layout, and exit layout mode</td></tr>
+<tr><td><strong>RESET</strong></td><td>Reset the working arrangement to the Default preset (does not exit layout mode)</td></tr>
+<tr><td><strong>ESC</strong> / <strong>CANCEL</strong></td><td>Cancel all changes and exit layout mode</td></tr>
+</tbody>
+</table></div>
+<p>The active layout persists across sessions. <strong>My Layout</strong> is stored separately and can be recalled from the preset dropdown at any time.</p>
+<h3 id="pinned-panels">Pinned Panels<a class="anchor" href="#pinned-panels" aria-label="Link to this section">#</a></h3>
+<p>The <strong>Pad Surface</strong> (knobs) and <strong>Sequencer</strong> panels are permanently docked to the bottom of the workspace. They cannot be moved or resized in Layout Mode. All other panels are clamped to the rows above them. The pinned panels carry 6 px of bottom padding by default.</p>
+<hr>
+<h2 id="13-transport-and-tempo-controls">13. Transport and Tempo Controls<a class="anchor" href="#13-transport-and-tempo-controls" aria-label="Link to this section">#</a></h2>
+<h3 id="bpm">BPM<a class="anchor" href="#bpm" aria-label="Link to this section">#</a></h3>
+<p>The BPM field is shown in the transport strip. Click the value and type a new tempo, or use the up/down arrows. The accepted range is <strong>20–300 BPM</strong>.</p>
+<h3 id="swing">Swing<a class="anchor" href="#swing" aria-label="Link to this section">#</a></h3>
+<p>The Swing control adds rhythmic offset to alternating steps. The displayed range is 50–75:</p>
+<ul><li><strong>50</strong> — straight timing (no swing)</li><li><strong>&gt;50</strong> — the <strong>1st, 3rd, 5th …</strong> (even-indexed) step of each pair is stretched longer and the <strong>2nd, 4th, 6th …</strong> step is shortened, producing a swing feel</li><li><strong>75</strong> — near-maximum swing offset (approaching triplet feel, which lives near <code>~66.7</code>)</li></ul>
+<p>Swing is applied per-step at render time and affects pad playback and the step sequencer. Backing tracks align to the sequencer grid, so swing indirectly shifts their perceived beat positions without altering the backing-track audio itself.</p>
+<h3 id="metronome">Metronome<a class="anchor" href="#metronome" aria-label="Link to this section">#</a></h3>
+<p>The <strong>METRONOME</strong> toggle lives in the <strong>SYSTEM</strong> tab. When active, a click fires on every beat (every 4 steps), with an accented click (<code>1 kHz</code> vs <code>800 Hz</code>) on the bar downbeat. The click is routed <strong>directly to the audio output, bypassing the master bus and FX chain</strong> so master EQ, compression, and effects do not colour it.</p>
+<p>The transport controls are shown in <strong>Figure 13.1</strong>.</p>
+<figure class="fig"><img src="images/15_transport_strip_bpm_swing.png" alt="Figure 13.1 — Transport strip: BPM and swing controls." loading="lazy"><figcaption><strong>Figure 13.1</strong> — Transport strip: BPM and swing controls.</figcaption></figure>
+<hr>
+<h2 id="14-backing-track-full-control-reference">14. Backing Track — Full Control Reference<a class="anchor" href="#14-backing-track-full-control-reference" aria-label="Link to this section">#</a></h2>
+<h3 id="collapse-expand">Collapse / Expand<a class="anchor" href="#collapse-expand" aria-label="Link to this section">#</a></h3>
+<p>The transport strip has a <strong>▲ COLLAPSE</strong> / <strong>▼ EXPAND</strong> toggle at its left edge. Collapsing hides the waveform display and reduces the strip to a single row, redistributing the freed space to the LCD and XPAD panels. Collapsing the transport strip stops backing-track playback before the panel shrinks. The toggle is pinned at the fixed left edge and remains visible even when the horizontal content is scrolled right.</p>
+<p><strong>Figure 14.1</strong> illustrates the expanded backing-track strip.</p>
+<figure class="fig"><img src="images/16_backing_track_expanded_waveform.png" alt="Figure 14.1 — Backing track strip in its expanded state." loading="lazy"><figcaption><strong>Figure 14.1</strong> — Backing track strip in its expanded state.</figcaption></figure>
+<h3 id="waveform-zoom">Waveform Zoom<a class="anchor" href="#waveform-zoom" aria-label="Link to this section">#</a></h3>
+<p>The <strong>ZOOM ON / ZOOM OFF</strong> button toggles waveform zoom. When on, the backing-track waveform is expanded horizontally for finer positioning. This does not affect playback — zoom is view only.</p>
+<p><strong>Zoom is not trim.</strong> The <code>ZOOM</code> sliders and <code>RESET ZOOM</code> change only what you are looking at. Setting the track's in and out points is a separate action — the <code>CLIP</code> handles on the DAW master lane (Section 15) — and that is what actually silences audio. Zooming in on a passage never shortens the track, and trimming the track never crops your view of the song.</p>
+<h3 id="grid-lock-and-phase-offset">Grid Lock and Phase Offset<a class="anchor" href="#grid-lock-and-phase-offset" aria-label="Link to this section">#</a></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>CONTROL</th><th>FUNCTION</th></tr></thead>
+<tbody>
+<tr><td>LOCK MODE</td><td>Selects how the backing track locks to the grid: <strong>RATE ONLY</strong>, <strong>RATE+PHASE</strong>, or <strong>FOLLOW TRACK BPM</strong> (see below)</td></tr>
+<tr><td>GRID START / SET GRID START</td><td>Sets the phase origin — the point in the backing track that aligns to beat 1. Use this to align a loop that does not start on beat 1</td></tr>
+<tr><td>BPM (manual field)</td><td>Override the estimated BPM. Enter exact tempo to lock the track to the sequencer grid</td></tr>
+</tbody>
+</table></div>
+<p>Lock modes in detail:</p>
+<ul><li><strong>RATE ONLY</strong> (default) — the backing track's playback rate is scaled so its BPM matches the project BPM (or the manual BT BPM override). Pitch shifts with the rate, like classic repitch playback.</li><li><strong>RATE+PHASE</strong> — same rate matching, and when the transport starts, the sequencer's start step is derived from the current backing-track position, so the pattern phase lines up with wherever the track is.</li><li><strong>FOLLOW TRACK BPM</strong> — the track plays at its native speed (rate <code>1.0×</code>) and the <strong>project BPM follows the track's</strong> confirmed or estimated BPM instead.</li></ul>
+<h3 id="backing-track-mute-mute-lvl">Backing Track Mute (MUTE / LVL)<a class="anchor" href="#backing-track-mute-mute-lvl" aria-label="Link to this section">#</a></h3>
+<p>A <strong>MUTE</strong> button sits next to the <strong>LVL</strong> slider in the backing-track strip (disabled when no track is loaded; lit red while muted).</p>
+<ul><li>Mute is <strong>gain-only</strong> with a short click-free ramp — the track keeps playing silently, so the playhead, grid lock, and song-section mapping all stay exactly where they are.</li><li>Your <strong>LVL</strong> setting is untouched: the slider dims and the percentage readout is struck through while muted, and unmuting restores the same level.</li><li>The sample-editor preview stays audible while the backing track is muted — MUTE silences only the backing track itself.</li></ul>
+<h3 id="waveform-seek-song-follows-sequencer-is-master">Waveform Seek — Song Follows (Sequencer is Master)<a class="anchor" href="#waveform-seek-song-follows-sequencer-is-master" aria-label="Link to this section">#</a></h3>
+<p>Clicking or scrubbing the backing-track waveform seeks the track. When <strong>GRID LOCK</strong> is on, the seek <strong>moves both</strong>: the Song Mode pointer (current section and bar) snaps to the song section under the new playhead position, and during Song Mode playback the matching scene is applied immediately. Seeks resolve to the nearest <strong>bar</strong>, the finest boundary a section can start or end on.</p>
+<ul><li>The cued song position <strong>survives STOP</strong> — pressing PLAY resumes from the cued section rather than restarting from the top.</li><li>Editing a section's <strong>BARS</strong> count or per-step <strong>BPM</strong> re-pins the playhead to the same musical position inside the same section, so the coloured section bands, the playhead, and every seek always agree.</li><li>With GRID LOCK off, the backing track is independent and a waveform click behaves as a plain seek.</li></ul>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>To align a loop with a pickup note: play the track, find beat 1 with the playhead, then press <strong>SET GRID START</strong> at that position.</p></div></aside>
+<h3 id="playback-rate">Playback Rate<a class="anchor" href="#playback-rate" aria-label="Link to this section">#</a></h3>
+<p>The rate control (<code>0.5×</code> to <code>2.0×</code>) changes playback speed without affecting the sequencer. Values below <code>1.0×</code> slow the track; above <code>1.0×</code> speed it up. Use Rate lock mode to pitch-compensate.</p>
+<h3 id="keyboard-shortcut">Keyboard Shortcut<a class="anchor" href="#keyboard-shortcut" aria-label="Link to this section">#</a></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>SHORTCUT</th><th>ACTION</th></tr></thead>
+<tbody>
+<tr><td><code>Shift + X</code></td><td>Clear the loaded backing track</td></tr>
+</tbody>
+</table></div>
+<h3 id="backing-track-collapse-behavior">Backing Track Collapse Behavior<a class="anchor" href="#backing-track-collapse-behavior" aria-label="Link to this section">#</a></h3>
+<p>Collapsing the transport strip stops backing-track playback before the panel shrinks. This prevents the backing track from continuing in the background after the waveform strip is hidden.</p>
+<hr>
+<h2 id="15-daw-view-multi-lane-backing-track-workspace">15. DAW View — Multi-Lane Backing Track Workspace<a class="anchor" href="#15-daw-view-multi-lane-backing-track-workspace" aria-label="Link to this section">#</a></h2>
+<p>The <strong>DAW</strong> tab is a Windows-first, horizontal multi-lane workspace for arranging and auditioning backing tracks and stems against your pattern. It hosts one <strong>MASTER</strong> lane (the project backing track shared with the transport strip) plus <strong>seven AUX lanes</strong> for additional reference tracks or stems, each with its own waveform, transport, and mix controls.</p>
+<p>The DAW view is developed and validated on the Windows/Electron desktop runtime first. Other platforms inherit the same logic once proven.</p>
+<p>The DAW workspace is shown in <strong>Figure 15.1</strong>.</p>
+<figure class="fig"><img src="images/35_daw_multilane.png" alt="Figure 15.1 — DAW tab: the multi-lane backing-track workspace." loading="lazy"><figcaption><strong>Figure 15.1</strong> — DAW tab: the multi-lane backing-track workspace.</figcaption></figure>
+<h3 id="daw-header-controls">DAW Header Controls<a class="anchor" href="#daw-header-controls" aria-label="Link to this section">#</a></h3>
+<p>The top strip of the DAW view holds the global controls:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>CONTROL</th><th>FUNCTION</th></tr></thead>
+<tbody>
+<tr><td><code>DAW</code> / <code>WINDOWS FIRST</code></td><td>Title and platform badge (informational)</td></tr>
+<tr><td><code>MASTER: {name}</code></td><td>Shows the loaded master backing-track name, or <code>NO BACKING TRACK</code></td></tr>
+<tr><td><code>LINK ON</code> / <code>LINK OFF</code></td><td>Links all loaded lanes to one shared transport. <strong>ON by default.</strong> When ON, the master and every loaded aux lane start, pause, and stop together from a single Web Audio scheduled timestamp so they stay sample-aligned</td></tr>
+<tr><td><code>LOAD TRACK</code> / <code>REPLACE</code></td><td>Loads (or replaces) the master backing track</td></tr>
+<tr><td><code>CLEAR</code></td><td>Clears the master backing track</td></tr>
+<tr><td><code>PLAY ALL</code> / <code>PAUSE ALL</code> (linked) — <code>PLAY</code> / <code>PAUSE</code> (unlinked)</td><td>Starts or pauses playback. The label and scope follow the LINK state</td></tr>
+<tr><td><code>STOP ALL</code> (linked) — <code>STOP</code> (unlinked)</td><td>Stops playback and returns to the start</td></tr>
+<tr><td><code>FULL SCREEN</code></td><td>Opens the DAW in a maximised overlay (see below)</td></tr>
+</tbody>
+</table></div>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>Keep <strong>LINK ON</strong> when you want stems and the master to play as one arrangement. Switch <strong>LINK OFF</strong> to audition a single backing track in isolation while you set its level and pan.</p></div></aside>
+<h3 id="linked-vs-unlinked-playback">Linked vs. Unlinked Playback<a class="anchor" href="#linked-vs-unlinked-playback" aria-label="Link to this section">#</a></h3>
+<ul><li><strong>LINK ON (default):</strong> <code>PLAY ALL</code> starts the master backing track and every loaded aux lane from one shared scheduled start time. <code>PAUSE ALL</code> and <code>STOP ALL</code> apply to all lanes at once. This is the mode for layered stems that must stay locked together.</li><li><strong>LINK OFF:</strong> The header transport controls only the master track. Each aux lane is driven independently from its own per-lane <code>PLAY</code> / <code>STOP</code> controls, so you can audition individual backing tracks without starting the rest.</li></ul>
+<p>Per-lane <code>PLAY</code> / <code>STOP</code> controls remain available on each aux lane regardless of link state, so you can always audition a single track.</p>
+<h3 id="timeline-header-and-markers">Timeline Header and Markers<a class="anchor" href="#timeline-header-and-markers" aria-label="Link to this section">#</a></h3>
+<p>Below the controls is the <strong>HORIZONTAL TIMELINE</strong> header:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>ELEMENT</th><th>MEANING</th></tr></thead>
+<tbody>
+<tr><td><code>{n} LANES</code></td><td>Total lane count (master + aux)</td></tr>
+<tr><td><code>LVL {n}%</code></td><td>Current master backing-track level</td></tr>
+<tr><td><code>BPM {value}</code></td><td>Master backing-track BPM label</td></tr>
+<tr><td><code>GRID {LOCK / FREE}</code></td><td>Master grid-lock state</td></tr>
+<tr><td><code>SECTIONS {n}</code></td><td>Number of song sections overlaid on the master waveform</td></tr>
+<tr><td><code>BARS</code> / <code>MEASURES</code></td><td>Timeline marker display mode toggle. <strong>MEASURES is the default.</strong> Switches the waveform ruler/markers between bar lines and measure lines</td></tr>
+</tbody>
+</table></div>
+<p>The ruler across the top of the lanes shows <code>START</code> and percentage ticks (<code>12.5%</code> … <code>87.5%</code>) as quick position references.</p>
+<h3 id="the-master-lane">The MASTER Lane<a class="anchor" href="#the-master-lane" aria-label="Link to this section">#</a></h3>
+<p>The MASTER lane is the larger top row and represents the project backing track (the same track shown in the transport strip). It carries:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>CONTROL</th><th>FUNCTION</th></tr></thead>
+<tbody>
+<tr><td><code>LINKED</code> badge</td><td>Indicates the lane participates in linked transport</td></tr>
+<tr><td><code>MUTE</code> / <code>SOLO</code></td><td>Mute or solo the master in the lane mix</td></tr>
+<tr><td><code>VOL</code></td><td>Master level, <code>0–200%</code></td></tr>
+<tr><td><code>PAN</code></td><td>Stereo pan, <code>-100</code> (left) … <code>+100</code> (right)</td></tr>
+<tr><td><code>LOAD</code> / <code>REPLACE</code>, <code>PLAY</code> / <code>PLAY ALL</code>, <code>STOP</code> / <code>STOP ALL</code>, <code>CLEAR</code></td><td>Lane-level duplicates of the header transport actions</td></tr>
+<tr><td><code>CLIP</code> / <code>MOVE</code></td><td>Arms which drag gesture the master waveform responds to (see below)</td></tr>
+</tbody>
+</table></div>
+<p>The master waveform honours the project's slice markers, song-section overlays, and the backing-track zoom view. Click anywhere on the master waveform to seek.</p>
+<h4 id="master-clip-editing-clip-and-move">Master Clip Editing — CLIP and MOVE<a class="anchor" href="#master-clip-editing-clip-and-move" aria-label="Link to this section">#</a></h4>
+<p>The master lane's waveform has two drag gestures, and <strong>exactly one is armed at a time</strong>. The armed gesture is the only coloured affordance on the clip, so there is nothing to aim at by mistake.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>MODE</th><th>WHAT DRAGS</th><th>WHAT IT CHANGES</th></tr></thead>
+<tbody>
+<tr><td><code>CLIP</code> (default)</td><td>The two coloured <strong>edge handles</strong></td><td>The track's in and out points — where the audio starts and stops playing. Non-destructive; the file is untouched</td></tr>
+<tr><td><code>MOVE</code></td><td>The <strong>body</strong> of the clip</td><td><strong>Where the track sits in the song</strong> — which bar it comes in on. The in/out points do not change</td></tr>
+</tbody>
+</table></div>
+<p>Both gestures snap to the DAW <code>SNAP</code> setting (default <code>1/4</code> bar; <code>OFF</code>, <code>1/8</code> and <code>1/16</code> are also available). While dragging, a readout shows <code>IN</code> and <code>OUT</code> in <code>CLIP</code> mode, or <code>AT</code> — the song position the track now starts at — in <code>MOVE</code> mode.</p>
+<p><code>MOVE</code> writes the same <strong>grid offset</strong> that <code>SET GRID START</code> and the <code>±ms</code> nudges in the transport strip use, so all three controls agree. A positive offset places the audio <strong>later</strong> in the song; dragging left of the song start trims pre-roll off the front.</p>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>Use <code>MOVE</code> when the backing track should come in a couple of bars after the song<br>starts — the arrangement keeps its full length and the sequencer keeps running<br>from bar 1, the audio just enters later.</p></div></aside>
+<p>Trimming with <code>CLIP</code> silences audio outside the window and hides it on the waveform. It does <strong>not</strong> crop your view of the song: the section bands, ruler and playhead still draw across the full arrangement, and the <code>ZOOM</code> sliders are a separate view control (see Section 14).</p>
+<h3 id="aux-lanes-1-7">AUX Lanes (1–7)<a class="anchor" href="#aux-lanes-1-7" aria-label="Link to this section">#</a></h3>
+<p>Each of the seven aux lanes is an independent backing-track slot:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>CONTROL</th><th>FUNCTION</th></tr></thead>
+<tbody>
+<tr><td><code>LOADED</code> / <code>EMPTY</code> badge</td><td>Whether a track is loaded in the lane</td></tr>
+<tr><td><code>MUTE</code> / <code>SOLO</code></td><td>Mute or solo this lane in the mix</td></tr>
+<tr><td><code>VOL</code></td><td>Lane level, <code>0–150%</code> (default <code>65%</code>)</td></tr>
+<tr><td><code>PAN</code></td><td>Stereo pan, <code>-100</code> … <code>+100</code></td></tr>
+<tr><td><code>LOAD</code></td><td>Opens a file picker for the lane</td></tr>
+<tr><td><code>PLAY</code> / <code>PAUSE</code></td><td>Audition this lane independently</td></tr>
+<tr><td><code>STOP</code></td><td>Stop and reset this lane</td></tr>
+<tr><td><code>CLEAR</code></td><td>Remove the loaded track from the lane</td></tr>
+<tr><td><code>CLIP</code> / <code>MOVE</code></td><td>Arms which drag gesture this lane's clip responds to</td></tr>
+</tbody>
+</table></div>
+<p>Aux lanes accept <code>WAV</code>, <code>AIF</code>/<code>AIFF</code>, <code>MP3</code>, <code>M4A</code>, <code>FLAC</code>, and <code>OGG</code>. Click an aux waveform to seek that lane to that position. The lane footer shows the total track time, or <code>LOAD TRACK TO VIEW WAVEFORM</code> when empty.</p>
+<p>Each aux lane arms <code>CLIP</code> or <code>MOVE</code> independently, exactly as the master lane does: <code>CLIP</code> drags the edge handles to set the clip's in/out points inside the sample, <code>MOVE</code> drags the clip body to slide it along the lane timeline. Both snap to the DAW <code>SNAP</code> setting, and the drag readout shows <code>IN · OUT · AT</code>.</p>
+<p>A moved aux clip is scheduled to <strong>start later</strong> rather than being pulled back to its head, so a clip placed at bar 9 stays silent until the playhead reaches it — in linked playback as well as solo audition.</p>
+<p>See <strong>Figure 15.2</strong> for a single aux lane in detail.</p>
+<figure class="fig"><img src="images/42_daw_master_trim.png" alt="Figure 15.2 — DAW aux lane controls and waveform." loading="lazy"><figcaption><strong>Figure 15.2</strong> — DAW aux lane controls and waveform.</figcaption></figure>
+<h3 id="solo-and-mute-behavior">Solo and Mute Behavior<a class="anchor" href="#solo-and-mute-behavior" aria-label="Link to this section">#</a></h3>
+<ul><li>When <strong>any</strong> lane (master or aux) is soloed, all non-soloed lanes are silenced.</li><li>An explicit <strong>MUTE</strong> always silences that lane regardless of solo state.</li><li>Lane levels are applied smoothly to avoid clicks when toggling mute/solo during playback.</li></ul>
+<h3 id="full-screen">Full Screen<a class="anchor" href="#full-screen" aria-label="Link to this section">#</a></h3>
+<p>Press <strong>FULL SCREEN</strong> to expand the DAW into a maximised overlay titled <code>DAW FULL SCREEN // BACKING TRACKS</code> for detailed multi-lane work. Press <strong>CLOSE</strong> (top-right) to return. Leaving the DAW tab also exits the maximised overlay.</p>
+<aside class="callout callout--important"><p class="callout__label">IMPORTANT</p><div class="callout__body"><p>Backing-track source position is mapped to the sequencer step grid even when the backing-track BPM differs from the project BPM. If you change project or backing BPM mid-session, stop and restart transport once so the latest alignment plan is applied.</p></div></aside>
+<hr>
+<h2 id="16-bank-switching-a-b-c-d">16. Bank Switching (A / B / C / D)<a class="anchor" href="#16-bank-switching-a-b-c-d" aria-label="Link to this section">#</a></h2>
+<p>Each bank holds an independent set of 16 pads with their own samples, layer names, and parameter settings. Banks share the same scenes and patterns.</p>
+<h3 id="switching-banks">Switching Banks<a class="anchor" href="#switching-banks" aria-label="Link to this section">#</a></h3>
+<p>Click <strong>A</strong>, <strong>B</strong>, <strong>C</strong>, or <strong>D</strong> in the bank selector strip (visible in the XPAD area and transport). The active bank button highlights in red.</p>
+<p>The bank selector is shown in <strong>Figure 16.1</strong>.</p>
+<figure class="fig"><img src="images/17_bank_selector_abcd.png" alt="Figure 16.1 — Bank selector (A / B / C / D)." loading="lazy"><figcaption><strong>Figure 16.1</strong> — Bank selector (A / B / C / D).</figcaption></figure>
+<h3 id="what-changes-on-a-bank-switch">What Changes on a Bank Switch<a class="anchor" href="#what-changes-on-a-bank-switch" aria-label="Link to this section">#</a></h3>
+<ul><li>All 16 pad sample assignments change to the bank's stored values.</li><li>Pad parameters (tune, env, FX sends) change to the bank's stored values.</li><li>Pattern/scene data does <strong>not</strong> change — patterns are bank-independent.</li><li>The currently selected pad ID is preserved; the sample loaded there changes.</li></ul>
+<h3 id="bank-overrides-in-song-mode">Bank Overrides in Song Mode<a class="anchor" href="#bank-overrides-in-song-mode" aria-label="Link to this section">#</a></h3>
+<p>Each song playlist step has an optional <strong>BANK</strong> field. Set it to <code>A</code>, <code>B</code>, <code>C</code>, or <code>D</code> to force a bank switch when that step plays, or leave it <code>AUTO</code> to keep the current bank.</p>
+<h3 id="the-factory-sound-library">The Factory Sound Library<a class="anchor" href="#the-factory-sound-library" aria-label="Link to this section">#</a></h3>
+<p>Every bank is filled in when you install. You do not need to load a sample pack before you can make something.</p>
+<p><strong>Bank A — Synth Kit.</strong> Bank A uses no samples at all. All 16 pads are played by RXB's built-in synthesis voices, so they are tunable from the pad controls with no audio file behind them. Pads: <code>KICK 1</code>, <code>KICK 2</code>, <code>SUB</code>, <code>SNAR 1</code>, <code>SNAR 2</code>, <code>CLAP</code>, <code>RIM</code>, <code>TOM L</code>, <code>CH</code>, <code>OH</code>, <code>PRC 1</code>, <code>TOM H</code>, <code>LEAD</code>, <code>CHORD</code>, <code>STAB</code>, <code>VOX</code>.</p>
+<p><strong>Bank B — Core Drum Kit.</strong> 20 acoustic-style drum samples: three kicks (one with a separate sub layer), two snares plus a rimshot, two claps, a rim, a low tom, closed/open/pedal hats on a choke group, two shakers, two percussion hits, a crash and a ride.</p>
+<p><strong>Bank C — Melodic and Vocal Kit.</strong> 24 pitched samples, all tuned to <strong>A minor</strong> so the bank plays together out of the box: three basses with alternates and a fill, seven synthetic vox chops and ad-libs, three stabs, three chords, three leads, two pads, an atmosphere bed and a two-bar signature loop at 90 BPM.</p>
+<p><strong>Bank D — 808s, FX and Transitions.</strong> 19 samples for arrangement moves: four 808s (including a long-tail version for half-time), drum FX, a cinematic impact, up and down sweeps, a snap, a riser, a downlifter and four drum loops at 124, 140, 88 and 100 BPM.</p>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>Bank C and the Bank D loops share the same key and a compatible tempo family.<br>Start a beat by dropping <code>LOOP_MAIN</code> on a pad, then layer <code>BASS_A</code> and<br><code>CHORD_A</code> from Bank C over it — they are already in tune with each other.</p></div></aside>
+<h3 id="where-the-factory-sounds-come-from">Where the Factory Sounds Come From<a class="anchor" href="#where-the-factory-sounds-come-from" aria-label="Link to this section">#</a></h3>
+<p>Every factory sample was <strong>generated by RXB Workstation itself</strong>. The same synthesis engine that plays Bank A was used to render each one-shot and loop offline; the reverb tails use impulse responses generated by the application rather than recordings of real rooms.</p>
+<p>That matters for two practical reasons:</p>
+<ul><li><strong>They are yours to release.</strong> The factory content contains no third-party samples, recordings or sample packs. You can use it in commercial releases with no clearance, no royalty, no credit and no sample-replacement worry. The licence is set out in <code>EULA.txt</code>, installed alongside the application.</li><li><strong>They are a starting point, not a ceiling.</strong> Because they came out of the synth engine, anything in Banks B, C or D can be rebuilt or reshaped from Bank A's voices, or replaced entirely with your own recordings through the <code>INPUT</code> tab and <strong>Record Input to Pad</strong> (Sections 18 and 19).</li></ul>
+<aside class="callout callout--important"><p class="callout__label">IMPORTANT</p><div class="callout__body"><p>The one restriction is on redistributing the <em>sounds themselves</em>. You may<br>release any music you make with them, but you may not repackage the factory<br>samples as a sample pack, loop library or preset pack. See <code>EULA.txt</code> clause<br>2.3.</p></div></aside>
+<p><strong>Figure 16.2</strong> illustrates Bank B populated.</p>
+<figure class="fig"><img src="images/41_bank_b_drums.png" alt="Figure 16.2 — Bank B loaded with the factory drum kit." loading="lazy"><figcaption><strong>Figure 16.2</strong> — Bank B loaded with the factory drum kit.</figcaption></figure>
+<hr>
+<h2 id="17-xpad-tab-reference">17. XPAD Tab Reference<a class="anchor" href="#17-xpad-tab-reference" aria-label="Link to this section">#</a></h2>
+<p>The <strong>XPAD</strong> tab is the primary pad editing surface. It combines layer management, pad configuration, and the full Record Input to Pad workflow.</p>
+<p>The full XPAD tab is shown in <strong>Figure 17.1</strong>.</p>
+<figure class="fig"><img src="images/18_xpad_full_tab_control_surface.png" alt="Figure 17.1 — XPAD tab with the pad control surface." loading="lazy"><figcaption><strong>Figure 17.1</strong> — XPAD tab with the pad control surface.</figcaption></figure>
+<h3 id="layer-button-grid">Layer Button Grid<a class="anchor" href="#layer-button-grid" aria-label="Link to this section">#</a></h3>
+<p>The 2×2 layer grid mirrors the XY quadrant map from Section 4:</p>
+<ul><li><strong>Layer 1</strong> — top-left</li><li><strong>Layer 2</strong> — top-right</li><li><strong>Layer 3</strong> — bottom-left</li><li><strong>Layer 4</strong> — bottom-right</li></ul>
+<p>Click any layer button to select that layer and audition its current sound settings. Double-click a layer button to open the file picker and load a new sample into it. The button shows the layer name when a sample is loaded, or <code>Empty</code> when the slot is free.</p>
+<h3 id="xpad-layer-sound-editor">XPAD Layer Sound Editor<a class="anchor" href="#xpad-layer-sound-editor" aria-label="Link to this section">#</a></h3>
+<p>The <strong>PAD CONTROL SURFACE</strong> inside the <strong>XPAD</strong> tab supports per-layer sound editing and recall.</p>
+<ul><li>Each layer can store its own <code>MAIN</code>, <code>ENV</code>, <code>COMP</code>, and <code>FX</code> settings.</li><li>If a layer has no independent override, it remains linked to the parent pad settings.</li><li>The top-right status indicator shows <code>Lx LINK</code> when the layer is following the pad and <code>Lx OVR</code> when that layer has its own saved settings.</li><li>Use <strong>LINK PAD</strong> to remove the layer override and return that layer to the pad-level sound.</li></ul>
+<h4 id="xpad-main-tab">XPAD MAIN Tab<a class="anchor" href="#xpad-main-tab" aria-label="Link to this section">#</a></h4>
+<div class="table-wrap"><table>
+<thead><tr><th>CONTROL</th><th>FUNCTION</th></tr></thead>
+<tbody>
+<tr><td><code>TUNE</code></td><td>Per-layer pitch offset</td></tr>
+<tr><td><code>RESO</code></td><td>Per-layer resonance amount</td></tr>
+<tr><td><code>CUTOFF</code></td><td>Per-layer filter cutoff</td></tr>
+<tr><td><code>DRIVE</code></td><td>Per-layer saturation / drive</td></tr>
+<tr><td><code>DEPTH</code></td><td>Per-layer aftertouch depth</td></tr>
+<tr><td><code>AT: OFF / VOL</code></td><td>Per-layer aftertouch target toggle</td></tr>
+</tbody>
+</table></div>
+<h4 id="xpad-env-tab">XPAD ENV Tab<a class="anchor" href="#xpad-env-tab" aria-label="Link to this section">#</a></h4>
+<div class="table-wrap"><table>
+<thead><tr><th>CONTROL</th><th>FUNCTION</th></tr></thead>
+<tbody>
+<tr><td><code>ATK</code></td><td>Per-layer attack</td></tr>
+<tr><td><code>DEC</code></td><td>Per-layer decay</td></tr>
+<tr><td><code>SUS</code></td><td>Per-layer sustain</td></tr>
+<tr><td><code>REL</code></td><td>Per-layer release</td></tr>
+</tbody>
+</table></div>
+<h4 id="xpad-comp-tab">XPAD COMP Tab<a class="anchor" href="#xpad-comp-tab" aria-label="Link to this section">#</a></h4>
+<div class="table-wrap"><table>
+<thead><tr><th>CONTROL</th><th>FUNCTION</th></tr></thead>
+<tbody>
+<tr><td><code>AMOUNT</code></td><td>Per-layer insert compressor amount</td></tr>
+<tr><td><code>RATIO</code></td><td>Per-layer compressor ratio</td></tr>
+<tr><td><code>ATK</code></td><td>Per-layer compressor attack</td></tr>
+</tbody>
+</table></div>
+<h4 id="xpad-fx-tab">XPAD FX Tab<a class="anchor" href="#xpad-fx-tab" aria-label="Link to this section">#</a></h4>
+<div class="table-wrap"><table>
+<thead><tr><th>CONTROL</th><th>FUNCTION</th></tr></thead>
+<tbody>
+<tr><td><code>REV</code></td><td>Per-layer reverb send</td></tr>
+<tr><td><code>DEL</code></td><td>Per-layer delay send</td></tr>
+<tr><td><code>PAN</code></td><td>Per-layer pan position</td></tr>
+<tr><td><code>TYPE</code></td><td>Per-layer filter type (<code>LP</code> / <code>HP</code> / <code>BP</code>)</td></tr>
+</tbody>
+</table></div>
+<h3 id="xpad-preview-behavior">XPAD Preview Behavior<a class="anchor" href="#xpad-preview-behavior" aria-label="Link to this section">#</a></h3>
+<ul><li>Clicking a layer tile previews that exact XY corner/layer.</li><li>The <strong>PREVIEW</strong> button retriggers the currently selected XPAD layer without leaving the tab.</li><li>Editing a control in the XPAD layer sound editor may retrigger preview so you can hear the updated layer while designing it.</li></ul>
+<h3 id="crosshair-overlay">Crosshair Overlay<a class="anchor" href="#crosshair-overlay" aria-label="Link to this section">#</a></h3>
+<p>A faint grey crosshair marks the 50 % midpoint on each pad button, showing the XY quadrant split. This is a visual guide only — it does not affect pad triggering.</p>
+<h3 id="layer-copy-paste">Layer Copy / Paste<a class="anchor" href="#layer-copy-paste" aria-label="Link to this section">#</a></h3>
+<p>In the XPAD tab (or SAMPLE tab), the <strong>COPY</strong> button copies the current pad layer (sample + settings) to an internal clipboard. <strong>PASTE</strong> writes the clipboard content to the currently selected pad and layer. The clipboard is session-only and does not persist across reloads.</p>
+<hr>
+<h2 id="18-input-tab-monitoring-reference">18. INPUT Tab — Monitoring Reference<a class="anchor" href="#18-input-tab-monitoring-reference" aria-label="Link to this section">#</a></h2>
+<h3 id="starting-input-monitoring">Starting Input Monitoring<a class="anchor" href="#starting-input-monitoring" aria-label="Link to this section">#</a></h3>
+<ol><li>Select your audio input device from the device dropdown (<code>System Default</code> or a named interface).</li><li>Select the route mode: - <strong>Input to Master</strong> — feeds the input signal directly to the master output (for monitoring through the mix). - <strong>Input to FX Rack to Master</strong> — routes the input through the FX Rack before the master (for live FX processing).</li><li>Click <strong>START MON</strong>. The status indicator changes to <code>MONITOR: LATCHED</code>.</li></ol>
+<p>Monitoring can also be started from the <strong>Record Input to Pad</strong> card in the XPAD or SAMPLE tabs without switching to the INPUT tab.</p>
+<p>See <strong>Figure 18.1</strong> for the input routing and monitoring controls.</p>
+<figure class="fig"><img src="images/19_input_tab_monitoring_retro.png" alt="Figure 18.1 — INPUT tab: monitoring and the retro buffer." loading="lazy"><figcaption><strong>Figure 18.1</strong> — INPUT tab: monitoring and the retro buffer.</figcaption></figure>
+<h3 id="retrospective-buffer">Retrospective Buffer<a class="anchor" href="#retrospective-buffer" aria-label="Link to this section">#</a></h3>
+<p>While monitoring is active, RXB continuously buffers the incoming audio in a rolling ring buffer (up to 60 seconds). The INPUT LCD shows:</p>
+<pre><code>RETRO: 12.4s / 60s</code></pre>
+<p>This means 12.4 seconds of audio are currently buffered and available for <strong>CAPTURE LAST</strong>.</p>
+<h3 id="line-select">Line Select<a class="anchor" href="#line-select" aria-label="Link to this section">#</a></h3>
+<p>When multiple input channels are detected, the <strong>LINE SELECT</strong> card shows individual channel strips. Each strip has an enable toggle and a gain slider (<code>0.00</code> to <code>2.00</code>). Disabled channels are excluded from capture.</p>
+<h3 id="stopping-monitoring">Stopping Monitoring<a class="anchor" href="#stopping-monitoring" aria-label="Link to this section">#</a></h3>
+<p>Click <strong>STOP MON</strong>. The buffer is cleared. All monitoring state is separate from project save state.</p>
+<hr>
+<h2 id="19-record-input-to-pad-complete-reference">19. Record Input to Pad — Complete Reference<a class="anchor" href="#19-record-input-to-pad-complete-reference" aria-label="Link to this section">#</a></h2>
+<p>The <strong>Record Input to Pad</strong> card appears on both the <strong>XPAD</strong> and <strong>SAMPLE</strong> tabs. Both instances are identical.</p>
+<h3 id="card-header">Card Header<a class="anchor" href="#card-header" aria-label="Link to this section">#</a></h3>
+<p>The header shows a live monitoring status badge (<strong>MON ON</strong> / <strong>MON OFF</strong>) and a <strong>START MON</strong> / <strong>STOP MON</strong> quick button. This allows monitoring to be activated without switching to the INPUT tab.</p>
+<p>The recording controls are shown in <strong>Figure 19.1</strong>.</p>
+<figure class="fig"><img src="images/20_record_input_to_pad_card.png" alt="Figure 19.1 — Record Input to Pad card." loading="lazy"><figcaption><strong>Figure 19.1</strong> — Record Input to Pad card.</figcaption></figure>
+<h3 id="recording-live-input">Recording Live Input<a class="anchor" href="#recording-live-input" aria-label="Link to this section">#</a></h3>
+<ol><li>Select the target pad from the pad dropdown.</li><li>Select the target layer from the layer dropdown (<code>Layer 1</code> – <code>Layer 4</code>).</li><li>Click <strong>RECORD INPUT</strong> — recording starts immediately from the monitored input.</li><li>Click <strong>STOP RECORD</strong> to end capture and commit to the selected pad/layer.</li></ol>
+<p>The recording indicator (●) shows red when active.</p>
+<h3 id="capture-last-retrospective-capture">Capture Last (Retrospective Capture)<a class="anchor" href="#capture-last-retrospective-capture" aria-label="Link to this section">#</a></h3>
+<p>Captures the last N seconds of already-buffered input audio without needing to press record in advance.</p>
+<ol><li>Set the capture length (1–60 seconds).</li><li>Click <strong>CAPTURE LAST</strong>.</li></ol>
+<p><strong>Layer fallback:</strong> if the target layer already has a sample, RXB automatically finds the next empty layer (scanning forward, then wrapping). A status message confirms: <em>&quot;Layer 1 occupied — placed on Layer 2.&quot;</em> The layer selector updates to reflect the actual destination.</p>
+<p><strong>Requirement:</strong> monitoring must be active and audio must have passed through the input path before clicking CAPTURE LAST.</p>
+<h3 id="resample-mix">Resample Mix<a class="anchor" href="#resample-mix" aria-label="Link to this section">#</a></h3>
+<p>Captures the current master mix output (everything playing together) and commits it as a new sample.</p>
+<ol><li>Set the bar length (1–8 bars).</li><li>Click <strong>RESAMPLE MIX</strong>.</li></ol>
+<p>The capture runs for exactly the specified number of bars at the current BPM, then commits to the selected pad/layer. Internal resample, live input recording, and auto-sampling are mutually exclusive.</p>
+<h3 id="status-error-messages">Status / Error Messages<a class="anchor" href="#status-error-messages" aria-label="Link to this section">#</a></h3>
+<p>All status and error messages from this card appear inline in red text directly inside the card. Common messages:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>MESSAGE</th><th>CAUSE</th></tr></thead>
+<tbody>
+<tr><td>No retrospective audio available yet</td><td>Monitoring was not active before clicking CAPTURE LAST</td></tr>
+<tr><td>Layer N occupied — placed on Layer N</td><td>Target layer had a sample; placed on next available layer</td></tr>
+<tr><td>Auto-sampler range trimmed to N note(s)</td><td>Fewer pads available than notes requested</td></tr>
+<tr><td>Select a MIDI sync output first</td><td>AUTO-SAMPLE requires a MIDI output configured in MIDI → SYNC STACK</td></tr>
+</tbody>
+</table></div>
+<hr>
+<h2 id="20-auto-sampler">20. Auto-Sampler<a class="anchor" href="#20-auto-sampler" aria-label="Link to this section">#</a></h2>
+<p>The Auto-Sampler automates the process of building a multi-sample keygroup from an external synthesizer or instrument. It sends MIDI notes out through your MIDI sync output, records each note as a sample, assigns each capture to a successive pad, and creates a full keygroup multi-sample map automatically.</p>
+<h3 id="requirements">Requirements<a class="anchor" href="#requirements" aria-label="Link to this section">#</a></h3>
+<ul><li>A <strong>MIDI sync output</strong> must be selected in <strong>MIDI → SYNC STACK → MIDI OUTPUT</strong>.</li><li>The selected MIDI output must be connected to the instrument you want to sample.</li><li>Input monitoring must be active (or will be started automatically).</li><li>Sufficient empty pads must be available starting from the selected pad.</li></ul>
+<h3 id="workflow">Workflow<a class="anchor" href="#workflow" aria-label="Link to this section">#</a></h3>
+<ol><li>Connect your synthesizer/instrument MIDI input to a MIDI interface.</li><li>In <strong>MIDI → SYNC STACK</strong>, select the MIDI output connected to the instrument.</li><li>In the <strong>XPAD</strong> or <strong>SAMPLE</strong> tab, open the <strong>Record Input to Pad</strong> card.</li><li>Select the <strong>start pad</strong> and <strong>layer</strong> where captures should begin.</li><li>Click <strong>SHOW SETTINGS</strong> to configure the note range and timing.</li><li>Click <strong>START AUTO-SAMPLE</strong>.</li><li>RXB will automatically: send Note On → wait (Hold) → send Note Off → wait (Tail) → capture → move to next pad.</li><li>When complete, the anchor pad is set to Keygroup mode with a full multi-sample zone map.</li></ol>
+<p><strong>Figure 20.1</strong> illustrates the Auto-Sampler configuration fields.</p>
+<figure class="fig"><img src="images/21_auto_sampler_settings_expanded.png" alt="Figure 20.1 — Auto-Sampler settings, expanded." loading="lazy"><figcaption><strong>Figure 20.1</strong> — Auto-Sampler settings, expanded.</figcaption></figure>
+<h3 id="settings">Settings<a class="anchor" href="#settings" aria-label="Link to this section">#</a></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>SETTING</th><th>DESCRIPTION</th><th>DEFAULT</th></tr></thead>
+<tbody>
+<tr><td>NOTE START</td><td>Lowest MIDI note to sample (0–127, shown with note name)</td><td>36 (C1)</td></tr>
+<tr><td>NOTE END</td><td>Highest MIDI note to sample (0–127, shown with note name)</td><td>72 (C4)</td></tr>
+<tr><td>STEP</td><td>Semitone interval between captures (e.g. 3 = every 3 semitones)</td><td>3</td></tr>
+<tr><td>VELOCITY</td><td>MIDI velocity sent for each Note On (1–127)</td><td>112</td></tr>
+<tr><td>HOLD</td><td>How long the note is sustained before Note Off (ms)</td><td>1000 ms</td></tr>
+<tr><td>TAIL</td><td>Silence wait after Note Off before ending capture (captures release tail)</td><td>180 ms</td></tr>
+<tr><td>MIDI CHANNEL</td><td>MIDI channel used to send Note On/Off messages</td><td>1</td></tr>
+</tbody>
+</table></div>
+<p><strong>NOTE END can be lower than NOTE START</strong> — the sampler will scan downward in that case.</p>
+<p>The number of captures is limited by the number of pads available from the start pad. If the note range exceeds available pads, the range is trimmed and a status message confirms how many notes were captured.</p>
+<h3 id="stopping-early">Stopping Early<a class="anchor" href="#stopping-early" aria-label="Link to this section">#</a></h3>
+<p>Click <strong>STOP AUTO-SAMPLE</strong> at any time. The current note capture completes before stopping. All captures made so far are committed to their pads.</p>
+<h3 id="result">Result<a class="anchor" href="#result" aria-label="Link to this section">#</a></h3>
+<p>On completion, the anchor pad (first destination pad) is assigned:</p>
+<ul><li>All captured samples as multi-sample zones with per-zone MIDI root keys.</li><li>Keygroup mode is activated automatically.</li><li>The pad is selected and ready to play chromatically across the captured range.</li></ul>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>Set HOLD to match the sustain of the instrument (longer for pads/strings, shorter for plucks), and TAIL to at least the release time so reverb and decay tails are captured cleanly.</p></div></aside>
+<hr>
+<h2 id="21-step-performance-editing">21. Step Performance Editing<a class="anchor" href="#21-step-performance-editing" aria-label="Link to this section">#</a></h2>
+<p>Step performance controls add per-step expression data to the sequencer grid, separate from the basic on/off pattern.</p>
+<h3 id="access">Access<a class="anchor" href="#access" aria-label="Link to this section">#</a></h3>
+<p>Step performance editing is available in the sequencer <strong>GRID</strong> panel. Select a mode using the <strong>VEL</strong>, <strong>PRB</strong>, or <strong>RAT</strong> buttons in the sequencer transport strip. With a mode active, click or drag directly on any step cell to set per-step values inline on the grid. Per-step probability and ratchet overrides are shown as small indicators inside active step cells (<code>P xx%</code> and <code>xN</code>).</p>
+<p>The step-edit controls are shown in <strong>Figure 21.1</strong>.</p>
+<figure class="fig"><img src="images/22_grid_vel_prb_rat_modes.png" alt="Figure 21.1 — STEP EDIT modes and the step strip they act on." loading="lazy"><figcaption><strong>Figure 21.1</strong> — STEP EDIT modes and the step strip they act on.</figcaption></figure>
+<h3 id="edit-modes">Edit Modes<a class="anchor" href="#edit-modes" aria-label="Link to this section">#</a></h3>
+<p>Select a mode using the mode buttons in the sequencer transport strip:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>MODE</th><th>WHAT IT CONTROLS</th></tr></thead>
+<tbody>
+<tr><td><strong>VEL</strong></td><td>Per-step velocity and pan. Drag vertically to adjust velocity, horizontally to adjust pan (–1 to +1). Click to toggle the step on/off</td></tr>
+<tr><td><strong>PRB</strong></td><td>Per-step probability (0–100 %). Click to cycle through preset values; Shift+click to clear the override. Steps with PRB &lt; 100 % may not trigger on every pass</td></tr>
+<tr><td><strong>RAT</strong></td><td>Per-step ratchet (1–8). Sets how many times the step fires within its grid slot. Click to cycle through values; Shift+click to clear the override</td></tr>
+</tbody>
+</table></div>
+<p>Right-click any step cell to clear its PRB and RAT overrides in one action.</p>
+<h3 id="editing-values">Editing Values<a class="anchor" href="#editing-values" aria-label="Link to this section">#</a></h3>
+<p>Click and drag on a step cell to set its value. The <strong>CLR</strong> button in the sequencer transport strip resets all PRB and RAT overrides for the current pad on the active bar.</p>
+<h3 id="step-perf-surface-global-pad-defaults">Step Perf Surface (Global Pad Defaults)<a class="anchor" href="#step-perf-surface-global-pad-defaults" aria-label="Link to this section">#</a></h3>
+<p>The <strong>STEP PERF SURFACE</strong> panel shows per-pad global defaults that apply whenever a step has no per-step override set:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>KNOB</th><th>WHAT IT SETS</th></tr></thead>
+<tbody>
+<tr><td><strong>PROB</strong></td><td>Default trigger probability (0–100 %) for all steps on this pad</td></tr>
+<tr><td><strong>RATC</strong></td><td>Default ratchet count (1–8) for all steps on this pad</td></tr>
+<tr><td><strong>HUM</strong></td><td>Humanize — random timing offset per step (0–40 ms)</td></tr>
+</tbody>
+</table></div>
+<h3 id="midi-learn-targets">MIDI Learn Targets<a class="anchor" href="#midi-learn-targets" aria-label="Link to this section">#</a></h3>
+<p>Step performance targets can be assigned to MIDI controller knobs via <strong>MIDI → MIDI LEARN (USER LAYER)</strong>:</p>
+<ul><li><code>STEP PERF SURFACE KNOBS</code>: Prob, Ratchet, Humanize (global pad defaults)</li><li><code>STEP EDIT MODE</code>: VEL, RPB, RAT (selects the active edit mode)</li></ul>
+<hr>
+<h2 id="22-arpeggiator-keygroup-mode">22. Arpeggiator (Keygroup Mode)<a class="anchor" href="#22-arpeggiator-keygroup-mode" aria-label="Link to this section">#</a></h2>
+<p>When <strong>KEYGRP</strong> mode is active and transport is playing, RXB includes a basic arpeggiator that triggers when multiple keyboard keys are held.</p>
+<h3 id="enabling">Enabling<a class="anchor" href="#enabling" aria-label="Link to this section">#</a></h3>
+<p>The <strong>ARP</strong> toggle appears in the MAIN tab view when keygroup mode is active. Enable it to activate arpeggiator behaviour.</p>
+<p>See <strong>Figure 22.1</strong> for the ARP control.</p>
+<figure class="fig"><img src="images/23_main_keygrp_arp_toggle.png" alt="Figure 22.1 — Arpeggiator toggle in keygroup mode." loading="lazy"><figcaption><strong>Figure 22.1</strong> — Arpeggiator toggle in keygroup mode.</figcaption></figure>
+<h3 id="how-it-works">How It Works<a class="anchor" href="#how-it-works" aria-label="Link to this section">#</a></h3>
+<ul><li>Hold two or more keys on the computer keyboard (pad trigger keys).</li><li>While playing, RXB cycles through the held notes in sequence, one per step.</li><li>The arpeggiator speed is tied to the sequencer BPM — one note per step at current tempo.</li><li>Release all keys to stop the arpeggio.</li></ul>
+<h3 id="notes">Notes<a class="anchor" href="#notes" aria-label="Link to this section">#</a></h3>
+<ul><li>The arpeggiator uses the scale/root/octave settings from the KEYGRP tab.</li><li>Velocity follows the pad's current velocity setting.</li><li>The arpeggiator is deactivated when keygroup mode is turned off. Held keys are cleared automatically.</li></ul>
+<hr>
+<h2 id="23-fx-rack-reference">23. FX Rack Reference<a class="anchor" href="#23-fx-rack-reference" aria-label="Link to this section">#</a></h2>
+<h3 id="plugin-browser">Plugin Browser<a class="anchor" href="#plugin-browser" aria-label="Link to this section">#</a></h3>
+<p>The <strong>PLUGIN BROWSER</strong> sidebar (left side of the FXRACK tab) lists all available effect modules. Click a module name to load it into the active effect slot. A loaded module shows an <strong>INSERTED</strong> badge. Click again to unload.</p>
+<p>The five built-in send modules:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>MODULE</th><th>SHORT NAME</th><th>CHARACTER</th></tr></thead>
+<tbody>
+<tr><td>Granular Bloom</td><td>GRN</td><td>Granular texture, diffusion, bloom movement</td></tr>
+<tr><td>Nebula Verb</td><td>VRB</td><td>Hybrid reverb — room, hall, plate textures</td></tr>
+<tr><td>Vector Echo</td><td>ECH</td><td>Stereo delay with modulation and routing variants</td></tr>
+<tr><td>Bedroom Air</td><td>AIR</td><td>Vocal doubler and air enhancement chain</td></tr>
+<tr><td>Psychedelic Vox</td><td>PSY</td><td>Slap / echo / swirl vocal space chain</td></tr>
+</tbody>
+</table></div>
+<p>The FX Rack is shown in <strong>Figure 23.1</strong>.</p>
+<figure class="fig"><img src="images/24_fxrack_browser_parameters.png" alt="Figure 23.1 — FX Rack browser and module parameters." loading="lazy"><figcaption><strong>Figure 23.1</strong> — FX Rack browser and module parameters.</figcaption></figure>
+<h3 id="pad-sends">Pad Sends<a class="anchor" href="#pad-sends" aria-label="Link to this section">#</a></h3>
+<p>The <strong>PAD SENDS</strong> card shows five send knobs for the currently selected pad (shown as <code>Pxx</code> in the card header). Each knob sets how much of that pad's output is sent to the corresponding FX module.</p>
+<ul><li>Turning a send knob to zero removes that pad from the effect entirely.</li><li>Send values are saved per pad and persist with the project.</li></ul>
+<h3 id="effect-parameters">Effect Parameters<a class="anchor" href="#effect-parameters" aria-label="Link to this section">#</a></h3>
+<p>Selecting a module in the browser opens its parameter controls in the main area. Parameters vary by module — use the LCD readout to monitor live values. Each module also has a <strong>preset selector</strong> dropdown and a <strong>bypass toggle</strong>.</p>
+<h3 id="xy-write-mode">XY WRITE Mode<a class="anchor" href="#xy-write-mode" aria-label="Link to this section">#</a></h3>
+<p>The <strong>XY WRITE</strong> toggle maps the XY pad position to effect parameter modulation. When active, moving the XY pad on the selected XPAD pad writes modulation values to the loaded effect in real time.</p>
+<hr>
+<h2 id="24-keyboard-shortcuts-complete-reference">24. Keyboard Shortcuts — Complete Reference<a class="anchor" href="#24-keyboard-shortcuts-complete-reference" aria-label="Link to this section">#</a></h2>
+<div class="table-wrap"><table>
+<thead><tr><th>SHORTCUT</th><th>ACTION</th></tr></thead>
+<tbody>
+<tr><td><code>L</code></td><td>Enter Layout Mode</td></tr>
+<tr><td><code>Enter</code> (in Layout Mode)</td><td>Lock and save current layout</td></tr>
+<tr><td><code>Escape</code> (in Layout Mode)</td><td>Cancel layout changes</td></tr>
+<tr><td><code>Ctrl + Z</code> / <code>Cmd + Z</code></td><td>Undo</td></tr>
+<tr><td><code>Ctrl + Y</code> / <code>Cmd + Y</code></td><td>Redo</td></tr>
+<tr><td><code>Ctrl + Shift + Z</code> / <code>Cmd + Shift + Z</code></td><td>Redo (alternate)</td></tr>
+<tr><td><code>Shift + X</code></td><td>Clear backing track</td></tr>
+<tr><td><code>1 2 3 4</code></td><td>Trigger pads 1–4</td></tr>
+<tr><td><code>Q W E R</code></td><td>Trigger pads 5–8</td></tr>
+<tr><td><code>A S D F</code></td><td>Trigger pads 9–12</td></tr>
+<tr><td><code>Z X C V</code></td><td>Trigger pads 13–16</td></tr>
+</tbody>
+</table></div>
+<p>Keyboard pad triggering is suppressed while a text input field is focused.</p>
+<p>Undo/Redo history depth supports up to <code>40</code> states. Redo is available via <code>Ctrl+Y</code> or <code>Ctrl+Shift+Z</code>.</p>
+<hr>
+<h2 id="25-macros">25. Macros<a class="anchor" href="#25-macros" aria-label="Link to this section">#</a></h2>
+<p>The Macro system provides four assignable control slots, each driving any number of <strong>pad parameters</strong>, <strong>per-pad FX sends</strong>, or <strong>FX module parameters</strong>. Macro mapping (what a macro controls) lives in the dedicated <strong>MACRO</strong> tab. Optional MIDI-CC control (what external controller knob drives the macro) is configured separately in the <strong>MIDI</strong> tab.</p>
+<h3 id="overview">Overview<a class="anchor" href="#overview" aria-label="Link to this section">#</a></h3>
+<p>Four macro slots (<code>MACRO 1</code> – <code>MACRO 4</code>) are always available. Each macro:</p>
+<ul><li>Has a live value slider (<code>0.00</code> – <code>1.00</code>) on the MACRO tab that moves all linked targets at once.</li><li>Can be renamed (click the macro name field).</li><li>Holds any number of targets, each with its own <strong>AMOUNT</strong> (–1 … +1) that scales and can invert the macro's influence.</li><li>Can optionally be driven by a MIDI CC set per controller profile (see §11 Performance MIDI Controller Library).</li></ul>
+<h3 id="macro-tab-layout">MACRO Tab Layout<a class="anchor" href="#macro-tab-layout" aria-label="Link to this section">#</a></h3>
+<p>The <strong>MACRO</strong> tab is split into two columns:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>PANEL</th><th>CONTENT</th></tr></thead>
+<tbody>
+<tr><td><strong>MACRO CONTROLS</strong> (left)</td><td>Four stacked slots. Each row: name input, <strong>EDIT</strong> (selects this slot's targets on the right), <strong>LEARN</strong> (arms target capture), macro value slider, and <code>Targets: N</code> count. The currently selected slot has a red border.</td></tr>
+<tr><td><strong>{MACRO} TARGETS</strong> (right)</td><td>Target list for the selected macro, plus <strong>CLEAR TARGETS</strong>. Each row shows the target label, an <strong>AMOUNT</strong> slider (<code>-1.00</code> … <code>+1.00</code>), and an <strong>X</strong> remove button. Empty state reads <em>&quot;NO TARGETS LEARNED&quot;</em>.</td></tr>
+</tbody>
+</table></div>
+<p><strong>Figure 25.1</strong> illustrates the two-column macro layout.</p>
+<figure class="fig"><img src="images/25.0_macro_tab_two_column.png" alt="Figure 25.1 — MACRO tab: macro controls and learned targets." loading="lazy"><figcaption><strong>Figure 25.1</strong> — MACRO tab: macro controls and learned targets.</figcaption></figure>
+<h3 id="assigning-targets-learning">Assigning Targets (Learning)<a class="anchor" href="#assigning-targets-learning" aria-label="Link to this section">#</a></h3>
+<ol><li>Open the <strong>MACRO</strong> tab.</li><li>In <strong>MACRO CONTROLS</strong>, click <strong>LEARN</strong> on the macro slot you want to map. LEARN lights red and the slot is armed.</li><li>Move any eligible control in another tab — a pad knob, a per-pad FX send, or an FX module parameter. The captured control is added as a target on that macro.</li><li>Click <strong>LEARN</strong> again to disarm.</li></ol>
+<p>Learning the same control a second time updates (rather than duplicates) the target. Switch the visible target list by clicking <strong>EDIT</strong> on a different slot.</p>
+<h3 id="adjusting-and-removing-targets">Adjusting and Removing Targets<a class="anchor" href="#adjusting-and-removing-targets" aria-label="Link to this section">#</a></h3>
+<ul><li><strong>AMOUNT</strong> (<code>-1.00</code> … <code>+1.00</code>) — scales the macro's influence on that target. Negative values invert the direction (e.g. macro up → parameter down).</li><li><strong>X</strong> — removes a single target.</li><li><strong>CLEAR TARGETS</strong> — removes all targets for the currently selected macro.</li></ul>
+<h3 id="supported-target-types">Supported Target Types<a class="anchor" href="#supported-target-types" aria-label="Link to this section">#</a></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>TYPE</th><th>EXAMPLE LABEL</th><th>SOURCE</th></tr></thead>
+<tbody>
+<tr><td>Pad parameter</td><td><code>PAD 13 :: filter</code>, <code>PAD 13 :: drive</code>, <code>PAD 13 :: atDepth</code></td><td>Any pad knob on MAIN / ENV / FX / COMP surfaces</td></tr>
+<tr><td>Per-pad FX send</td><td><code>PAD 13 :: SEND vrb</code></td><td>Pad send knob in the FXRACK <code>PAD SENDS</code> card</td></tr>
+<tr><td>FX module parameter</td><td><code>FX grn :: {param}</code></td><td>Any parameter on a loaded FX Rack module</td></tr>
+</tbody>
+</table></div>
+<p>Transport, tempo, swing, and step-perf globals are <strong>not</strong> macro targets in the current build — those are assigned via MIDI Learn (see §11), not via the MACRO tab.</p>
+<h3 id="midi-cc-control-optional">MIDI CC Control (Optional)<a class="anchor" href="#midi-cc-control-optional" aria-label="Link to this section">#</a></h3>
+<p>A macro slot can be driven by an external controller CC:</p>
+<ol><li>Go to <strong>MIDI → PERFORMANCE MIDI CONTROLLER → MACRO CC</strong> and set the CC number for each macro slot. Defaults vary by controller profile (Launchkey: <code>21–24</code>, Push: <code>14–17</code>, Move: <code>71–74</code>).</li><li>Incoming CC values on the matching channel scale the macro value in real time, driving every target as if the on-screen slider were moved.</li></ol>
+<p>The macro CC fields are shown in <strong>Figure 25.2</strong>.</p>
+<figure class="fig"><img src="images/25_midi_macro_cc_assignments.png" alt="Figure 25.2 — Macro CC assignments (M1-M4)." loading="lazy"><figcaption><strong>Figure 25.2</strong> — Macro CC assignments (M1-M4).</figcaption></figure>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>Use negative AMOUNT values on selected targets to create morphs that open one sound while closing another from the same macro sweep.</p></div></aside>
+<hr>
+<h2 id="26-warp-time-stretch-reference">26. Warp / Time-Stretch Reference<a class="anchor" href="#26-warp-time-stretch-reference" aria-label="Link to this section">#</a></h2>
+<h3 id="location">Location<a class="anchor" href="#location" aria-label="Link to this section">#</a></h3>
+<p><code>SAMPLE</code> tab → <strong>STRETCH</strong> card (bottom-right of the edit surface)</p>
+<h3 id="controls">Controls<a class="anchor" href="#controls" aria-label="Link to this section">#</a></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>CONTROL</th><th>DESCRIPTION</th></tr></thead>
+<tbody>
+<tr><td>MODE</td><td><strong>Repitch</strong> — time and pitch change together (classic sampler behaviour). <strong>B-PRSV</strong> (Beat Preserve) — time changes while pitch is maintained</td></tr>
+<tr><td>RATIO</td><td>Stretch factor from <code>0.25×</code> to <code>4.00×</code>. <code>1.00</code> = no change. Default is <code>1.00</code></td></tr>
+<tr><td>APPLY STRETCH</td><td>Commits the stretch to the sample buffer (destructive — use Undo to reverse)</td></tr>
+</tbody>
+</table></div>
+<p>See <strong>Figure 26.1</strong> for the stretch controls.</p>
+<figure class="fig"><img src="images/26_sample_stretch_card.png" alt="Figure 26.1 — SAMPLE tab: the time-stretch card." loading="lazy"><figcaption><strong>Figure 26.1</strong> — SAMPLE tab: the time-stretch card.</figcaption></figure>
+<h3 id="choosing-a-mode">Choosing a Mode<a class="anchor" href="#choosing-a-mode" aria-label="Link to this section">#</a></h3>
+<ul><li><strong>Repitch</strong> is the most transparent for percussive sounds and natural samples. Slower playback lowers pitch; faster raises it. Use for vinyl-style effects or tempo matching that tolerates pitch shift.</li><li><strong>Beat Preserve</strong> maintains the original pitch while changing duration. Best for melodic loops and sustained pads that need to match a new tempo.</li></ul>
+<h3 id="stretch-workflow">Stretch Workflow<a class="anchor" href="#stretch-workflow" aria-label="Link to this section">#</a></h3>
+<ol><li>Load a sample into the SAMPLE view.</li><li>Set RATIO to the desired stretch factor (e.g. <code>0.75</code> for 75% of original length).</li><li>Preview playback to evaluate the result.</li><li>Click <strong>APPLY STRETCH</strong> to commit. The waveform updates immediately.</li><li>Use <strong>Ctrl+Z</strong> to undo if the result is not acceptable.</li></ol>
+<hr>
+<h2 id="27-song-mode-and-arranger-extended-reference">27. Song Mode and Arranger — Extended Reference<a class="anchor" href="#27-song-mode-and-arranger-extended-reference" aria-label="Link to this section">#</a></h2>
+<h3 id="song-mode-playlist">Song Mode Playlist<a class="anchor" href="#song-mode-playlist" aria-label="Link to this section">#</a></h3>
+<p>Song Mode plays back a playlist of steps in sequence. Each step defines:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>FIELD</th><th>DESCRIPTION</th></tr></thead>
+<tbody>
+<tr><td>SCENE</td><td>Which scene pattern plays (1–8)</td></tr>
+<tr><td>BARS</td><td>How many bars the section plays before advancing. A <code>½</code> marker appears beside the label on odd lengths</td></tr>
+<tr><td>½ BAR</td><td>Which bar of the pattern the trailing odd bar plays — <code>1ST</code> or <code>LAST</code>. Greyed out on even-length sections</td></tr>
+<tr><td>BPM</td><td><code>AUTO</code> uses the global BPM; enter a value to override per step</td></tr>
+<tr><td>BANK</td><td><code>AUTO</code> keeps the current bank; A/B/C/D forces a bank switch</td></tr>
+<tr><td>SOURCE</td><td><strong>MAIN</strong> and/or <strong>KEYGRP</strong> toggles — controls which voices are active for this step</td></tr>
+</tbody>
+</table></div>
+<p>The panel header shows a running total, e.g. <code>4 sections · 15 bars</code>.</p>
+<h3 id="exporting-the-whole-arrangement">Exporting the Whole Arrangement<a class="anchor" href="#exporting-the-whole-arrangement" aria-label="Link to this section">#</a></h3>
+<p>Location: <code>SONG</code> view → header → <strong>EXPORT ARRANGEMENT</strong> <code>WAV</code> / <code>MP3</code></p>
+<p>This is the &quot;give me my song as a file&quot; button. Press it and RXB rewinds to the top of the arrangement, plays the whole thing, stops itself at the end, and saves the result. You do not have to sit there starting and stopping a recorder.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>WHERE IT GOES</th><th>WHEN</th></tr></thead>
+<tbody>
+<tr><td><code>Bounces/</code> inside your project folder, named <code>arrangement-&lt;timestamp&gt;.wav</code></td><td>When the project is a linked folder</td></tr>
+<tr><td>Your downloads folder</td><td>Otherwise</td></tr>
+</tbody>
+</table></div>
+<p>Both buttons are greyed out until <code>SONG MODE</code> is <code>ACTIVE</code> and the playlist has at least one section — hover to see which of the two is missing.</p>
+<p>While it runs, the header shows elapsed time, total time, and which section is playing. <code>CANCEL</code> stops it immediately and saves nothing.</p>
+<aside class="callout callout--important"><p class="callout__label">IMPORTANT</p><div class="callout__body"><p>This is a <strong>real-time bounce</strong>: RXB records its own output while the song plays, so <strong>a three-minute song takes three minutes to export</strong>. That is not a hang. The upside is that the file is exactly what you heard — your mix buses, per-pad bus assignments, master EQ, compressor and limiter are all in it, because it is the same audio path, not a separate render.</p></div></aside>
+<p>Leave the app in the foreground and avoid switching projects or editing the arrangement while it runs.</p>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>Set the master and bus levels the way you want the finished track to sound <em>before</em> you export, and watch the DELIVERY METERING card in the <code>MIXER</code> view during a normal playthrough first. What that meter reads is what your exported file will read — there is no separate mastering stage between playback and the bounce.</p></div></aside>
+<p>The export controls are shown in <strong>Figure 27.1</strong>.</p>
+<figure class="fig"><img src="images/39_song_export_arrangement.png" alt="Figure 27.1 — Song Mode: arrangement export controls." loading="lazy"><figcaption><strong>Figure 27.1</strong> — Song Mode: arrangement export controls.</figcaption></figure>
+<h3 id="odd-length-sections-turnarounds-and-pickups">Odd-Length Sections, Turnarounds and Pickups<a class="anchor" href="#odd-length-sections-turnarounds-and-pickups" aria-label="Link to this section">#</a></h3>
+<p>A sequencer pattern is 32 steps — 8 beats, or <strong>two bars</strong> of 4/4. Sections built from whole pattern loops can therefore only ever be an even number of bars. Setting <strong>BARS</strong> to an odd number ends the section halfway through a loop, which is what lets you write a 7-bar verse or a single-bar lead-in.</p>
+<p>When a section runs an odd number of bars, the <strong>½ BAR</strong> toggle decides what that final bar plays:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>SETTING</th><th>WHAT YOU HEAR</th></tr></thead>
+<tbody>
+<tr><td><code>1ST</code></td><td>The trailing bar repeats the bar the section opened on — the section is simply cut short</td></tr>
+<tr><td><code>LAST</code></td><td>The trailing bar plays the pattern's <strong>second</strong> bar instead — its fill or turnaround</td></tr>
+</tbody>
+</table></div>
+<p><strong>Building a turnaround:</strong> set a section to an odd length (say 7 bars) and switch ½ BAR to <code>LAST</code>. Bars 1–6 play the pattern normally and the seventh plays the pattern's second bar, so the section ends on its fill rather than restarting.</p>
+<p><strong>Building a pickup:</strong> add a section of <strong>1 bar</strong> with ½ BAR set to <code>LAST</code>, and place it immediately before the section it leads into. The single bar plays that pattern's second bar as a lead-in.</p>
+<p>Even-length sections behave exactly as before — the toggle is greyed out because it has nothing to decide.</p>
+<aside class="callout callout--important"><p class="callout__label">IMPORTANT</p><div class="callout__body"><p>A project containing an odd-length section, opened in a build older than 2026-08-08, will play that section one bar short. Older builds round the stored length down to a whole loop.</p></div></aside>
+<p><strong>Figure 27.2</strong> illustrates a built-out song playlist.</p>
+<figure class="fig"><img src="images/27_song_mode_playlist.png" alt="Figure 27.2 — Song Mode playlist with multiple sections." loading="lazy"><figcaption><strong>Figure 27.2</strong> — Song Mode playlist with multiple sections.</figcaption></figure>
+<h3 id="clip-launcher-workflow">Clip Launcher Workflow<a class="anchor" href="#clip-launcher-workflow" aria-label="Link to this section">#</a></h3>
+<p>The Clip Launcher stores up to 8 clip slots. Each slot can hold a scene capture and carry its own MAIN/KEYGRP source state.</p>
+<div class="table-wrap"><table>
+<thead><tr><th>BUTTON</th><th>ACTION</th></tr></thead>
+<tbody>
+<tr><td><code>CAP</code></td><td>Captures the current scene pattern into this clip slot</td></tr>
+<tr><td><code>GO</code></td><td>Queues this clip for launch — plays at the next bar boundary (quantised)</td></tr>
+</tbody>
+</table></div>
+<p>The clip launcher is shown in <strong>Figure 27.3</strong>.</p>
+<figure class="fig"><img src="images/28_song_clip_launcher.png" alt="Figure 27.3 — Clip launcher with populated slots." loading="lazy"><figcaption><strong>Figure 27.3</strong> — Clip launcher with populated slots.</figcaption></figure>
+<aside class="callout callout--important"><p class="callout__label">IMPORTANT</p><div class="callout__body"><p>After changing the song structure, stop and restart transport once to ensure the latest transport plan is loaded before relying on playback order.</p></div></aside>
+<h3 id="mixer-and-backing-track-visual-reference">Mixer and Backing Track Visual Reference<a class="anchor" href="#mixer-and-backing-track-visual-reference" aria-label="Link to this section">#</a></h3>
+<h4 id="mixer-fader-grip-and-meter-standard">Mixer Fader Grip and Meter Standard<a class="anchor" href="#mixer-fader-grip-and-meter-standard" aria-label="Link to this section">#</a></h4>
+<p>The MIXER gain slider uses a small hollow triangle grip positioned to the left of the level meter so your finger does not cover the meter markings while dragging.</p>
+<ul><li>Mixer meter track width standard: <code>6 px</code></li><li>Mixer slider grip: shared hollow triangle style</li><li>Mixer visuals use shared token-based color and sizing standards</li></ul>
+<h4 id="xpad-keygrp-follow-behavior">XPAD / KEYGRP Follow Behavior<a class="anchor" href="#xpad-keygrp-follow-behavior" aria-label="Link to this section">#</a></h4>
+<p>When working in <strong>KEYGRP</strong> mode, the XPAD view follows the currently selected active pad. The layer labels, sound editor, and preview target move with the active keygroup pad selection.</p>
+<h4 id="backing-track-transport-layout">Backing Track Transport Layout<a class="anchor" href="#backing-track-transport-layout" aria-label="Link to this section">#</a></h4>
+<p>The backing-track header is split into two rows for readability:</p>
+<ul><li>Top row: core backing-track transport and lock controls</li><li>Second row: <code>LVL</code>, <code>ZOOM</code>, <code>BT BPM</code>, and status/readout controls</li></ul>
+<h4 id="backing-track-scrollbar-standard">Backing Track Scrollbar Standard<a class="anchor" href="#backing-track-scrollbar-standard" aria-label="Link to this section">#</a></h4>
+<p>Where horizontal overflow is required, RXB uses a shared dark <code>14 px</code> scrollbar style including arrow-style ends.</p>
+<h4 id="lvl-zoom-controls">LVL / ZOOM Controls<a class="anchor" href="#lvl-zoom-controls" aria-label="Link to this section">#</a></h4>
+<p>The <code>LVL</code> and <code>ZOOM</code> section uses the standard tokenized workstation control shell.</p>
+<hr>
+<h3 id="numeric-scrub-controls-horizontal-popout">Numeric Scrub Controls — Horizontal Popout<a class="anchor" href="#numeric-scrub-controls-horizontal-popout" aria-label="Link to this section">#</a></h3>
+<p>All numeric scrub controls (BPM, SWING, BT BPM, STRETCH RATIO) use a compact <strong>horizontal popout</strong> panel that slides out to the side of the scrub button when activated.</p>
+<aside class="callout callout--note"><p class="callout__label">How to use:</p><div class="callout__body"><p></p></div></aside>
+<ol><li>Click the scrub button (small pill icon) next to any numeric field — the horizontal popout appears immediately.</li><li>Drag left/right across the track bar to sweep the value across the full range.</li><li>Click the <strong>◄</strong> arrow to step the value down by one increment.</li><li>Click the <strong>►</strong> arrow to step the value up by one increment.</li><li>Click outside the popout or press <strong>Escape</strong> to dismiss.</li></ol>
+<aside class="callout callout--note"><p class="callout__label">Visual features:</p><div class="callout__body"><p></p></div></aside>
+<ul><li>Accent-red fill bar shows position across the range at a glance.</li><li>Glowing red handle marks the current value precisely.</li><li>Live value readout sits inline to the right of the track.</li></ul>
+<p><strong>STRETCH RATIO note:</strong> the STRETCH RATIO scrub in the SAMPLE tab opens to the <strong>left</strong> (the popup is at the right edge of the panel). All other controls open to the <strong>right</strong>.</p>
+<p>See <strong>Figure 27.4</strong> for the BPM scrub control.</p>
+<figure class="fig"><img src="images/29_bpm_scrub_popout.png" alt="Figure 27.4 — BPM scrub popout." loading="lazy"><figcaption><strong>Figure 27.4</strong> — BPM scrub popout.</figcaption></figure>
+<hr>
+<h3 id="per-pad-insert-compressor-comp-tab">Per-Pad Insert Compressor (COMP Tab)<a class="anchor" href="#per-pad-insert-compressor-comp-tab" aria-label="Link to this section">#</a></h3>
+<p>A per-pad insert compressor is available on the <strong>PAD CONTROL SURFACE</strong> and the <strong>XPAD</strong> per-layer sound editor.</p>
+<h4 id="comp-tab-controls">COMP Tab Controls<a class="anchor" href="#comp-tab-controls" aria-label="Link to this section">#</a></h4>
+<div class="table-wrap"><table>
+<thead><tr><th>CONTROL</th><th>FUNCTION</th></tr></thead>
+<tbody>
+<tr><td><code>AMOUNT</code></td><td>Compressor depth (<code>0.00</code> = bypass, <code>1.00</code> = full compression)</td></tr>
+<tr><td><code>RATIO</code></td><td>Compression ratio (<code>1.0:1</code> – <code>6.0:1</code>)</td></tr>
+<tr><td><code>ATK</code></td><td>Compressor attack time (<code>1–30 ms</code>)</td></tr>
+</tbody>
+</table></div>
+<p>Setting <code>AMOUNT</code> to <code>0.00</code> bypasses the compressor entirely — no compressor node is created and there is zero CPU overhead on that pad path.</p>
+<p>Signal-chain position: after the drive/saturation stage and filter, before pad volume and routing. This makes the compressor an insert on the pad voice rather than a send effect.</p>
+<p>Settings are saved per pad and persist with the project. Project files without compressor data load with <code>AMOUNT: 0.00</code> (bypass) automatically.</p>
+<p>The <strong>PAD CONTROL SURFACE</strong> has five tabs: <strong>MAIN</strong>, <strong>ENV</strong>, <strong>COMP</strong>, <strong>FX</strong>, and <strong>WARP</strong>.</p>
+<p>The compressor controls are shown in <strong>Figure 27.5</strong>.</p>
+<figure class="fig"><img src="images/30_pad_control_surface_comp_tab.png" alt="Figure 27.5 — Pad control surface: COMP tab." loading="lazy"><figcaption><strong>Figure 27.5</strong> — Pad control surface: COMP tab.</figcaption></figure>
+<hr>
+<h3 id="per-pad-scene-profiles">Per-Pad Scene Profiles<a class="anchor" href="#per-pad-scene-profiles" aria-label="Link to this section">#</a></h3>
+<p>Each pad carries 16 independent sound profiles — one per scene slot. Scenes 1–8 and 9–16 each form a bank with an anchor scene (scene 1 and scene 9 respectively).</p>
+<p>Each profile stores the complete sound state for that pad in that scene:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>SECTION</th><th>PARAMETERS</th></tr></thead>
+<tbody>
+<tr><td>MAIN</td><td>Pitch, resonance, filter cutoff, drive, aftertouch depth, aftertouch target</td></tr>
+<tr><td>ENV</td><td>Attack, decay, sustain, release</td></tr>
+<tr><td>COMP</td><td>Compressor amount, ratio, attack</td></tr>
+<tr><td>FX</td><td>Reverb, delay, pan, filter type</td></tr>
+<tr><td>FXRACK</td><td>Per-module send levels (GRN, VRB, ECH, AIR, PSY)</td></tr>
+</tbody>
+</table></div>
+<p>Step performance parameters (probability, ratchet, humanize) are <strong>not</strong> part of scene profiles — they remain global per-pad.</p>
+<h4 id="anchor-scenes-and-sync">Anchor Scenes and Sync<a class="anchor" href="#anchor-scenes-and-sync" aria-label="Link to this section">#</a></h4>
+<ul><li><strong>Anchor scenes</strong> (scene 1 and scene 9) always read directly from their own stored profile (or fall back to pad-level defaults if no profile exists).</li><li><strong>Non-anchor scenes</strong> (2–8 and 10–16) default to <strong>synced</strong> — a synced scene follows the anchor's current values in real time rather than storing its own.</li><li>Syncing is a live link: if you change a parameter on the anchor scene, all synced scenes immediately reflect that change.</li></ul>
+<h4 id="scene-profile-ui">Scene Profile UI<a class="anchor" href="#scene-profile-ui" aria-label="Link to this section">#</a></h4>
+<div class="table-wrap"><table>
+<thead><tr><th>ELEMENT</th><th>DESCRIPTION</th></tr></thead>
+<tbody>
+<tr><td><code>SC {n}</code> badge</td><td>Shows the current scene number in the PAD CONTROL SURFACE header; highlighted blue when the current scene is synced</td></tr>
+<tr><td><code>SYNC TO SCENE 1</code> / <code>SYNC TO SCENE 9</code></td><td>Toggle button (non-anchor scenes only); lit blue when synced. Label reflects the active bank (MAIN or KEYGRP)</td></tr>
+<tr><td>Dimmed content area</td><td>When a scene is synced, the parameter controls are shown at reduced opacity — values are read-only, reflecting the anchor</td></tr>
+<tr><td>RESET buttons</td><td>Available on every tab (MAIN, ENV, FX, COMP, WARP) to reset that tab's values to defaults</td></tr>
+</tbody>
+</table></div>
+<p><strong>Figure 27.6</strong> illustrates the synced, read-only state.</p>
+<figure class="fig"><img src="images/31_pad_control_surface_sc_sync.png" alt="Figure 27.6 — Pad control surface synced to a scene." loading="lazy"><figcaption><strong>Figure 27.6</strong> — Pad control surface synced to a scene.</figcaption></figure>
+<h4 id="creating-and-removing-scene-specific-sounds">Creating and Removing Scene-Specific Sounds<a class="anchor" href="#creating-and-removing-scene-specific-sounds" aria-label="Link to this section">#</a></h4>
+<ul><li><strong>To give a scene its own independent sound:</strong> click the <code>SYNC TO SCENE 1</code> / <code>SYNC TO SCENE 9</code> button on a synced scene. RXB captures the anchor's current values as a starting point and stores them as an independent profile for that scene.</li><li><strong>To re-sync a scene back to the anchor:</strong> click the button again — the profile slot resets to null and the scene follows the anchor live.</li><li>Editing any MAIN/ENV/FX/COMP/FXRACK parameter on an <strong>anchor scene</strong> stores the changes in that anchor's profile slot. Non-anchor synced scenes immediately reflect the change.</li></ul>
+<h4 id="playback-behavior">Playback Behavior<a class="anchor" href="#playback-behavior" aria-label="Link to this section">#</a></h4>
+<ul><li>Live pad hits, sequencer playback, and the arpeggiator all resolve scene profiles consistently — the same sound is used whether a pad is triggered manually or by a sequencer step.</li><li>Switching the active scene during playback immediately pushes resolved compressor parameters to the audio engine for all pads — no retrigger required.</li></ul>
+<aside class="callout callout--important"><p class="callout__label">IMPORTANT</p><div class="callout__body"><p>Editing parameters on a synced (non-anchor) scene does nothing — the controls are locked. Switch the sync off first to create an independent profile, then edit.</p></div></aside>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>Use scene profiles to build variation across your 8 main scenes — same pads, different tones. Scene 1 becomes your reference sound; tweak filter, drive, or reverb on scenes 2–8 for texture shifts between pattern sections.</p></div></aside>
+<hr>
+<h3 id="scene-copy-paste-with-sound-state">Scene Copy/Paste with Sound State<a class="anchor" href="#scene-copy-paste-with-sound-state" aria-label="Link to this section">#</a></h3>
+<p>Scene copy/paste (GRID → scene context menu) captures and transfers the full per-scene sound state alongside the pattern data.</p>
+<p>When you paste a scene, the destination scene receives both:</p>
+<ul><li>The step pattern from the source scene</li><li>The per-pad scene-profile sound settings from the source scene (tune, filter, envelope, compressor, FX sends)</li></ul>
+<p>This ensures pasted scenes sound identical to their source rather than playing with the destination scene's existing pad sounds.</p>
+<hr>
+<h3 id="visual-performance-enhancements">Visual Performance Enhancements<a class="anchor" href="#visual-performance-enhancements" aria-label="Link to this section">#</a></h3>
+<h4 id="xy-layer-flash-on-step-trigger">XY Layer Flash on Step Trigger<a class="anchor" href="#xy-layer-flash-on-step-trigger" aria-label="Link to this section">#</a></h4>
+<p>During sequencer playback, the corner layer tags on each XPAD pad button briefly brighten when a step fires for that pad. Layers with a bilinear XY weight of 0.01 or higher will flash.</p>
+<p>This gives immediate visual feedback about which layer(s) are contributing to each triggered step based on the current XY position:</p>
+<ul><li>Top-left (<code>L1</code>) flashes when the XY position is in the top-left quadrant.</li><li>Top-right (<code>L2</code>) flashes when in the top-right quadrant.</li><li>Bottom-left (<code>L3</code>) and bottom-right (<code>L4</code>) similarly.</li><li>When XY is centered, all four layers flash proportionally.</li></ul>
+<p>The effect uses the existing corner tag display — no separate overlay is added.</p>
+<h4 id="waveform-cursor-step-tracking">Waveform Cursor Step Tracking<a class="anchor" href="#waveform-cursor-step-tracking" aria-label="Link to this section">#</a></h4>
+<p>When the <strong>SAMPLE</strong> view is open and the currently selected pad fires a step during sequencer playback, the waveform cursor animates forward in real time, tracking the playback position through the sample.</p>
+<p>No new audio node is created for the visual update — a RAF-based clock drives the cursor independently of the audio engine, synchronized via the step trigger.</p>
+<hr>
+<h2 id="28-dmx-lighting-art-net-output">28. DMX Lighting (Art-Net Output)<a class="anchor" href="#28-dmx-lighting-art-net-output" aria-label="Link to this section">#</a></h2>
+<p>The <strong>DMX</strong> tab (rightmost in the tab bar) turns RXB into a lighting controller. It transmits a full <strong>DMX512</strong> universe over <strong>Art-Net</strong> (UDP), so you can drive fixtures, dimmers, and LED rigs in sync with your performance. Art-Net output uses the desktop runtime's network layer — it is a <strong>Windows/desktop feature</strong> and is not available in browser-only contexts.</p>
+<p>The full DMX surface is shown in <strong>Figure 28.1</strong>.</p>
+<figure class="fig"><img src="images/43_dmx_full_tab.png" alt="Figure 28.1 — DMX tab: Art-Net output, master, and scene bank." loading="lazy"><figcaption><strong>Figure 28.1</strong> — DMX tab: Art-Net output, master, and scene bank.</figcaption></figure>
+<h3 id="art-net-output-configuration">Art-Net Output Configuration<a class="anchor" href="#art-net-output-configuration" aria-label="Link to this section">#</a></h3>
+<p>The <strong>ART-NET OUTPUT</strong> card configures the network destination:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>CONTROL</th><th>FUNCTION</th><th>DEFAULT</th></tr></thead>
+<tbody>
+<tr><td><code>ENABLED</code></td><td>Master transmit switch. When off, no Art-Net packets are sent (<code>STANDBY</code>)</td><td>Off</td></tr>
+<tr><td><code>TARGET IP</code></td><td>Destination address. Use a fixture/node IP for unicast, or a broadcast address to reach all nodes</td><td><code>255.255.255.255</code> (broadcast)</td></tr>
+<tr><td><code>PORT</code></td><td>UDP port (<code>1–65535</code>)</td><td><code>6454</code> (standard Art-Net)</td></tr>
+<tr><td><code>UNIVERSE (0–15)</code></td><td>DMX universe selector</td><td><code>0</code></td></tr>
+</tbody>
+</table></div>
+<p>The status line beneath confirms the live state — for example <code>LIVE · 12 ch active · U0 → 255.255.255.255:6454</code> when enabled, or <code>STANDBY — enable to transmit Art-Net</code> when off. Any send error from the network layer is appended to this line.</p>
+<p>Frames are sent automatically whenever channel values, the master dimmer, or the enabled state change, and are throttled to roughly <strong>44 frames per second</strong> to keep the network output smooth.</p>
+<aside class="callout callout--important"><p class="callout__label">IMPORTANT</p><div class="callout__body"><p><code>255.255.255.255</code> broadcasts to every device on the local network. For show-critical rigs, set <code>TARGET IP</code> to the specific Art-Net node address to avoid flooding unrelated devices.</p></div></aside>
+<h3 id="master-controls">Master Controls<a class="anchor" href="#master-controls" aria-label="Link to this section">#</a></h3>
+<div class="table-wrap"><table>
+<thead><tr><th>CONTROL</th><th>FUNCTION</th></tr></thead>
+<tbody>
+<tr><td><code>DIMMER</code></td><td>Master intensity (<code>0–255</code>). Every channel value is scaled by <code>dimmer ÷ 255</code> before transmission, so this acts as a grand master fader across the whole universe</td></tr>
+<tr><td><code>BEAT SYNC</code></td><td>Enables tempo-locked automation (requires transport playing and output enabled)</td></tr>
+<tr><td>Beat sync mode</td><td><code>Flash on beat</code> or <code>Scene advance on beat</code> (see below)</td></tr>
+<tr><td>Beat indicator</td><td>The small dot flashes red on each synced beat</td></tr>
+</tbody>
+</table></div>
+<h4 id="beat-sync-modes">Beat Sync Modes<a class="anchor" href="#beat-sync-modes" aria-label="Link to this section">#</a></h4>
+<p>Beat sync runs only while the transport is <strong>playing</strong>, output is <strong>ENABLED</strong>, and BPM is above zero. The beat interval follows the project tempo (<code>60 ÷ BPM</code> seconds).</p>
+<ul><li><strong>Flash on beat</strong> — momentarily forces the master dimmer to full (<code>255</code>) for a short pulse on each beat, then returns to the set level. Use for strobe/accent effects locked to tempo.</li><li><strong>Scene advance on beat</strong> — steps through the Scene Bank (<code>SCN 1 → 8</code>, wrapping) one scene per beat, recalling each scene's channel snapshot in turn. Use for automated, tempo-synced lighting changes.</li></ul>
+<h3 id="scene-bank">Scene Bank<a class="anchor" href="#scene-bank" aria-label="Link to this section">#</a></h3>
+<p>The <strong>SCENE BANK</strong> stores up to <strong>eight</strong> lighting snapshots (<code>SCN 1</code>–<code>SCN 8</code>). Each slot has three actions:</p>
+<div class="table-wrap"><table>
+<thead><tr><th>BUTTON</th><th>ACTION</th></tr></thead>
+<tbody>
+<tr><td><code>STOR</code></td><td>Stores the current 512 channel values into that scene slot</td></tr>
+<tr><td><code>RCLL</code> / <code>LIVE</code></td><td>Recalls the stored snapshot to the live channels. The active scene's button reads <code>LIVE</code> and the slot is outlined in red</td></tr>
+<tr><td><code>×</code></td><td>Clears the stored snapshot</td></tr>
+</tbody>
+</table></div>
+<p>Populated slots show their active-channel count. In <code>Scene advance on beat</code> mode, the bank is cycled automatically.</p>
+<aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>Build a few looks with the channel grid, <code>STOR</code> each into SCN 1–8, then enable <strong>BEAT SYNC → Scene advance on beat</strong> to run a hands-free, tempo-locked light show.</p></div></aside>
+<h3 id="channel-grid-dmx-1-512">Channel Grid (DMX 1–512)<a class="anchor" href="#channel-grid-dmx-1-512" aria-label="Link to this section">#</a></h3>
+<p>The <strong>CHANNELS — DMX 1–512</strong> card shows the full universe as a 16-column grid of cells. Each cell displays its channel number and current value (<code>0–255</code>); brightness and red tint track the value.</p>
+<ul><li><strong>Click a cell</strong> to open the inline channel editor — a <code>0–255</code> slider plus a numeric field for exact entry. Click the cell again or the <code>×</code> to close the editor.</li><li><strong>BLACKOUT</strong> instantly zeroes all 512 channels (live output, not the stored scenes).</li></ul>
+<p>The footer summarises the universe: <code>{n}/512 active · master ×{ratio} · click cell to edit</code>.</p>
+<aside class="callout callout--important"><p class="callout__label">IMPORTANT</p><div class="callout__body"><p>The Scene Bank, channel values, and Art-Net settings on this tab are <strong>session-level</strong> — they are not written into the <code>.rxbproj</code> project file and reset when the app is relaunched. Rebuild or re-store your looks at the start of each session.</p></div></aside>
+<hr>
+<h2 id="documentation-disclaimer-notice">Documentation Disclaimer Notice<a class="anchor" href="#documentation-disclaimer-notice" aria-label="Link to this section">#</a></h2>
+<h3 id="product-behavior-disclaimer">Product behavior disclaimer<a class="anchor" href="#product-behavior-disclaimer" aria-label="Link to this section">#</a></h3>
+<p>RXB Workstation behavior may vary by runtime, OS audio stack, connected hardware, and project complexity. Validate critical workflows in your target deployment environment.</p>
+<h3 id="audio-legal-disclaimer">Audio/legal disclaimer<a class="anchor" href="#audio-legal-disclaimer" aria-label="Link to this section">#</a></h3>
+<p>Users are responsible for ensuring they have legal rights to load, process, save, and distribute any audio/media used with RXB Workstation.</p>
+<h3 id="third-party-trademark-disclaimer">Third-party trademark disclaimer<a class="anchor" href="#third-party-trademark-disclaimer" aria-label="Link to this section">#</a></h3>
+<p>All third-party product names and trademarks are property of their respective owners and are used for identification/reference purposes only.</p>
+<h3 id="performance-disclaimer">Performance disclaimer<a class="anchor" href="#performance-disclaimer" aria-label="Link to this section">#</a></h3>
+<p>Performance targets, latency characteristics, and compatibility notes are informational and not guarantees for every system configuration.</p>
+<p>Thank you for using RXB Workstation. For updates, support articles, and issue reporting, use the RXB Support Portal.</p>
+<p>--- End of RXB Workstation User Manual CV2.6.5 ---</p>
+</div>
+</main>
+<footer class="site-foot">
+  <div class="wrap foot-inner">
+    <p><strong>RXB Workstation</strong> 2.6.5 &middot; &copy; 2026 Brand RPB</p>
+    <nav aria-label="Footer">
+      <a href="../manual/">Manual</a>
+      <a href="../support/">Support</a>
+      <a href="../eula/">Licence</a>
+      <a href="../privacy/">Privacy</a>
+      <a href="../licenses/">Third-party notices</a>
+      <a href="mailto:ryno@globalxbrand.com">ryno@globalxbrand.com</a>
+    </nav>
+  </div>
+</footer>
+</body>
+</html>
