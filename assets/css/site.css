@@ -67,7 +67,15 @@ main{padding:2.5rem 0 4rem}
 h1{font-weight:800;letter-spacing:-.022em;line-height:1.08;margin:0 0 1rem;
   font-size:clamp(2.1rem,6vw,3.4rem)}
 .lede{font-size:1.12rem;color:var(--text-2);max-width:38rem;margin:0 0 1.75rem}
-.cta-row{display:flex;flex-wrap:wrap;gap:.7rem;margin:0}
+.cta-row{display:flex;flex-wrap:wrap;gap:.7rem;margin:0;align-items:center}
+/* Steam badge. Valve's rules: the logo stands alone (no words inside the
+   link), at least 50px tall on screen, with clear space of at least the
+   locomotive-crank diameter (~12.5px at this size) on every side. */
+.steam-badge{display:inline-flex;padding:14px 18px;background:#000;
+  border:1px solid var(--line-strong);border-radius:7px;line-height:0}
+.steam-badge:hover{border-color:var(--text-2)}
+.steam-badge:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.steam-badge img{display:block;height:50px;width:auto;max-width:none}
 .btn{display:inline-block;padding:.62rem 1.15rem;border-radius:7px;
   border:1px solid var(--line-strong);background:var(--widget);color:var(--text);
   font-weight:600;font-size:.92rem;text-decoration:none}
@@ -155,6 +163,7 @@ tbody tr:nth-child(even){background:rgba(255,255,255,.022)}
 .foot-inner{display:flex;flex-wrap:wrap;gap:.8rem 2rem;align-items:center;
   justify-content:space-between;max-width:64rem}
 .site-foot p{margin:0;font-size:.83rem;color:var(--text-2)}
+.site-foot .foot-legal{flex-basis:100%;font-size:.72rem;color:var(--text-off)}
 .site-foot nav{display:flex;flex-wrap:wrap;gap:1rem}
 .site-foot a{font-size:.83rem;color:var(--text-2);text-decoration:none}
 .site-foot a:hover{color:var(--accent)}

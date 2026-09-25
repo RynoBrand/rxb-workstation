@@ -4,10 +4,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RXB Workstation User Manual</title>
-<meta name="description" content="The complete RXB Workstation 2.6.5 user manual: every tab, control and workflow, with figures.">
+<meta name="description" content="The complete RXB Workstation 2.6.6 user manual: every tab, control and workflow, with figures.">
 <meta name="color-scheme" content="dark">
 <meta property="og:title" content="RXB Workstation User Manual">
-<meta property="og:description" content="The complete RXB Workstation 2.6.5 user manual: every tab, control and workflow, with figures.">
+<meta property="og:description" content="The complete RXB Workstation 2.6.6 user manual: every tab, control and workflow, with figures.">
 <meta property="og:type" content="website">
 <link rel="icon" href="../assets/img/icon.png">
 <link rel="stylesheet" href="../assets/css/site.css">
@@ -26,7 +26,7 @@
 <nav class="toc" aria-label="On this page"><p class="toc__title">On this page</p><ol><li><a href="#1-introduction-overview">1. Introduction &amp; Overview</a></li><li><a href="#2-system-requirements">2. System Requirements</a></li><li><a href="#3-getting-started">3. Getting Started</a></li><li><a href="#4-core-concepts">4. Core Concepts</a></li><li><a href="#5-pad-grid-operation">5. Pad Grid Operation</a></li><li><a href="#6-keygroup-mode-keygrp">6. Keygroup Mode (KEYGRP)</a></li><li><a href="#7-effects-routing">7. Effects &amp; Routing</a></li><li><a href="#8-file-management">8. File Management</a></li><li><a href="#9-troubleshooting">9. Troubleshooting</a></li><li><a href="#10-appendix">10. Appendix</a></li><li><a href="#11-extended-workflow-reference">11. Extended Workflow Reference</a></li><li><a href="#12-layout-mode">12. Layout Mode</a></li><li><a href="#13-transport-and-tempo-controls">13. Transport and Tempo Controls</a></li><li><a href="#14-backing-track-full-control-reference">14. Backing Track — Full Control Reference</a></li><li><a href="#15-daw-view-multi-lane-backing-track-workspace">15. DAW View — Multi-Lane Backing Track Workspace</a></li><li><a href="#16-bank-switching-a-b-c-d">16. Bank Switching (A / B / C / D)</a></li><li><a href="#17-xpad-tab-reference">17. XPAD Tab Reference</a></li><li><a href="#18-input-tab-monitoring-reference">18. INPUT Tab — Monitoring Reference</a></li><li><a href="#19-record-input-to-pad-complete-reference">19. Record Input to Pad — Complete Reference</a></li><li><a href="#20-auto-sampler">20. Auto-Sampler</a></li><li><a href="#21-step-performance-editing">21. Step Performance Editing</a></li><li><a href="#22-arpeggiator-keygroup-mode">22. Arpeggiator (Keygroup Mode)</a></li><li><a href="#23-fx-rack-reference">23. FX Rack Reference</a></li><li><a href="#24-keyboard-shortcuts-complete-reference">24. Keyboard Shortcuts — Complete Reference</a></li><li><a href="#25-macros">25. Macros</a></li><li><a href="#26-warp-time-stretch-reference">26. Warp / Time-Stretch Reference</a></li><li><a href="#27-song-mode-and-arranger-extended-reference">27. Song Mode and Arranger — Extended Reference</a></li><li><a href="#28-dmx-lighting-art-net-output">28. DMX Lighting (Art-Net Output)</a></li><li><a href="#documentation-disclaimer-notice">Documentation Disclaimer Notice</a></li></ol></nav>
 <div class="doc doc--manual">
 <h1>User Manual</h1>
-<p class="lede">RXB Workstation 2.6.5. Every tab, control and workflow, with numbered figures throughout.</p>
+<p class="lede">RXB Workstation 2.6.6. Every tab, control and workflow, with numbered figures throughout.</p>
 <p>Version: CV2.6.5 Date: June 18, 2026 (revised August 22, 2026) Status: Current release. Adds the Windows-first DAW multi-lane backing-track workspace and linked playback. The July revision improves Mixer view visibility (scrollable panel, full-height channel strips) and touch-drag reliability for knobs and faders. The August revision adds the backing-track MUTE button, sequencer-master song/backing-track timeline sync (waveform seek moves the Song pointer, section-length edits follow the playhead), and a native-transport fallback status notice. The 8 August revision measures Song Mode sections in <strong>bars</strong> so they can run an odd length, with a per-section toggle for building turnarounds and pickups (Section 27); anchors the Mixer's horizontal scrollbar to the bottom of the panel; and hardens playback so a UI stall — switching tabs mid-playback — can no longer leave the audio cutting in and out. The 15 August revision adds the <strong>MIX BUSES</strong> card to the MIXER view — five group faders (<code>DRUMS</code>, <code>MUSIC</code>, <code>VOX</code>, <code>FX</code>, <code>BACKING</code>) with metering, pan, mute, solo, and master-EQ routing, saved with the project (Section 7) — and makes clearing the backing track or a DAW lane undoable (Section 11). The 16 August revision lets <strong>any pad be sent to any bus</strong> from a <code>BUS</code> selector on its channel strip (Section 7), and adds <strong>EXPORT ARRANGEMENT</strong> to the SONG view, which plays the whole song through and saves it as a WAV or MP3 unattended (Section 27). The 22 August revision ships the <strong>factory sound library</strong>: all 63 samples in Banks B, C and D, synthesised by RXB's own audio engine and licensed for commercial use with no clearance required (Section 16).</p>
 <p>Table of Contents:</p>
 <p>(Word field code style — <em>keep this exact text</em> in the generated <code>.docx</code> file.  Do not interpret or modify it.)</p>
@@ -1184,8 +1184,9 @@
 </main>
 <footer class="site-foot">
   <div class="wrap foot-inner">
-    <p><strong>RXB Workstation</strong> 2.6.5 &middot; &copy; 2026 Brand RPB</p>
+    <p><strong>RXB Workstation</strong> 2.6.6 &middot; &copy; 2026 Brand RPB</p>
     <nav aria-label="Footer">
+      <a href="https://store.steampowered.com/app/5157640/RXB_Workstation/">Steam store</a>
       <a href="../manual/">Manual</a>
       <a href="../support/">Support</a>
       <a href="../eula/">Licence</a>
@@ -1193,6 +1194,7 @@
       <a href="../licenses/">Third-party notices</a>
       <a href="mailto:ryno@globalxbrand.com">ryno@globalxbrand.com</a>
     </nav>
+    <p class="foot-legal">&copy;2026 Valve Corporation. Steam and the Steam logo are trademarks and/or registered trademarks of Valve Corporation in the U.S. and/or other countries.</p>
   </div>
 </footer>
 </body>
