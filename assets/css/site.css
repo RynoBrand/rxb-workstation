@@ -89,7 +89,10 @@ h1{font-weight:800;letter-spacing:-.022em;line-height:1.08;margin:0 0 1rem;
 .btn:hover{background:var(--hover);color:#fff}
 .btn--primary{background:var(--accent);border-color:var(--accent-dim);color:var(--on-accent)}
 .btn--primary:hover{background:#ff2457;color:var(--on-accent)}
+.btn--yt{gap:.55rem}
+.yt-icon{display:block;flex:none;width:1.45rem;height:auto}
 .hero-shot{margin:2.25rem 0 0}
+.hero-shot + .cta-row{margin-top:1.75rem}
 .hero-shot img{display:block;width:100%;height:auto;border:1px solid var(--line);
   border-radius:10px;box-shadow:0 20px 48px -20px rgba(0,0,0,.55)}
 
