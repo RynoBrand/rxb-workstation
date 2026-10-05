@@ -22,6 +22,27 @@ The legal pages are generated from the same files the installer ships via
 is the whole reason this is a generator and not a hand-written site. Re-run the
 build after changing any source above — nothing regenerates on its own.
 
+## Steam store link
+
+The homepage hero has a single **Buy on Steam** button (`.steam-buy`): the
+Steam logo on black on the left, "Buy on Steam" on red on the right. It links to
+`https://store.steampowered.com/app/5157640/RXB_Workstation/`. Every page's
+footer has a "Steam store" link and Valve's trademark attribution line, and
+the Support page's Refunds section links to Steam's refund process.
+
+- A "Get RXB Workstation" panel lower on the homepage repeats the Buy on Steam
+  button, and the kicker line reads "Available now on Steam".
+- The stylesheet link carries a content hash (`site.css?v=<hash>`), so returning
+  visitors get new styles straight away. Without it, a cached stylesheet showed
+  the badge unframed after the first Steam update.
+- The URL comes from one constant, `STEAM_URL` in `scripts/build-website.mjs`.
+- The logo is copied at build time from
+  `brand/steam/official/steam_logo_lockup_white.svg` to
+  `assets/img/steam-logo-white.svg`. It is Valve's own vector artwork.
+- Valve's usage rules (logo stands alone, 50 px minimum height, clear space,
+  attribution) are in `brand/steam/README.md`. Read them before changing the
+  badge.
+
 ## Publishing to GitHub Pages
 
 1. Push to a repository.

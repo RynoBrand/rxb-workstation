@@ -57,6 +57,23 @@ blockquote{margin:1.25rem 0;padding:.35rem 0 .35rem 1.1rem;border-left:3px solid
   padding:.45rem .6rem;border-radius:5px}
 .site-nav a:hover{color:var(--text);background:var(--widget)}
 .site-nav a.is-active{color:var(--accent)}
+.films{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2.25rem;margin:1.5rem 0 1rem;align-items:start}
+.film{margin:0}
+.film h2{margin-top:1rem}
+.films .chapters{columns:1}
+.films .video__btn{width:54px;height:54px;margin:-27px 0 0 -27px}
+@media(max-width:760px){.films{grid-template-columns:1fr;gap:2.5rem}}
+.video{position:relative;aspect-ratio:16/9;background:#000;border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.video iframe,.video__play{position:absolute;inset:0;width:100%;height:100%;border:0;display:block}
+.video__play img{width:100%;height:100%;object-fit:cover;display:block}
+.video__btn{position:absolute;left:50%;top:50%;width:68px;height:68px;margin:-34px 0 0 -34px;
+  background:var(--accent) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 68 68'%3E%3Cpath fill='white' d='M27 20l22 14-22 14z'/%3E%3C/svg%3E") center/100% 100% no-repeat;
+  border-radius:50%;box-shadow:0 2px 12px rgba(0,0,0,.5);transition:transform .12s}
+.video__play:hover .video__btn,.video__play:focus-visible .video__btn{transform:scale(1.08)}
+.video__play:focus-visible{outline:2px solid var(--accent);outline-offset:-2px}
+.chapters{list-style:none;padding:0;margin:.6rem 0 0;columns:2;column-gap:2rem}
+.chapters li{margin:.25rem 0;break-inside:avoid}
+@media(max-width:640px){.chapters{columns:1}}
 
 main{padding:2.5rem 0 4rem}
 

@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>RXB Workstation User Manual</title>
-<meta name="description" content="The complete RXB Workstation 2.6.6 user manual: every tab, control and workflow, with figures.">
+<meta name="description" content="The complete RXB Workstation 2.6.7 user manual: every tab, control and workflow, with figures.">
 <meta name="color-scheme" content="dark">
 <meta property="og:title" content="RXB Workstation User Manual">
-<meta property="og:description" content="The complete RXB Workstation 2.6.6 user manual: every tab, control and workflow, with figures.">
+<meta property="og:description" content="The complete RXB Workstation 2.6.7 user manual: every tab, control and workflow, with figures.">
 <meta property="og:type" content="website">
 <link rel="icon" href="../assets/img/icon.png">
-<link rel="stylesheet" href="../assets/css/site.css?v=d04a3df2ea">
+<link rel="stylesheet" href="../assets/css/site.css?v=86a3a8f6db">
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -19,15 +19,15 @@
     <a class="brand" href="../">
       <img src="../assets/img/logo-white.png" alt="RXB Workstation" height="26">
     </a>
-    <nav class="site-nav" aria-label="Main"><a href="../">Overview</a><a href="../manual/" class="is-active">Manual</a><a href="../support/">Support</a><a href="../eula/">Licence</a><a href="../privacy/">Privacy</a></nav>
+    <nav class="site-nav" aria-label="Main"><a href="../">Overview</a><a href="../watch/">Watch</a><a href="../manual/" class="is-active">Manual</a><a href="../support/">Support</a><a href="../eula/">Licence</a><a href="../privacy/">Privacy</a></nav>
   </div>
 </header>
 <main id="main" class="wrap wrap--wide">
 <nav class="toc" aria-label="On this page"><p class="toc__title">On this page</p><ol><li><a href="#1-introduction-overview">1. Introduction &amp; Overview</a></li><li><a href="#2-system-requirements">2. System Requirements</a></li><li><a href="#3-getting-started">3. Getting Started</a></li><li><a href="#4-core-concepts">4. Core Concepts</a></li><li><a href="#5-pad-grid-operation">5. Pad Grid Operation</a></li><li><a href="#6-keygroup-mode-keygrp">6. Keygroup Mode (KEYGRP)</a></li><li><a href="#7-effects-routing">7. Effects &amp; Routing</a></li><li><a href="#8-file-management">8. File Management</a></li><li><a href="#9-troubleshooting">9. Troubleshooting</a></li><li><a href="#10-appendix">10. Appendix</a></li><li><a href="#11-extended-workflow-reference">11. Extended Workflow Reference</a></li><li><a href="#12-layout-mode">12. Layout Mode</a></li><li><a href="#13-transport-and-tempo-controls">13. Transport and Tempo Controls</a></li><li><a href="#14-backing-track-full-control-reference">14. Backing Track — Full Control Reference</a></li><li><a href="#15-daw-view-multi-lane-backing-track-workspace">15. DAW View — Multi-Lane Backing Track Workspace</a></li><li><a href="#16-bank-switching-a-b-c-d">16. Bank Switching (A / B / C / D)</a></li><li><a href="#17-xpad-tab-reference">17. XPAD Tab Reference</a></li><li><a href="#18-input-tab-monitoring-reference">18. INPUT Tab — Monitoring Reference</a></li><li><a href="#19-record-input-to-pad-complete-reference">19. Record Input to Pad — Complete Reference</a></li><li><a href="#20-auto-sampler">20. Auto-Sampler</a></li><li><a href="#21-step-performance-editing">21. Step Performance Editing</a></li><li><a href="#22-arpeggiator-keygroup-mode">22. Arpeggiator (Keygroup Mode)</a></li><li><a href="#23-fx-rack-reference">23. FX Rack Reference</a></li><li><a href="#24-keyboard-shortcuts-complete-reference">24. Keyboard Shortcuts — Complete Reference</a></li><li><a href="#25-macros">25. Macros</a></li><li><a href="#26-warp-time-stretch-reference">26. Warp / Time-Stretch Reference</a></li><li><a href="#27-song-mode-and-arranger-extended-reference">27. Song Mode and Arranger — Extended Reference</a></li><li><a href="#28-dmx-lighting-art-net-output">28. DMX Lighting (Art-Net Output)</a></li><li><a href="#documentation-disclaimer-notice">Documentation Disclaimer Notice</a></li></ol></nav>
 <div class="doc doc--manual">
 <h1>User Manual</h1>
-<p class="lede">RXB Workstation 2.6.6. Every tab, control and workflow, with numbered figures throughout.</p>
-<p>Version: CV2.6.5 Date: June 18, 2026 (revised August 22, 2026) Status: Current release. Adds the Windows-first DAW multi-lane backing-track workspace and linked playback. The July revision improves Mixer view visibility (scrollable panel, full-height channel strips) and touch-drag reliability for knobs and faders. The August revision adds the backing-track MUTE button, sequencer-master song/backing-track timeline sync (waveform seek moves the Song pointer, section-length edits follow the playhead), and a native-transport fallback status notice. The 8 August revision measures Song Mode sections in <strong>bars</strong> so they can run an odd length, with a per-section toggle for building turnarounds and pickups (Section 27); anchors the Mixer's horizontal scrollbar to the bottom of the panel; and hardens playback so a UI stall — switching tabs mid-playback — can no longer leave the audio cutting in and out. The 15 August revision adds the <strong>MIX BUSES</strong> card to the MIXER view — five group faders (<code>DRUMS</code>, <code>MUSIC</code>, <code>VOX</code>, <code>FX</code>, <code>BACKING</code>) with metering, pan, mute, solo, and master-EQ routing, saved with the project (Section 7) — and makes clearing the backing track or a DAW lane undoable (Section 11). The 16 August revision lets <strong>any pad be sent to any bus</strong> from a <code>BUS</code> selector on its channel strip (Section 7), and adds <strong>EXPORT ARRANGEMENT</strong> to the SONG view, which plays the whole song through and saves it as a WAV or MP3 unattended (Section 27). The 22 August revision ships the <strong>factory sound library</strong>: all 63 samples in Banks B, C and D, synthesised by RXB's own audio engine and licensed for commercial use with no clearance required (Section 16).</p>
+<p class="lede">RXB Workstation 2.6.7. Every tab, control and workflow, with numbered figures throughout.</p>
+<p>Version: CV2.6.7 Date: June 18, 2026 (revised October 1, 2026) Status: Current release. Adds the Windows-first DAW multi-lane backing-track workspace and linked playback. The July revision improves Mixer view visibility (scrollable panel, full-height channel strips) and touch-drag reliability for knobs and faders. The August revision adds the backing-track MUTE button, sequencer-master song/backing-track timeline sync (waveform seek moves the Song pointer, section-length edits follow the playhead), and a native-transport fallback status notice. The 8 August revision measures Song Mode sections in <strong>bars</strong> so they can run an odd length, with a per-section toggle for building turnarounds and pickups (Section 27); anchors the Mixer's horizontal scrollbar to the bottom of the panel; and hardens playback so a UI stall — switching tabs mid-playback — can no longer leave the audio cutting in and out. The 15 August revision adds the <strong>MIX BUSES</strong> card to the MIXER view — five group faders (<code>DRUMS</code>, <code>MUSIC</code>, <code>VOX</code>, <code>FX</code>, <code>BACKING</code>) with metering, pan, mute, solo, and master-EQ routing, saved with the project (Section 7) — and makes clearing the backing track or a DAW lane undoable (Section 11). The 16 August revision lets <strong>any pad be sent to any bus</strong> from a <code>BUS</code> selector on its channel strip (Section 7), and adds <strong>EXPORT ARRANGEMENT</strong> to the SONG view, which plays the whole song through and saves it as a WAV or MP3 unattended (Section 27). The 22 August revision ships the <strong>factory sound library</strong>: all 63 samples in Banks B, C and D, synthesised by RXB's own audio engine and licensed for commercial use with no clearance required (Section 16).</p>
 <p>Table of Contents:</p>
 <p>(Word field code style — <em>keep this exact text</em> in the generated <code>.docx</code> file.  Do not interpret or modify it.)</p>
 <h2 id="1-introduction-overview">1. Introduction &amp; Overview<a class="anchor" href="#1-introduction-overview" aria-label="Link to this section">#</a></h2>
@@ -254,9 +254,19 @@
 <h3 id="save-and-open-actions">Save and Open Actions<a class="anchor" href="#save-and-open-actions" aria-label="Link to this section">#</a></h3>
 <ul><li><strong>SAVE PROJECT</strong> writes both <code>project.rxbproj</code> and <code>project.json</code>, then creates a timestamped backup.</li><li><strong>COLLECT + SAVE</strong> copies required sample assets to <code>Samples/</code> and writes project files.</li><li><strong>SAVE AS</strong> creates a new project destination while preserving project metadata links.</li><li><strong>OPEN</strong> supports folder-first and direct-file project open flows.</li><li><strong>NEW CLEAN FILE</strong> initializes a fresh project state.</li></ul>
 <p>Backups are auto-cleaned to retain the newest three backup files per project root.</p>
+<h3 id="closing-with-unsaved-changes">Closing With Unsaved Changes<a class="anchor" href="#closing-with-unsaved-changes" aria-label="Link to this section">#</a></h3>
+<p>If you close RXB, or quit it, while the project has unsaved changes, a dialog asks <strong>Save changes to this project before closing?</strong> with three choices:</p>
+<ul><li><strong>Save</strong> saves the project first. RXB closes only if the save really worked; if it fails, RXB stays open so your work is not lost.</li><li><strong>Don't Save</strong> closes and discards everything since the last save.</li><li><strong>Cancel</strong> keeps RXB open.</li></ul>
+<h3 id="crash-recovery-autosave">Crash Recovery (Autosave)<a class="anchor" href="#crash-recovery-autosave" aria-label="Link to this section">#</a></h3>
+<p>While you work, RXB keeps an autosave snapshot of the session. It is written about 10 seconds after you stop making changes, and a normal exit clears it.</p>
+<p>If RXB did not close cleanly (a crash, a power cut), the next launch shows a notice on the intro screen: <strong>RXB didn't close cleanly last time</strong>, with the date and time of the unsaved session.</p>
+<ul><li><strong>RESTORE</strong> brings the session back.</li><li><strong>DISCARD</strong> throws it away.</li></ul>
+<p>A snapshot older than seven days is not offered, and starting or opening another project also discards it. Autosave is a safety net, not a replacement for <strong>SAVE PROJECT</strong>.</p>
 <aside class="callout callout--warning"><p class="callout__label">WARNING</p><div class="callout__body"><p>Do not move or rename project sample assets outside RXB after saving. If links break, run <strong>COLLECT + SAVE</strong> to rebuild a portable project state.</p></div></aside>
 <h2 id="9-troubleshooting">9. Troubleshooting<a class="anchor" href="#9-troubleshooting" aria-label="Link to this section">#</a></h2>
 <p>Use this section for common recovery and stability checks.</p>
+<h3 id="after-a-crash-or-unexpected-close">After a Crash or Unexpected Close<a class="anchor" href="#after-a-crash-or-unexpected-close" aria-label="Link to this section">#</a></h3>
+<ul><li>On the next launch, use <strong>RESTORE</strong> on the intro screen notice to recover the unsaved session. See <strong>Crash Recovery (Autosave)</strong> in File Management.</li></ul>
 <h3 id="missing-samples-or-broken-links">Missing Samples or Broken Links<a class="anchor" href="#missing-samples-or-broken-links" aria-label="Link to this section">#</a></h3>
 <ul><li>If a file shows as missing, relink from the relevant load action first.</li><li>Re-run <strong>COLLECT + SAVE</strong> to rebuild portable sample references in <code>Samples/</code>.</li><li>Reopen the project and confirm all pad layers (<code>L1-L4</code>) resolve.</li></ul>
 <h3 id="backing-track-import-failures">Backing Track Import Failures<a class="anchor" href="#backing-track-import-failures" aria-label="Link to this section">#</a></h3>
@@ -312,6 +322,9 @@
 <p>Changes in this revision (Section 16 updated in place):</p>
 <ul><li><strong>The factory sound library ships.</strong> Banks B, C and D previously contained 63 placeholder files that were half a second of silence each — the pads triggered, the meters moved, and nothing came out. All 63 are now real sounds. Bank A was always synthesised and is unchanged. See Section 16.</li><li><strong>Everything is synthesised by RXB.</strong> The samples were rendered offline by the application's own audio engine, not sourced from a sample pack. There is no third-party audio anywhere in the factory content.</li><li><strong>Cleared for commercial release.</strong> You may use the factory sounds in commercial music with no clearance, royalty or credit. The full terms, including the one restriction — you may not repackage the sounds themselves as a sample library — are in <code>EULA.txt</code>, installed with the application.</li><li><strong>All 42 manual screenshots re-captured</strong> against CV2.6.5. The previous set dated from 17 April 2026 and predated the DAW tab, the MIX BUSES card and per-pad bus routing. Capture is now automated (<code>npm run docs:screenshots</code>) so the images track the app.</li><li><strong>Bank C is tuned to A minor</strong> and the Bank D loops are tempo-labelled, so the melodic content works together without retuning.</li></ul>
 <aside class="callout callout--tip"><p class="callout__label">PRO TIP</p><div class="callout__body"><p>If you built projects while the placeholders were in place, those projects<br>referenced the factory filenames and will simply start making sound when you<br>reopen them. Nothing needs to be relinked.</p></div></aside>
+<h3 id="addendum-october-1-2026">Addendum — October 1, 2026<a class="anchor" href="#addendum-october-1-2026" aria-label="Link to this section">#</a></h3>
+<p>Changes in this revision (Sections 8, 9 and 12 updated in place):</p>
+<ul><li><strong>Closing with unsaved changes</strong> now asks whether to save: <strong>Save</strong>, <strong>Don't Save</strong> or <strong>Cancel</strong>. See Section 8.</li><li><strong>Crash recovery.</strong> After an unclean exit, the intro screen offers <strong>RESTORE</strong> or <strong>DISCARD</strong> for the unsaved session. See Section 8, and Section 9 for the checks.</li><li><strong>Presentation mode</strong> (<strong>SYSTEM → DISPLAY</strong>) hides the CPU/MEM readout, save status and footer for streaming and screen recording. See Section 12.</li><li><strong>Song Mode:</strong> sections that follow a section with an odd number of bars now start on their first bar. See SONG Tab (Song Modes) in Section 11.</li><li><strong>Audio:</strong> the sidechain duck and aftertouch volume no longer click on sustained sounds, and the MIXER's delivery-metering values are easier to read.</li><li>The figures were captured on CV2.6.5. The layout they show is unchanged, apart from the version label in the footer and the MIXER readout colours.</li></ul>
 <h3 id="addendum-august-22-2026-documentation-cleanup">Addendum — August 22, 2026 (documentation cleanup)<a class="anchor" href="#addendum-august-22-2026-documentation-cleanup" aria-label="Link to this section">#</a></h3>
 <p>Two sets of corrections, both found by comparing this manual against the shipped code rather than by reading it.</p>
 <p><strong>The Linear Arranger has been removed from this manual.</strong> <code>ARR PLAY</code>, <code>ARR TO SONG</code> and the <code>+ARR</code> clip-slot button were real features in CV2.6.3, but the UI was removed in CV2.6.4 and this manual kept documenting them for four minor versions. There was no way to reach any of the three in the shipped app.</p>
@@ -521,6 +534,8 @@
 <h3 id="pinned-panels">Pinned Panels<a class="anchor" href="#pinned-panels" aria-label="Link to this section">#</a></h3>
 <p>The <strong>Pad Surface</strong> (knobs) and <strong>Sequencer</strong> panels are permanently docked to the bottom of the workspace. They cannot be moved or resized in Layout Mode. All other panels are clamped to the rows above them. The pinned panels carry 6 px of bottom padding by default.</p>
 <hr>
+<h3 id="presentation-mode">Presentation Mode<a class="anchor" href="#presentation-mode" aria-label="Link to this section">#</a></h3>
+<p>For streaming, screen recording and screenshots, <strong>SYSTEM → DISPLAY → Presentation mode</strong> (set it <strong>ON</strong>) hides the CPU/MEM readout, the save-status line and the footer. Save warnings still appear. The setting is stored on this machine, not in the project, and it stays on after you relaunch RXB.</p>
 <h2 id="13-transport-and-tempo-controls">13. Transport and Tempo Controls<a class="anchor" href="#13-transport-and-tempo-controls" aria-label="Link to this section">#</a></h2>
 <h3 id="bpm">BPM<a class="anchor" href="#bpm" aria-label="Link to this section">#</a></h3>
 <p>The BPM field is shown in the transport strip. Click the value and type a new tempo, or use the up/down arrows. The accepted range is <strong>20–300 BPM</strong>.</p>
@@ -1179,14 +1194,15 @@
 <h3 id="performance-disclaimer">Performance disclaimer<a class="anchor" href="#performance-disclaimer" aria-label="Link to this section">#</a></h3>
 <p>Performance targets, latency characteristics, and compatibility notes are informational and not guarantees for every system configuration.</p>
 <p>Thank you for using RXB Workstation. For updates, support articles, and issue reporting, use the RXB Support Portal.</p>
-<p>--- End of RXB Workstation User Manual CV2.6.5 ---</p>
+<p>--- End of RXB Workstation User Manual CV2.6.7 ---</p>
 </div>
 </main>
 <footer class="site-foot">
   <div class="wrap foot-inner">
-    <p><strong>RXB Workstation</strong> 2.6.6 &middot; &copy; 2026 Brand RPB</p>
+    <p><strong>RXB Workstation</strong> 2.6.7 &middot; &copy; 2026 Brand RPB</p>
     <nav aria-label="Footer">
       <a href="https://store.steampowered.com/app/5157640/RXB_Workstation/">Steam store</a>
+      <a href="../watch/">Watch</a>
       <a href="../manual/">Manual</a>
       <a href="../support/">Support</a>
       <a href="../eula/">Licence</a>
@@ -1195,6 +1211,7 @@
       <a href="mailto:ryno@globalxbrand.com">ryno@globalxbrand.com</a>
     </nav>
     <p class="foot-legal">&copy;2026 Valve Corporation. Steam and the Steam logo are trademarks and/or registered trademarks of Valve Corporation in the U.S. and/or other countries.</p>
+    <p class="foot-legal">YouTube and the YouTube logo are trademarks of Google LLC. RXB Workstation is not affiliated with or endorsed by Google or Valve.</p>
   </div>
 </footer>
 </body>
