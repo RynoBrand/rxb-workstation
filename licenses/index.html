@@ -57,6 +57,7 @@ TABLE OF CONTENTS
   SECTION D  GNU Lesser General Public License 3.0 packages (1 package, BUNDLED)
   SECTION E  SIL Open Font License 1.1 typefaces (2 families, BUNDLED)
   SECTION F  First-party content (factory sample library)
+  SECTION G  iPad app only: Capacitor (MIT, BUNDLED in the iPad build)
 
 ================================================================================
 SECTION A — Apache License 2.0
@@ -681,13 +682,48 @@ SECTION F - FIRST-PARTY CONTENT
   third-party audio-effect code, algorithm ports or presets are used.
 
 ================================================================================
+SECTION G - iPad APP ONLY (added 2026-11-12)
+================================================================================
+
+  The iPad App Store build wraps the same renderer in a native iOS shell made
+  with Capacitor.  Capacitor ships inside the iPad app only; it is not part of
+  the Windows build.  The wrapper project lives outside this repository
+  (C:\Dev\RXB_iPad_App); this file is copied into the iPad bundle by
+  scripts/build-ipad-pwa.mjs.
+
+  Capacitor 8.6.0 (@capacitor/core, @capacitor/ios, and the Capacitor and
+  Cordova frameworks from capacitor-swift-pm) - MIT License
+
+  MIT License
+
+  Copyright (c) 2017-present Drifty Co.
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the &quot;Software&quot;), to deal
+  in the Software without restriction, including without limitation the rights
+  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED &quot;AS IS&quot;, WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  SOFTWARE.
+
+================================================================================
 END OF THIRD-PARTY SOFTWARE NOTICES
 ================================================================================
 </pre></div>
 </main>
 <footer class="site-foot">
   <div class="wrap foot-inner">
-    <p><strong>RXB Workstation</strong> 2.6.8 &middot; &copy; 2026 Brand RPB</p>
+    <p><strong>RXB Workstation</strong> 2.6.9 &middot; &copy; 2026 Brand RPB</p>
     <nav aria-label="Footer">
       <a href="https://store.steampowered.com/app/5157640/RXB_Workstation/">Steam store</a>
       <a href="../watch/">Watch</a>
