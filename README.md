@@ -43,6 +43,39 @@ the Support page's Refunds section links to Steam's refund process.
   attribution) are in `brand/steam/README.md`. Read them before changing the
   badge.
 
+## App Store link (iPad, added 24 Nov 2026)
+
+The hero's store row (`.cta-row--stores`) holds Apple's black **Download on
+the App Store** badge (`.appstore-badge`), first, then the Buy on Steam button.
+Both are 64 px tall, at the owner's request, and the gap between them is 16 px,
+Apple's clear space at that size. It links to
+`https://apps.apple.com/app/id6834072824`.
+
+- **64 px puts the Steam logo at 41 px, below Valve's 50 px minimum.** The
+  owner chose that on 24 Nov 2026; it is recorded, with how to undo it, in
+  `brand/steam/README.md` ("Second known deviation"). Change both heights
+  together, or the pair stops matching.
+
+- The kicker reads "Windows and iPad · ... · Available now on Steam and the
+  App Store". `iPad` and `App Store` sit in `.tm` spans, so the upper-case
+  kicker does not print them in capitals.
+- The "Get RXB Workstation" panel has two text buttons, "Buy for Windows on
+  Steam" and "Buy for iPad on the App Store". It does not repeat the badge,
+  because Apple allows one badge per layout. The panel also says what the iPad
+  leaves out (Art-Net lighting, MIDI controllers).
+- Every page's footer has an "App Store" link and Apple's credit lines.
+- The Support page lists both operating systems (Windows 10/11 64-bit on
+  Steam, iPadOS 16 or later on the App Store), and its Refunds section sends
+  App Store buyers to `reportaproblem.apple.com`.
+- The URL comes from one constant, `APP_STORE_URL` in
+  `scripts/build-website.mjs`.
+- The badge is copied at build time from
+  `brand/apple/official/Download_on_the_App_Store_Badge_US-UK_RGB_blk.svg` to
+  `assets/img/app-store-badge-black.svg`. It is Apple's own artwork, unaltered.
+- Apple's usage rules (black badge when other stores appear, App Store first,
+  one badge per layout, 40 px minimum, clear space, credit lines, how to write
+  `iPad`) are in `brand/apple/README.md`. Read them before changing the badge.
+
 ## Publishing to GitHub Pages
 
 1. Push to a repository.
